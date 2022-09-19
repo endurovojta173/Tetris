@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Tetris
 {
-    public partial class menu : Form
+    public partial class tetris : Form
     {
-        public menu()
+        public tetris()
         {
             InitializeComponent();
+        }
+
+        private void tabulka_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
