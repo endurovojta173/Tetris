@@ -1,6 +1,6 @@
 ﻿namespace Tetris
 {
-    partial class tetris
+    partial class Tetris
     {
         /// <summary>
         /// Vyžaduje se proměnná návrháře.
