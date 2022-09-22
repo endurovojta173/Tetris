@@ -13,14 +13,30 @@ namespace Tetris
     public partial class Tetris : Form
     {
         //***INICIALIZACE***
+        Control[] aktivniPolozka = { null, null, null, null };
+        Control[] aktivniPolozka2 = { null, null, null, null };
+        Control[] dalsiPolozka = { null, null, null, null };
+        Control[] ulozenaPolozka = { null, null, null, null };
+        List<int> pieceSequence = new List<int>();
 
+        Color barvaPolozky=Color.White;
+        Color ulozenaBarvaPolozky = Color.White;
+
+        int intervalOpakovaniPolozky = 0; //int PieceSequenceIteration = 0;
+        int momentalniPolozka;
+        int dalsiPolozkaInt;
+        int ulozenaPolozkaInt = -1;
+        int otaceni = 0;
+        int ubehlyCas = 0;
         int kombo = 1; //násobitel skóre, podle toho kolikrát postavím řadu
         int skore = 0; //aktuální skóre
         int pocetPostavenychRad = 0;
         int rychlostHry = 0; //nastavuje rychlost hry
         bool konecHry = false;
 
+        readonly Color[] seznamBarev ={Color.Cyan,Color.Orange,Color.Blue,Color.Green,Color.Red, Color.Yellow,Color.Purple};
 
+        //Hra
         public Tetris()
         {
             InitializeComponent();
