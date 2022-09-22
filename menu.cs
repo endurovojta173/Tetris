@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tetris
 {
-    public partial class menu : Form
+    public partial class Menu : Form
     {
-        public menu()
+        public Menu()
         {
             InitializeComponent();
         }

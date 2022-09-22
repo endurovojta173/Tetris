@@ -10,9 +10,18 @@ using System.Windows.Forms;
 
 namespace Tetris
 {
-    public partial class tetris : Form
+    public partial class Tetris : Form
     {
-        public tetris()
+        //***INICIALIZACE***
+
+        int kombo = 1; //násobitel skóre, podle toho kolikrát postavím řadu
+        int skore = 0; //aktuální skóre
+        int pocetPostavenychRad = 0;
+        int rychlostHry = 0; //nastavuje rychlost hry
+        bool konecHry = false;
+
+
+        public Tetris()
         {
             InitializeComponent();
         }
