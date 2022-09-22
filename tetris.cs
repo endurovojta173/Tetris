@@ -34,7 +34,16 @@ namespace Tetris
         int rychlostHry = 0; //nastavuje rychlost hry
         bool konecHry = false;
 
-        readonly Color[] seznamBarev ={Color.Cyan,Color.Orange,Color.Blue,Color.Green,Color.Red, Color.Yellow,Color.Purple};
+        //Nastavení barev pro jednotlivé položky
+        readonly Color[] seznamBarev ={
+            Color.Cyan,     //I
+            Color.Orange,   //L
+            Color.Blue,     //J
+            Color.Green,    //S
+            Color.Red,      //Z
+            Color.Yellow,   //O
+            Color.Black     //T
+        };
 
         //Hra
         public Tetris()
