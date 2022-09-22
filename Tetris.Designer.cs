@@ -230,8 +230,11 @@
             this.pictureBox131 = new System.Windows.Forms.PictureBox();
             this.pictureBox186 = new System.Windows.Forms.PictureBox();
             this.pictureBox193 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_skore = new System.Windows.Forms.Label();
             this.Sekundy = new System.Windows.Forms.Timer(this.components);
+            this.label_cas = new System.Windows.Forms.Label();
+            this.label_obtiznost = new System.Windows.Forms.Label();
+            this.label_radky = new System.Windows.Forms.Label();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox200)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox199)).BeginInit();
@@ -2281,26 +2284,59 @@
             this.pictureBox193.TabIndex = 3;
             this.pictureBox193.TabStop = false;
             // 
-            // label1
+            // label_skore
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(389, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 44);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Skóre: 0";
+            this.label_skore.AutoSize = true;
+            this.label_skore.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_skore.Location = new System.Drawing.Point(389, 72);
+            this.label_skore.Name = "label_skore";
+            this.label_skore.Size = new System.Drawing.Size(167, 44);
+            this.label_skore.TabIndex = 1;
+            this.label_skore.Text = "Skóre: 0";
             // 
             // Sekundy
             // 
             this.Sekundy.Interval = 1000;
+            // 
+            // label_cas
+            // 
+            this.label_cas.AutoSize = true;
+            this.label_cas.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_cas.Location = new System.Drawing.Point(389, 116);
+            this.label_cas.Name = "label_cas";
+            this.label_cas.Size = new System.Drawing.Size(132, 44);
+            this.label_cas.TabIndex = 2;
+            this.label_cas.Text = "Čas: 0";
+            // 
+            // label_obtiznost
+            // 
+            this.label_obtiznost.AutoSize = true;
+            this.label_obtiznost.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold);
+            this.label_obtiznost.Location = new System.Drawing.Point(389, 160);
+            this.label_obtiznost.Name = "label_obtiznost";
+            this.label_obtiznost.Size = new System.Drawing.Size(234, 44);
+            this.label_obtiznost.TabIndex = 3;
+            this.label_obtiznost.Text = "Obtížnost: 0";
+            // 
+            // label_radky
+            // 
+            this.label_radky.AutoSize = true;
+            this.label_radky.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold);
+            this.label_radky.Location = new System.Drawing.Point(389, 204);
+            this.label_radky.Name = "label_radky";
+            this.label_radky.Size = new System.Drawing.Size(175, 44);
+            this.label_radky.TabIndex = 4;
+            this.label_radky.Text = "Řádky: 0";
             // 
             // Tetris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 750);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_radky);
+            this.Controls.Add(this.label_obtiznost);
+            this.Controls.Add(this.label_cas);
+            this.Controls.Add(this.label_skore);
             this.Controls.Add(this.tabulka);
             this.Name = "Tetris";
             this.Text = "Form1";
@@ -2513,7 +2549,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tabulka;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_skore;
         private System.Windows.Forms.PictureBox pictureBox100;
         private System.Windows.Forms.PictureBox pictureBox99;
         private System.Windows.Forms.PictureBox pictureBox98;
@@ -2715,6 +2751,9 @@
         private System.Windows.Forms.PictureBox pictureBox186;
         private System.Windows.Forms.PictureBox pictureBox193;
         private System.Windows.Forms.Timer Sekundy;
+        private System.Windows.Forms.Label label_cas;
+        private System.Windows.Forms.Label label_obtiznost;
+        private System.Windows.Forms.Label label_radky;
     }
 }
 
