@@ -52,6 +52,12 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ovladani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ovladani.Designer.cs">
+      <DependentUpon>Ovladani.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tetris.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ovladani.resx">
+      <DependentUpon>Ovladani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tetris.resx">
       <DependentUpon>Tetris.cs</DependentUpon>
