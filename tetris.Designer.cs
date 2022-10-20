@@ -231,10 +231,13 @@
             this.pictureBox186 = new System.Windows.Forms.PictureBox();
             this.pictureBox193 = new System.Windows.Forms.PictureBox();
             this.label_skore = new System.Windows.Forms.Label();
-            this.Sekundy = new System.Windows.Forms.Timer(this.components);
             this.label_cas = new System.Windows.Forms.Label();
             this.label_obtiznost = new System.Windows.Forms.Label();
             this.label_radky = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.label_updateSkore = new System.Windows.Forms.Label();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox200)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox199)).BeginInit();
@@ -2294,10 +2297,6 @@
             this.label_skore.TabIndex = 1;
             this.label_skore.Text = "Skóre: 0";
             // 
-            // Sekundy
-            // 
-            this.Sekundy.Interval = 1000;
-            // 
             // label_cas
             // 
             this.label_cas.AutoSize = true;
@@ -2328,11 +2327,22 @@
             this.label_radky.TabIndex = 4;
             this.label_radky.Text = "Řádky: 0";
             // 
+            // label_updateSkore
+            // 
+            this.label_updateSkore.AutoSize = true;
+            this.label_updateSkore.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_updateSkore.Location = new System.Drawing.Point(389, 34);
+            this.label_updateSkore.Name = "label_updateSkore";
+            this.label_updateSkore.Size = new System.Drawing.Size(246, 44);
+            this.label_updateSkore.TabIndex = 5;
+            this.label_updateSkore.Text = "updateSkore";
+            // 
             // Tetris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 750);
+            this.Controls.Add(this.label_updateSkore);
             this.Controls.Add(this.label_radky);
             this.Controls.Add(this.label_obtiznost);
             this.Controls.Add(this.label_cas);
@@ -2750,10 +2760,13 @@
         private System.Windows.Forms.PictureBox pictureBox161;
         private System.Windows.Forms.PictureBox pictureBox186;
         private System.Windows.Forms.PictureBox pictureBox193;
-        private System.Windows.Forms.Timer Sekundy;
         private System.Windows.Forms.Label label_cas;
         private System.Windows.Forms.Label label_obtiznost;
         private System.Windows.Forms.Label label_radky;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Label label_updateSkore;
     }
 }
 

@@ -49,6 +49,7 @@ namespace Tetris
         public Tetris()
         {
             InitializeComponent();
+
         }
 
         private void tabulka_Paint(object sender, PaintEventArgs e)
