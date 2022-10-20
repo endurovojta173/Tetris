@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Tetris
 {
-    public partial class Tetris : Form
+    public partial class Game : Form
     {
         //***INICIALIZACE***
         Control[] aktivniPolozka = { null, null, null, null };
@@ -44,7 +44,7 @@ namespace Tetris
         };
 
         //Hra
-        public Tetris()
+        public Game()
         {
             InitializeComponent();
             //Zapnutí timerů a vynulování label_updateSkore
