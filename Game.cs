@@ -425,10 +425,5 @@ namespace Tetris
             timer3.Stop();
         }
 
-
-        private void tabulka_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

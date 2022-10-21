@@ -687,7 +687,6 @@
             this.tabulka.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tabulka.Size = new System.Drawing.Size(333, 650);
             this.tabulka.TabIndex = 0;
-            this.tabulka.Paint += new System.Windows.Forms.PaintEventHandler(this.tabulka_Paint);
             // 
             // pictureBox200
             // 
