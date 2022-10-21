@@ -115,7 +115,8 @@ namespace Tetris
 
 
             // Zkontroluje jestli není konec hry
-            /*foreach (Control box in aktivniPolozka)
+
+            foreach (Control box in aktivniPolozka)
             {
                 if (box.BackColor != Color.White)
                 {
@@ -126,7 +127,7 @@ namespace Tetris
                     MessageBox.Show("Konec hry!");
                     return;
                 }
-            }*/
+            }
 
 
             // Populate falling piece squares with correct color
