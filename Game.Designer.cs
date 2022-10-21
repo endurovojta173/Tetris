@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.tabulka = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox200 = new System.Windows.Forms.PictureBox();
             this.pictureBox199 = new System.Windows.Forms.PictureBox();
@@ -2528,6 +2529,18 @@
             this.label_radky.TabIndex = 4;
             this.label_radky.Text = "Řádky: 0";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 800;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 2000;
+            // 
             // label_updateSkore
             // 
             this.label_updateSkore.AutoSize = true;
@@ -2542,6 +2555,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(626, 750);
             this.Controls.Add(this.label_updateSkore);
@@ -2550,6 +2564,7 @@
             this.Controls.Add(this.label_cas);
             this.Controls.Add(this.label_skore);
             this.Controls.Add(this.tabulka);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = "Tetris";
             this.tabulka.ResumeLayout(false);
