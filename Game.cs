@@ -11,12 +11,7 @@ namespace Tetris
         //***INICIALIZACE***
         Control[] aktivniPolozka = { null, null, null, null };
         Control[] aktivniPolozka2 = { null, null, null, null };
-        Control[] dalsiPolozka = { null, null, null, null };
-        Control[] ulozenaPolozka = { null, null, null, null };
         List<int> pieceSequence = new List<int>();
-
-        Color barvaPolozky=Color.White;
-        Color ulozenaBarvaPolozky = Color.White;
 
         int momentalniPolozka;
         int dalsiPolozkaInt;
