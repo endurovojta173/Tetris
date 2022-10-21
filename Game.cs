@@ -291,7 +291,6 @@ namespace Tetris
                 timer2.Stop();
                 MessageBox.Show("Konec hry!");
             }
-
             else
             {
                 //Posune dál nebo vytvoří nový, když se nemůže hýbat
@@ -403,7 +402,6 @@ namespace Tetris
 
             pocetPostavenychRad++;
             label_radky.Text = "Řádky: " + pocetPostavenychRad;
-
 
             if (CheckForCompleteRows() > -1)
             {
