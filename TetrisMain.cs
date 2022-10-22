@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Media; //pridano
 
 namespace Tetris
 {
     public partial class TetrisMain : Form
     {
+
         //***INICIALIZACE***
         Control[] aktivniPolozka = { null, null, null, null };
         Control[] aktivniPolozka2 = { null, null, null, null };
@@ -32,10 +34,16 @@ namespace Tetris
             Color.Purple    // T piece
         };
 
+        System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(); //Konstruktor zvuku //Soundtrack
+
+
         //Hra
         public TetrisMain()
         {
             InitializeComponent();
+
+            soundtrack.SoundLocation=@"../../zvuky/soundtrack.wav";//Lokace soundtracku
+            soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
 
             label_updateSkore.Text = "";
             rychlostHryTimer.Start();
