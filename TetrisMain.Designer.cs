@@ -551,6 +551,7 @@
             this.tabulka.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tabulka.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tabulka.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tabulka.Controls.Add(this.box100, 9, 11);
             this.tabulka.Controls.Add(this.box1, 0, 2);
             this.tabulka.Controls.Add(this.box2, 1, 2);
             this.tabulka.Controls.Add(this.box3, 2, 2);
@@ -650,7 +651,6 @@
             this.tabulka.Controls.Add(this.box97, 6, 11);
             this.tabulka.Controls.Add(this.box98, 7, 11);
             this.tabulka.Controls.Add(this.box99, 8, 11);
-            this.tabulka.Controls.Add(this.box100, 9, 11);
             this.tabulka.Controls.Add(this.box101, 0, 12);
             this.tabulka.Controls.Add(this.box102, 1, 12);
             this.tabulka.Controls.Add(this.box103, 2, 12);
@@ -3222,6 +3222,7 @@
             this.Controls.Add(this.label_skore);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TetrisMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
             this.tabulka.ResumeLayout(false);

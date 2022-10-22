@@ -41,7 +41,6 @@ namespace Tetris
         public TetrisMain()
         {
             InitializeComponent();
-
             soundtrack.SoundLocation=@"../../zvuky/soundtrack.wav";//Lokace soundtracku
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
 
@@ -439,5 +438,7 @@ namespace Tetris
             label_updateSkore.Text = "";
             skoreTimer.Stop();
         }
+
+  
     }
 }
