@@ -3,12 +3,9 @@ using System.Windows.Forms;
 
 namespace Tetris
 {
-    public partial class Game : Form
+    public partial class TetrisMain : Form
     {
-        // Handle inputs - triggered on any keypress
-        // Cleanup needed
-        // Handle inputs - triggered on any keypress
-        // Cleanup needed
+        //Pracuje s inputem, zatím pouzde WASD a šipky
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
             if (!CheckGameOver() & ((e.KeyCode == Keys.Left | e.KeyCode == Keys.A) & TestMove("left") == true))
@@ -25,40 +22,41 @@ namespace Tetris
             }
             else if (e.KeyCode == Keys.Up | e.KeyCode == Keys.W)
             {
-                //Rotate
-                int square1Col = tabulka.GetColumn(aktivniPolozka[0]);
-                int square1Row = tabulka.GetRow(aktivniPolozka[0]);
+                //Otáčení
 
-                int square2Col = tabulka.GetColumn(aktivniPolozka[1]);
-                int square2Row = tabulka.GetRow(aktivniPolozka[1]);
+                int ctverec1Sloupec = tabulka.GetColumn(aktivniPolozka[0]);
+                int ctverec1Radek = tabulka.GetRow(aktivniPolozka[0]);
 
-                int square3Col = tabulka.GetColumn(aktivniPolozka[2]);
-                int square3Row = tabulka.GetRow(aktivniPolozka[2]);
+                int ctverec2Sloupec = tabulka.GetColumn(aktivniPolozka[1]);
+                int ctverec2Radek = tabulka.GetRow(aktivniPolozka[1]);
 
-                int square4Col = tabulka.GetColumn(aktivniPolozka[3]);
-                int square4Row = tabulka.GetRow(aktivniPolozka[3]);
+                int ctverec3Sloupec = tabulka.GetColumn(aktivniPolozka[2]);
+                int ctverec3Radek = tabulka.GetRow(aktivniPolozka[2]);
 
-                if (momentalniPolozka == 0) //The line piece
+                int ctverec4Sloupec = tabulka.GetColumn(aktivniPolozka[3]);
+                int ctverec4Radek = tabulka.GetRow(aktivniPolozka[3]);
+
+                if (momentalniPolozka == 0) //I tvar
                 {
-                    //Test if piece is too close to edge of board
-                    if (otaceni == 0 & (square1Col == 0 | square1Col == 1 | square1Col == 9))
+                    //Otestuje jestli není I tvar moc blízko ke kraji, aby se mohl otočit
+                    if (otaceni == 0 & (ctverec1Sloupec == 0 | ctverec1Sloupec == 1 | ctverec1Sloupec == 9))
                     {
                         return;
                     }
-                    else if (otaceni == 1 & (square3Col == 0 | square3Col == 1 | square3Col == 9))
+                    else if (otaceni == 1 & (ctverec3Sloupec == 0 | ctverec3Sloupec == 1 | ctverec3Sloupec == 9))
                     {
                         return;
                     }
 
-                    //If test passes, rotate piece
+                    //Pokud test projde, tak se otočí
                     if (otaceni == 0)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col - 2, square1Row);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col - 1, square2Row - 1);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col, square3Row - 2);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col + 1, square4Row - 3);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 2, ctverec1Radek);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek - 1);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek - 2);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek - 3);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
+                        //Otestuje jestli nepřekrývá jiný kousek, jestli ne tak inkrementuje, aby se mohl otočit
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -70,10 +68,10 @@ namespace Tetris
                     }
                     else if (otaceni == 1)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col + 2, square1Row);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col + 1, square2Row + 1);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col, square3Row + 2);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col - 1, square4Row + 3);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 2, ctverec1Radek);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek + 1);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek + 2);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 1, ctverec4Radek + 3);
 
                         if (TestOverlap() == true)
                         {
@@ -85,27 +83,27 @@ namespace Tetris
                         }
                     }
                 }
-                else if (momentalniPolozka == 1) //The normal L
+                else if (momentalniPolozka == 1) //L
                 {
-                    //Test if piece is too close to edge of board
-                    if (otaceni == 0 & (square1Col == 8 | square1Col == 9))
+                    //Otestuje, jestli není moc blízko straně
+                    if (otaceni == 0 & (ctverec1Sloupec == 8 | ctverec1Sloupec == 9))
                     {
                         return;
                     }
-                    else if (otaceni == 2 & (square1Col == 9))
+                    else if (otaceni == 2 & (ctverec1Sloupec == 9))
                     {
                         return;
                     }
 
-                    //If test passes, rotate piece
+                    //Otočí
                     if (otaceni == 0)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col, square1Row + 2);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col + 1, square2Row + 1);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col + 2, square3Row);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col + 1, square4Row - 1);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek + 2);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek + 1);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 2, ctverec3Radek);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek - 1);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
+                        //Otestuje, jestli nepřekrývá, jestli jo tak zruší rotaci
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -117,12 +115,12 @@ namespace Tetris
                     }
                     else if (otaceni == 1)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col + 1, square1Row);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col, square2Row - 1);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col - 1, square3Row - 2);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col - 2, square4Row - 1);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek - 1);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek - 2);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 2, ctverec4Radek - 1);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
+                        //Otestuje, jestli nepřekrývá, jestli jo tak zruší rotaci
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -134,12 +132,12 @@ namespace Tetris
                     }
                     else if (otaceni == 2)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col + 1, square1Row - 1);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col, square2Row);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col - 1, square3Row + 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col, square4Row + 2);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek - 1);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek + 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek + 2);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
+                        //Otestuje, jestli nepřekrývá, jestli jo tak zruší rotaci
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -151,12 +149,12 @@ namespace Tetris
                     }
                     else if (otaceni == 3)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col - 2, square1Row - 1);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col - 1, square2Row);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col, square3Row + 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col + 1, square4Row);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 2, ctverec1Radek - 1);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek + 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
+                        //Otestuje, jestli nepřekrývá, jestli jo tak zruší rotaci
                         if (TestOverlap() == true)
                         {
                             otaceni = 0;
@@ -167,27 +165,24 @@ namespace Tetris
                         }
                     }
                 }
-                else if (momentalniPolozka == 2) //The backwards L
+                else if (momentalniPolozka == 2) //L ale naopak
                 {
-                    //Test if piece is too close to edge of board
-                    if (otaceni == 0 & (square1Col == 0 | square1Col == 1))
+                    if (otaceni == 0 & (ctverec1Sloupec == 0 | ctverec1Sloupec == 1))
                     {
                         return;
                     }
-                    else if (otaceni == 2 & square1Col == 0)
+                    else if (otaceni == 2 & ctverec1Sloupec == 0)
                     {
                         return;
                     }
 
-                    //If test passes, rotate piece
                     if (otaceni == 0)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col - 2, square1Row + 1);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col - 1, square2Row);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col, square3Row - 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col + 1, square4Row);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 2, ctverec1Radek + 1);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek - 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -199,12 +194,11 @@ namespace Tetris
                     }
                     else if (otaceni == 1)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col + 1, square1Row + 1);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col, square2Row);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col - 1, square3Row - 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col, square4Row - 2);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek + 1);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek - 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek - 2);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -216,12 +210,11 @@ namespace Tetris
                     }
                     else if (otaceni == 2)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col + 1, square1Row);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col, square2Row + 1);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col - 1, square3Row + 2);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col - 2, square4Row + 1);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek + 1);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek + 2);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 2, ctverec4Radek + 1);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -233,12 +226,11 @@ namespace Tetris
                     }
                     else if (otaceni == 3)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col, square1Row - 2);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col + 1, square2Row - 1);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col + 2, square3Row);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col + 1, square4Row + 1);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek - 2);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek - 1);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 2, ctverec3Radek);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek + 1);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni = 0;
@@ -249,29 +241,26 @@ namespace Tetris
                         }
                     }
                 }
-                else if (momentalniPolozka == 3) //The normal S
+                else if (momentalniPolozka == 3) //S
                 {
-                    //Test if piece is too close to edge of board
-                    if (otaceni == 0 & (square1Row == 1 | square1Col == 9))
+                    if (otaceni == 0 & (ctverec1Radek == 1 | ctverec1Sloupec == 9))
                     {
                         return;
                     }
-                    else if (otaceni == 1 & square1Col == 0)
+                    else if (otaceni == 1 & ctverec1Sloupec == 0)
                     {
                         return;
                     }
 
-                    //If test passes, rotate piece
                     if (otaceni == 0)
                     {
 
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col + 1, square1Row - 2);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col, square2Row - 1);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col + 1, square3Row);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col, square4Row + 1);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek - 2);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek - 1);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 1, ctverec3Radek);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek + 1);
 
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -283,12 +272,11 @@ namespace Tetris
                     }
                     else if (otaceni == 1)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col - 1, square1Row + 2);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col, square2Row + 1);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col - 1, square3Row);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col, square4Row - 1);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 1, ctverec1Radek + 2);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek + 1);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek - 1);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni = 0;
@@ -299,23 +287,20 @@ namespace Tetris
                         }
                     }
                 }
-                else if (momentalniPolozka == 4) //The backwards S
+                else if (momentalniPolozka == 4) 
                 {
-                    //Test if piece is too close to edge of board
-                    if (otaceni == 1 & square1Col == 8)
+                    if (otaceni == 1 & ctverec1Sloupec == 8)
                     {
                         return;
                     }
 
-                    //If test passes, rotate piece
                     if (otaceni == 0)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col, square1Row + 1);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col - 1, square2Row);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col, square3Row - 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col - 1, square4Row - 2);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek + 1);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek - 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 1, ctverec4Radek - 2);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -327,12 +312,11 @@ namespace Tetris
                     }
                     else if (otaceni == 1)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col, square1Row - 1);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col + 1, square2Row);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col, square3Row + 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col + 1, square4Row + 2);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek - 1);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek + 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek + 2);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni = 0;
@@ -343,32 +327,28 @@ namespace Tetris
                         }
                     }
                 }
-                else if (momentalniPolozka == 5) //The square
+                else if (momentalniPolozka == 5) //Čtverec
                 {
-                    //The square cannot rotate
                     return;
                 }
-                else if (momentalniPolozka == 6) //The pyramid
+                else if (momentalniPolozka == 6) //Pyramidka
                 {
-                    //Test if piece is too close to edge of board
-                    if (otaceni == 1 & square1Col == 9)
+                    if (otaceni == 1 & ctverec1Sloupec == 9)
                     {
                         return;
                     }
-                    else if (otaceni == 3 & square1Col == 0)
+                    else if (otaceni == 3 & ctverec1Sloupec == 0)
                     {
                         return;
                     }
 
-                    //If test passes, rotate piece
                     if (otaceni == 0)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col, square1Row);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col, square2Row - 2);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col - 1, square3Row - 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col - 2, square4Row);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek - 2); 
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek - 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 2, ctverec4Radek);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -380,12 +360,11 @@ namespace Tetris
                     }
                     else if (otaceni == 1)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col, square1Row);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col + 2, square2Row);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col + 1, square3Row - 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col, square4Row - 2);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 2, ctverec2Radek);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 1, ctverec3Radek - 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek - 2);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -397,12 +376,11 @@ namespace Tetris
                     }
                     else if (otaceni == 2)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col, square1Row);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col, square2Row + 2);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col + 1, square3Row + 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col + 2, square4Row);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek + 2);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 1, ctverec3Radek + 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 2, ctverec4Radek);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni++;
@@ -414,12 +392,11 @@ namespace Tetris
                     }
                     else if (otaceni == 3)
                     {
-                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(square1Col, square1Row);
-                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(square2Col - 2, square2Row);
-                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(square3Col - 1, square3Row + 1);
-                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(square4Col, square4Row + 2);
+                        aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
+                        aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 2, ctverec2Radek);
+                        aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek + 1);
+                        aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek + 2);
 
-                        //Test if new position overlaps another piece. If it does, cancel rotation.
                         if (TestOverlap() == true)
                         {
                             otaceni = 0;
@@ -431,14 +408,14 @@ namespace Tetris
                     }
                 }
 
-                //Set old position of piece to white
+                //Nastaví starou poziic na bílo
                 foreach (PictureBox square in aktivniPolozka)
                 {
                     square.BackColor = Color.White;
                 }
 
 
-                //Set new position of piece to that piece's color
+                //Nová pozidce se přebarví na barvu položky
                 int x = 0;
                 foreach (PictureBox square in aktivniPolozka2)
                 {
@@ -452,19 +429,18 @@ namespace Tetris
                 otaceni = 0;
 
 
-                // Layout options for falling piece
                 Control[,] activePieceArray =
                 {
-                        { pictureBox6, pictureBox16, pictureBox26, pictureBox36 }, // I 
-                        { pictureBox4, pictureBox14, pictureBox24, pictureBox25 }, // L
-                        { pictureBox5, pictureBox15, pictureBox25, pictureBox24 }, // J 
-                        { pictureBox14, pictureBox15, pictureBox5, pictureBox6 },  // S 
-                        { pictureBox5, pictureBox6, pictureBox16, pictureBox17 },  // Z
-                        { pictureBox5, pictureBox6, pictureBox15, pictureBox16 },  // O 
-                        { pictureBox6, pictureBox15, pictureBox16, pictureBox17 }  // T
+                        { box6, box16, box26, box36 }, // I
+                        { box4, box14,box24, box25 }, // L
+                        { box5, box15, box25, box24 }, // J
+                        { box14, box15, box5, box6 },  // S
+                        { box5, box6, box16, box17 },  // Z
+                        { box5, box6, box15, box16 },  // O
+                        { box6, box15, box16, box17 }  // T
                 };
 
-                // Erase falling piece
+                
                 foreach (Control x in aktivniPolozka)
                 {
                     x.BackColor = Color.White;
