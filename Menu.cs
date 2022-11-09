@@ -22,6 +22,7 @@ namespace Tetris
             //this.Close();
             TetrisMain main = new TetrisMain();    
             main.Show();
+            //showDialog
         }
     }
 }
