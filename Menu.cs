@@ -15,9 +15,14 @@ namespace Tetris
     {
         public Menu()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
-        public bool rezimaNaCas = false;
+        private bool rezimaNaCas = false;
+        public bool GetRezimNaCas()
+        {
+            return rezimaNaCas;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -29,13 +34,11 @@ namespace Tetris
 
         private void button2_rezimNaCas_Click(object sender, EventArgs e)
         {
-            rezimaNaCas = true;
             this.Hide();
             TetrisMain main = new TetrisMain();
             rezimaNaCas = true;
             main.ShowDialog();
         }
-
         private void button3_nastaveni_Click(object sender, EventArgs e)
         {
 
@@ -49,13 +52,8 @@ namespace Tetris
         private void button5_konec_Click(object sender, EventArgs e)
         {
             TetrisMain main = new TetrisMain();
-            this.Close();
             main.Close();
-        }
-
-        public bool GetRezimNaCas()
-        {
-            return rezimaNaCas;
+            this.Close();
         }
     }
 }
