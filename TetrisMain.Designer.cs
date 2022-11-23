@@ -38,6 +38,7 @@
             this.skoreTimer = new System.Windows.Forms.Timer(this.components);
             this.label_updateSkore = new System.Windows.Forms.Label();
             this.tabulka = new System.Windows.Forms.TableLayoutPanel();
+            this.box100 = new System.Windows.Forms.PictureBox();
             this.box1 = new System.Windows.Forms.PictureBox();
             this.box2 = new System.Windows.Forms.PictureBox();
             this.box3 = new System.Windows.Forms.PictureBox();
@@ -137,7 +138,6 @@
             this.box97 = new System.Windows.Forms.PictureBox();
             this.box98 = new System.Windows.Forms.PictureBox();
             this.box99 = new System.Windows.Forms.PictureBox();
-            this.box100 = new System.Windows.Forms.PictureBox();
             this.box101 = new System.Windows.Forms.PictureBox();
             this.box102 = new System.Windows.Forms.PictureBox();
             this.box103 = new System.Windows.Forms.PictureBox();
@@ -258,7 +258,9 @@
             this.box250 = new System.Windows.Forms.PictureBox();
             this.box251 = new System.Windows.Forms.PictureBox();
             this.box252 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabulka.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box3)).BeginInit();
@@ -358,7 +360,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.box97)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box98)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box99)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box101)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box102)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box103)).BeginInit();
@@ -799,6 +800,17 @@
             this.tabulka.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tabulka.Size = new System.Drawing.Size(341, 624);
             this.tabulka.TabIndex = 6;
+            // 
+            // box100
+            // 
+            this.box100.BackColor = System.Drawing.Color.White;
+            this.box100.Dock = System.Windows.Forms.DockStyle.Left;
+            this.box100.Location = new System.Drawing.Point(309, 284);
+            this.box100.Margin = new System.Windows.Forms.Padding(2);
+            this.box100.Name = "box100";
+            this.box100.Size = new System.Drawing.Size(29, 26);
+            this.box100.TabIndex = 99;
+            this.box100.TabStop = false;
             // 
             // box1
             // 
@@ -1888,17 +1900,6 @@
             this.box99.Size = new System.Drawing.Size(29, 26);
             this.box99.TabIndex = 98;
             this.box99.TabStop = false;
-            // 
-            // box100
-            // 
-            this.box100.BackColor = System.Drawing.Color.White;
-            this.box100.Dock = System.Windows.Forms.DockStyle.Left;
-            this.box100.Location = new System.Drawing.Point(309, 284);
-            this.box100.Margin = new System.Windows.Forms.Padding(2);
-            this.box100.Name = "box100";
-            this.box100.Size = new System.Drawing.Size(29, 26);
-            this.box100.TabIndex = 99;
-            this.box100.TabStop = false;
             // 
             // box101
             // 
@@ -3209,12 +3210,22 @@
             this.box252.TabIndex = 219;
             this.box252.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(397, 631);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Menu - M";
+            // 
             // TetrisMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tabulka);
             this.Controls.Add(this.label_updateSkore);
             this.Controls.Add(this.label_radky);
@@ -3226,6 +3237,7 @@
             this.Text = "Tetris";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
             this.tabulka.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.box100)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box3)).EndInit();
@@ -3325,7 +3337,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.box97)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box98)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box99)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.box100)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box101)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box102)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box103)).EndInit();
@@ -3680,6 +3691,7 @@
         private System.Windows.Forms.PictureBox box250;
         private System.Windows.Forms.PictureBox box251;
         private System.Windows.Forms.PictureBox box252;
+        private System.Windows.Forms.Label label1;
     }
 }
 

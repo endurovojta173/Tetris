@@ -22,6 +22,7 @@ namespace Tetris
         int vycistenychRadku = 0;
         bool konecHry = false;
         int PieceSequenceIteration = 0;
+        Menu menu = new Menu();
 
         readonly Color[] seznamBarev =
         {
@@ -33,9 +34,8 @@ namespace Tetris
             Color.Yellow,   // O 
             Color.Purple    // T
         };
-
+        
         System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(); //Konstruktor zvuku //Soundtrack
-
 
         //Hra
         public TetrisMain()
@@ -43,11 +43,18 @@ namespace Tetris
             InitializeComponent();
             soundtrack.SoundLocation=@"../../zvuky/soundtrack.wav";//Lokace soundtracku
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
-
+            //rozhodnutí o herním režimu
+            if(menu.GetRezimNaCas())
+            {
+                MessageBox.Show("režim na čas");
+            }
+            else 
+            {
+                MessageBox.Show("Nekonečný režim");
+            }
             label_updateSkore.Text = "";
             rychlostHryTimer.Start();
             casHryTimer.Start();
-
 
             //Generování položek
             Random random = new Random();
@@ -443,6 +450,14 @@ namespace Tetris
         //Pracuje s inputem, zatím pouzde WASD a šipky
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
+            //*****************************Menu************************
+            if(e.KeyCode==Keys.M)
+            {
+                this.Hide();
+                menu.ShowDialog();
+            }
+
+
             bool pozastaveno = false;
             if (e.KeyCode == Keys.Q)
             {
@@ -902,6 +917,5 @@ namespace Tetris
                 }
             }
         }
-
     }
 }
