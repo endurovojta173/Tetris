@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Media; //pridano
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Tetris
 {
@@ -57,6 +58,7 @@ namespace Tetris
             {
                 label_herniRezim.Text += " Nekonečný mód";
             }
+
             label_updateSkore.Text = "";
             rychlostHryTimer.Start();
             casHryTimer.Start();
@@ -109,9 +111,6 @@ namespace Tetris
             dalsiPolozkaInt = PieceSequence[PieceSequenceIteration];
             PieceSequenceIteration++;
 
-
-
-
             //Rozvržení padajícího kousku
             Control[,] activePieceArray =
             {
@@ -130,7 +129,6 @@ namespace Tetris
                 aktivniPolozka[x] = activePieceArray[momentalniPolozka, x];
             }
 
-
             //Zkontroluje jestli není konec hry
             foreach (Control box in aktivniPolozka)
             {
@@ -144,7 +142,6 @@ namespace Tetris
                     return;
                 }
             }
-
 
             // Populate falling piece squares with correct color
             foreach (Control square in aktivniPolozka)
@@ -334,7 +331,6 @@ namespace Tetris
             }
         }
 
-
         //Vyčistí nejnižší plný řádek
         private void ClearFullRow()
         {
@@ -402,6 +398,7 @@ namespace Tetris
 
 
         //Hra skončí, když je položka ve vrchním řádku, když je vytvořena nová položka
+        //***!!!!Pokud je mód na čas tak může i po vypršení času
         private bool CheckGameOver()
         {
             Control[] topRow = { box1, box2, box3, box4, box5, box6, box7, box8, box9, box10 };
@@ -410,19 +407,33 @@ namespace Tetris
             {
                 if ((box.BackColor != Color.White & box.BackColor != Color.LightGray) & !aktivniPolozka.Contains(box))
                 {
-                    //Konec hry
-                    return true;
+                    
+                    konecHry= true;
+                }
+            }
+            //dostat sem rezimHry
+            FileStream fs = new FileStream("pomocny.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            bool herniRezim = bool.Parse(sr.ReadLine());
+            fs.Close();
+
+            //Pokud režim na čas tak po učitém čase ukončí hru
+            if(herniRezim)
+            {
+                if(ubehlyCas==10)
+                {
+                    konecHry = true;
                 }
             }
 
             if (konecHry == true)
             {
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Ukončí hru
                 return true;
             }
 
             return false;
         }
-        
         //Updatuje čas hry
         private void CasHryTimer_Tick(object sender, EventArgs e)
         {
@@ -450,6 +461,8 @@ namespace Tetris
             label_updateSkore.Text = "";
             skoreTimer.Stop();
         }
+
+
 
         //**************************Ovládání******************************
         //Pracuje s inputem, zatím pouzde WASD a šipky

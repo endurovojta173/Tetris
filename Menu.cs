@@ -49,17 +49,27 @@ namespace Tetris
         }
         private void button3_nastaveni_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Nastaveni nastaveni = new Nastaveni();
+            nastaveni.ShowDialog();
         }
 
         private void button4_skore_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Skore skore = new Skore();
+            skore.ShowDialog();
         }
 
         private void button5_konec_Click(object sender, EventArgs e)
         {
             //Dořešit,samotná hra stále běží
+            TetrisMain main = new TetrisMain();
+            Skore skore = new Skore();
+            Nastaveni nastaveni = new Nastaveni();
+            main.Close();
+            skore.Close();
+            nastaveni.Close();
             this.Close();
         }
 
