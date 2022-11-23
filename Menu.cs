@@ -63,15 +63,6 @@ namespace Tetris
             this.Close();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            /*FileStream fs = new FileStream("pomocny.txt", FileMode.Create, FileAccess.Write);
-            StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine("true");
-            sw.Close();
-            fs.Close();*/
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
-        }
+        
     }
 }

@@ -34,7 +34,6 @@
             this.button3_nastaveni = new System.Windows.Forms.Button();
             this.button4_skore = new System.Windows.Forms.Button();
             this.button5_konec = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1_nekonecnyMod
@@ -87,23 +86,12 @@
             this.button5_konec.UseVisualStyleBackColor = true;
             this.button5_konec.Click += new System.EventHandler(this.button5_konec_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(417, 338);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 57);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "pomocnik";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button5_konec);
             this.Controls.Add(this.button4_skore);
             this.Controls.Add(this.button3_nastaveni);
@@ -124,6 +112,5 @@
         private System.Windows.Forms.Button button3_nastaveni;
         private System.Windows.Forms.Button button4_skore;
         private System.Windows.Forms.Button button5_konec;
-        private System.Windows.Forms.Button button1;
     }
 }
