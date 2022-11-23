@@ -259,6 +259,7 @@
             this.box251 = new System.Windows.Forms.PictureBox();
             this.box252 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label_herniRezim = new System.Windows.Forms.Label();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -772,7 +773,7 @@
             this.tabulka.Controls.Add(this.box250, 7, 1);
             this.tabulka.Controls.Add(this.box251, 8, 1);
             this.tabulka.Controls.Add(this.box252, 9, 1);
-            this.tabulka.Location = new System.Drawing.Point(11, 21);
+            this.tabulka.Location = new System.Drawing.Point(12, 74);
             this.tabulka.Margin = new System.Windows.Forms.Padding(2);
             this.tabulka.Name = "tabulka";
             this.tabulka.RowCount = 22;
@@ -3219,12 +3220,23 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Menu - M";
             // 
+            // label_herniRezim
+            // 
+            this.label_herniRezim.AutoSize = true;
+            this.label_herniRezim.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_herniRezim.Location = new System.Drawing.Point(6, 30);
+            this.label_herniRezim.Name = "label_herniRezim";
+            this.label_herniRezim.Size = new System.Drawing.Size(116, 33);
+            this.label_herniRezim.TabIndex = 8;
+            this.label_herniRezim.Text = "TETRIS -";
+            // 
             // TetrisMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.label_herniRezim);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabulka);
             this.Controls.Add(this.label_updateSkore);
@@ -3692,6 +3704,7 @@
         private System.Windows.Forms.PictureBox box251;
         private System.Windows.Forms.PictureBox box252;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_herniRezim;
     }
 }
 

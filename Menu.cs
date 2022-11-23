@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -16,27 +17,34 @@ namespace Tetris
         public Menu()
         {
             InitializeComponent();           
-        }
-        private bool rezimaNaCas = false;
-        public bool GetRezimNaCas()
-        {
-            return rezimaNaCas;
-        }
+        }        
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Zapíše false
+            FileStream fs = new FileStream("pomocny.txt", FileMode.Create, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine("false");
+            sw.Close();
+            fs.Close();
+
             this.Hide();
             TetrisMain main = new TetrisMain();
-            rezimaNaCas = false;
             main.ShowDialog();
         }
 
 
         private void button2_rezimNaCas_Click(object sender, EventArgs e)
         {
+            //Zapíše do souboru true
+            FileStream fs = new FileStream("pomocny.txt", FileMode.Create, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine("true");
+            sw.Close();
+            fs.Close();
+
             this.Hide();
             TetrisMain main = new TetrisMain();
-            rezimaNaCas = true;
             main.ShowDialog();
         }
         private void button3_nastaveni_Click(object sender, EventArgs e)
@@ -51,9 +59,19 @@ namespace Tetris
 
         private void button5_konec_Click(object sender, EventArgs e)
         {
-            TetrisMain main = new TetrisMain();
-            main.Close();
+            //Dořešit,samotná hra stále běží
             this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            /*FileStream fs = new FileStream("pomocny.txt", FileMode.Create, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine("true");
+            sw.Close();
+            fs.Close();*/
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
     }
 }

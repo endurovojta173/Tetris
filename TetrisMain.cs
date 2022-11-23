@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.Media; //pridano
+using System.IO;
 
 namespace Tetris
 {
@@ -43,14 +44,18 @@ namespace Tetris
             InitializeComponent();
             soundtrack.SoundLocation=@"../../zvuky/soundtrack.wav";//Lokace soundtracku
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
+            FileStream fs = new FileStream("pomocny.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            bool herniRezim = bool.Parse(sr.ReadLine());
+            fs.Close();
             //rozhodnutí o herním režimu
-            if(menu.GetRezimNaCas())
+            if(herniRezim)
             {
-                MessageBox.Show("režim na čas");
+                label_herniRezim.Text += " Časový mód";
             }
             else 
             {
-                MessageBox.Show("Nekonečný režim");
+                label_herniRezim.Text += " Nekonečný mód";
             }
             label_updateSkore.Text = "";
             rychlostHryTimer.Start();
@@ -453,7 +458,9 @@ namespace Tetris
             //*****************************Menu************************
             if(e.KeyCode==Keys.M)
             {
+                soundtrack.Stop();
                 this.Hide();
+                this.Close();
                 menu.ShowDialog();
             }
 
