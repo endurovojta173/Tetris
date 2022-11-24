@@ -526,6 +526,7 @@ namespace Tetris
                 e.SuppressKeyPress = (e.KeyCode == Keys.Right);
                 casHryTimer.Stop();
                 rychlostHryTimer.Stop();
+                soundtrack.Stop();
                 pozastaveno = true;
             }
             else if (e.KeyCode == Keys.E)
@@ -533,6 +534,7 @@ namespace Tetris
                 pozastaveno = false;
                 casHryTimer.Start();
                 rychlostHryTimer.Start();
+                soundtrack.PlayLooping();
             }
             if (!pozastaveno)
             {
