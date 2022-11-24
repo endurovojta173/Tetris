@@ -54,21 +54,7 @@ namespace Tetris
             soundtrack.SoundLocation=@"../../zvuky/soundtrack.wav";//Lokace soundtracku
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
 
-
-            /*FileStream fs = new FileStream("pomocny.txt", FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            bool herniRezim = bool.Parse(sr.ReadLine());
-            fs.Close();
-            //rozhodnutí o herním režimu
-            if(herniRezim)
-            {
-                label_herniRezim.Text += " Časový mód";
-            }
-            else 
-            {
-                label_herniRezim.Text += " Nekonečný mód";
-            }*/
-
+            //Načte nastavení 
             FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             jmeno = sr.ReadLine();
@@ -458,6 +444,8 @@ namespace Tetris
 
             if (konecHry == true)
             {
+                //uloží skóre
+                SaveScore();
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Ukončí hru
                 return true;
             }
@@ -486,16 +474,20 @@ namespace Tetris
             skoreTimer.Start();
         }
 
-        //Uloží Nick, skore, čas hry a režim hry
+        //Uloží Nick, skore, čas hry a režim hry(pokud hra na čas tak jak dlouho mohl hrát)
         private void SaveScore()
         {
-            if (CheckGameOver() == true)
-            {
-                FileStream fs = new FileStream(@"../../skore.txt", FileMode.OpenOrCreate, FileAccess.Write);
-                FileStream fs2 = new FileStream(@"../../skore.txt", FileMode.OpenOrCreate, FileAccess.Write);
-                StreamWriter sw = new StreamWriter(fs);
-                sw.WriteLine(skore);
-            }
+            FileStream fs = new FileStream(@"../../skore.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter sw = new StreamWriter(fs);
+            sw.WriteLine(jmeno);
+            sw.WriteLine(skore);
+            sw.WriteLine(ubehlyCas);
+            sw.WriteLine(herniMod);
+            if (herniMod) sw.WriteLine(delkaHry);
+            else sw.WriteLine("Neomezený");
+            sw.WriteLine(";");
+            sw.Close();
+            fs.Close();
         }
 
         //Každou sekundu smaže notifikaci o skóre

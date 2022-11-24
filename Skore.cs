@@ -16,6 +16,7 @@ namespace Tetris
         public Skore()
         {
             InitializeComponent();
+            NacistSkore();
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -28,19 +29,28 @@ namespace Tetris
 
         private void NacistSkore()
         {
-            FileStream fs = new FileStream(@"../../skore.txt", FileMode.OpenOrCreate, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            while(br.BaseStream.Position<br.BaseStream.Length)
+            FileStream fs = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            string radek="";
+            while(sr.BaseStream.Position<sr.BaseStream.Length)
             {
-                string radek = br.ReadString();
-                listBox1.Items.Add(radek);
+                string polozka = sr.ReadLine();
+                if(polozka!=";")
+                {
+                    radek += " " + polozka;
+                }
+                else
+                {
+                    listBox1.Items.Add(radek);
+                    radek = "";
+                }
             }
+            fs.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create, FileAccess.Write);
-            //BinaryWriter bw = new BinaryWriter(fs);
         }
     }
 }

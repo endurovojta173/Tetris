@@ -1,0 +1,6 @@
+Pepa
+100
+18
+False
+Neomezený
+;
