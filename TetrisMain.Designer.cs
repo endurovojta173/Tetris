@@ -262,6 +262,7 @@
             this.label_herniRezim = new System.Windows.Forms.Label();
             this.label_jmeno = new System.Windows.Forms.Label();
             this.label_delkaHry = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -488,30 +489,30 @@
             // label_skore
             // 
             this.label_skore.AutoSize = true;
-            this.label_skore.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_skore.Location = new System.Drawing.Point(389, 109);
+            this.label_skore.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label_skore.Location = new System.Drawing.Point(376, 135);
             this.label_skore.Name = "label_skore";
-            this.label_skore.Size = new System.Drawing.Size(167, 44);
+            this.label_skore.Size = new System.Drawing.Size(123, 32);
             this.label_skore.TabIndex = 1;
             this.label_skore.Text = "Skóre: 0";
             // 
             // label_cas
             // 
             this.label_cas.AutoSize = true;
-            this.label_cas.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_cas.Location = new System.Drawing.Point(389, 21);
+            this.label_cas.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label_cas.Location = new System.Drawing.Point(376, 74);
             this.label_cas.Name = "label_cas";
-            this.label_cas.Size = new System.Drawing.Size(163, 44);
+            this.label_cas.Size = new System.Drawing.Size(120, 32);
             this.label_cas.TabIndex = 2;
             this.label_cas.Text = "Čas: 0 s";
             // 
             // label_radky
             // 
             this.label_radky.AutoSize = true;
-            this.label_radky.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold);
-            this.label_radky.Location = new System.Drawing.Point(389, 65);
+            this.label_radky.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label_radky.Location = new System.Drawing.Point(376, 104);
             this.label_radky.Name = "label_radky";
-            this.label_radky.Size = new System.Drawing.Size(175, 44);
+            this.label_radky.Size = new System.Drawing.Size(129, 32);
             this.label_radky.TabIndex = 4;
             this.label_radky.Text = "Řádky: 0";
             // 
@@ -534,7 +535,7 @@
             // 
             this.label_updateSkore.AutoSize = true;
             this.label_updateSkore.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_updateSkore.Location = new System.Drawing.Point(392, 296);
+            this.label_updateSkore.Location = new System.Drawing.Point(358, 296);
             this.label_updateSkore.Name = "label_updateSkore";
             this.label_updateSkore.Size = new System.Drawing.Size(246, 44);
             this.label_updateSkore.TabIndex = 5;
@@ -3216,7 +3217,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(397, 631);
+            this.label1.Location = new System.Drawing.Point(379, 668);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 7;
@@ -3235,22 +3236,31 @@
             // label_jmeno
             // 
             this.label_jmeno.AutoSize = true;
-            this.label_jmeno.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_jmeno.Location = new System.Drawing.Point(389, 153);
+            this.label_jmeno.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.label_jmeno.Location = new System.Drawing.Point(376, 166);
             this.label_jmeno.Name = "label_jmeno";
-            this.label_jmeno.Size = new System.Drawing.Size(125, 44);
+            this.label_jmeno.Size = new System.Drawing.Size(91, 32);
             this.label_jmeno.TabIndex = 9;
             this.label_jmeno.Text = "Guest";
             // 
             // label_delkaHry
             // 
             this.label_delkaHry.AutoSize = true;
-            this.label_delkaHry.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_delkaHry.Location = new System.Drawing.Point(389, 203);
+            this.label_delkaHry.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_delkaHry.Location = new System.Drawing.Point(376, 197);
             this.label_delkaHry.Name = "label_delkaHry";
-            this.label_delkaHry.Size = new System.Drawing.Size(199, 44);
+            this.label_delkaHry.Size = new System.Drawing.Size(148, 32);
             this.label_delkaHry.TabIndex = 10;
             this.label_delkaHry.Text = "Délka hry:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(379, 681);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Vypnout hru - K";
             // 
             // TetrisMain
             // 
@@ -3258,6 +3268,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label_delkaHry);
             this.Controls.Add(this.label_jmeno);
             this.Controls.Add(this.label_herniRezim);
@@ -3731,6 +3742,7 @@
         private System.Windows.Forms.Label label_herniRezim;
         private System.Windows.Forms.Label label_jmeno;
         private System.Windows.Forms.Label label_delkaHry;
+        private System.Windows.Forms.Label label2;
     }
 }
 

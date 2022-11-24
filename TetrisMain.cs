@@ -74,12 +74,19 @@ namespace Tetris
             jmeno = sr.ReadLine();
             delkaHry = int.Parse(sr.ReadLine());
             herniMod = bool.Parse(sr.ReadLine());
+            fs.Close();
 
             label_jmeno.Text = jmeno;
             if (herniMod)
             {
                 label_herniRezim.Text += " Časový mód";
-                label_delkaHry.Text += " " + delkaHry;
+                if(delkaHry>=60)
+                {
+
+                    label_delkaHry.Text += " " + delkaHry/60+" m " + delkaHry%60+" s";
+
+                }
+                else label_delkaHry.Text += " " + delkaHry + " s";
             }
             else
             {
@@ -504,7 +511,7 @@ namespace Tetris
         //Pracuje s inputem, zatím pouzde WASD a šipky
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
-            //*****************************Menu************************
+            //Přesune do menu
             if(e.KeyCode==Keys.M)
             {
                 soundtrack.Stop();
@@ -512,7 +519,13 @@ namespace Tetris
                 menu.ShowDialog();
                 this.Close();
             }
-
+            //Vypne tetris
+            if (e.KeyCode == Keys.K)
+            {
+                soundtrack.Stop();
+                this.Hide();
+                this.Close();
+            }
 
             bool pozastaveno = false;
             if (e.KeyCode == Keys.Q)

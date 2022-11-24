@@ -1,4 +1,5 @@
-Jáchym
-10
+Guest
+200
 true
+
 ue
