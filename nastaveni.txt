@@ -1,4 +1,4 @@
-Ivan
-200
+Jáchym
+10
 true
-true
+ue

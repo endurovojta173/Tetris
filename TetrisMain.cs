@@ -26,6 +26,11 @@ namespace Tetris
         int PieceSequenceIteration = 0;
         Menu menu = new Menu();
 
+
+        string jmeno = "Guest";
+        int delkaHry = 0;
+        bool herniMod;
+
         readonly Color[] seznamBarev =
         {
             Color.Cyan,     // I 
@@ -66,9 +71,9 @@ namespace Tetris
 
             FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
-            string jmeno = sr.ReadLine();
-            int delkaHry = int.Parse(sr.ReadLine());
-            bool herniMod = bool.Parse(sr.ReadLine());
+            jmeno = sr.ReadLine();
+            delkaHry = int.Parse(sr.ReadLine());
+            herniMod = bool.Parse(sr.ReadLine());
 
             label_jmeno.Text = jmeno;
             if (herniMod)
@@ -435,18 +440,10 @@ namespace Tetris
                     konecHry= true;
                 }
             }
-            //dostat sem rezimHry //!!!!!!!!!!!!!!!!!!!!!!!!!!Nefunguje, změna do souboru nastaveni.txt
 
-
-            FileStream fs = new FileStream("pomocny.txt", FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            bool herniRezim = bool.Parse(sr.ReadLine());
-            fs.Close();
-
-            //Pokud režim na čas tak po učitém čase ukončí hru
-            if(herniRezim)
+            if(herniMod)
             {
-                if(ubehlyCas==10)
+                if(ubehlyCas==delkaHry)
                 {
                     konecHry = true;
                 }
