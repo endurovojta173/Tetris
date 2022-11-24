@@ -16,6 +16,7 @@ namespace Tetris
         public Skore()
         {
             InitializeComponent();
+            GetSkore();
             NacistSkore();
         }
         
@@ -27,30 +28,60 @@ namespace Tetris
             this.Dispose();
         }
 
-        private void NacistSkore()
+        private void GetSkore()
         {
-            FileStream fs = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.OpenOrCreate, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             string radek="";
-            while(sr.BaseStream.Position<sr.BaseStream.Length)
+            char[] separators = { ' ' };
+            while(!sr.EndOfStream)
             {
                 string polozka = sr.ReadLine();
                 if(polozka!=";")
                 {
-                    radek += " " + polozka;
+                    if (polozka == "True")
+                    {
+                        radek += " Časový mód";
+                    }
+                    else if (polozka == "False")
+                    {
+                        radek += " Nekonečný mód";
+                    }
+                    else
+                    {
+                        radek += " " + polozka;
+                    }
                 }
                 else
                 {
-                    listBox1.Items.Add(radek);
+                    FileStream fs1 = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Write);
+                    StreamWriter sw = new StreamWriter(fs1);
+                    string[] splitRadek = radek.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                    radek = "Jméno: " + splitRadek[0] + " Skóre: " + splitRadek[1] + " Délka hry: " + splitRadek[2] + " s Herní mód " + splitRadek[3] + " "+splitRadek[4] + " Maximální délka hry: " + splitRadek[5];
+                    sw.BaseStream.Seek(0, SeekOrigin.End);
+                    sw.WriteLine(radek);
+                    sw.Close();
+                    fs1.Close();
                     radek = "";
                 }
             }
             fs.Close();
         }
 
+        private void NacistSkore()
+        {
+            FileStream fs = new FileStream(@"../../skore.txt",FileMode.OpenOrCreate,FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            while(!sr.EndOfStream)
+            {
+                listBox1.Items.Add(sr.ReadLine());
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create, FileAccess.Write);
+            //FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create, FileAccess.Write);
+            //fs.Close();
         }
     }
 }

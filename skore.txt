@@ -1,6 +1,4 @@
-Pepa
-100
-18
-False
-Neomezený
-;
+Jméno: Ignác Skóre: 0 Délka hry: 20 s Herní mód Časový mód Maximální délka hry: 20
+
+Jméno: Ignác Skóre: 0 Délka hry: 8 s Herní mód Časový mód Maximální délka hry: 20
+Jméno: Ignác Skóre: 0 Délka hry: 8 s Herní mód Časový mód Maximální délka hry: 20

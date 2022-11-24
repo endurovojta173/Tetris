@@ -35,8 +35,6 @@
             this.label_radky = new System.Windows.Forms.Label();
             this.rychlostHryTimer = new System.Windows.Forms.Timer(this.components);
             this.casHryTimer = new System.Windows.Forms.Timer(this.components);
-            this.skoreTimer = new System.Windows.Forms.Timer(this.components);
-            this.label_updateSkore = new System.Windows.Forms.Label();
             this.tabulka = new System.Windows.Forms.TableLayoutPanel();
             this.box100 = new System.Windows.Forms.PictureBox();
             this.box1 = new System.Windows.Forms.PictureBox();
@@ -525,21 +523,6 @@
             // 
             this.casHryTimer.Interval = 1000;
             this.casHryTimer.Tick += new System.EventHandler(this.CasHryTimer_Tick);
-            // 
-            // skoreTimer
-            // 
-            this.skoreTimer.Interval = 1000;
-            this.skoreTimer.Tick += new System.EventHandler(this.SkoreTimer_Tick);
-            // 
-            // label_updateSkore
-            // 
-            this.label_updateSkore.AutoSize = true;
-            this.label_updateSkore.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_updateSkore.Location = new System.Drawing.Point(358, 296);
-            this.label_updateSkore.Name = "label_updateSkore";
-            this.label_updateSkore.Size = new System.Drawing.Size(246, 44);
-            this.label_updateSkore.TabIndex = 5;
-            this.label_updateSkore.Text = "updateSkore";
             // 
             // tabulka
             // 
@@ -3274,7 +3257,6 @@
             this.Controls.Add(this.label_herniRezim);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabulka);
-            this.Controls.Add(this.label_updateSkore);
             this.Controls.Add(this.label_radky);
             this.Controls.Add(this.label_cas);
             this.Controls.Add(this.label_skore);
@@ -3515,8 +3497,6 @@
         private System.Windows.Forms.Label label_radky;
         private System.Windows.Forms.Timer rychlostHryTimer;
         private System.Windows.Forms.Timer casHryTimer;
-        private System.Windows.Forms.Timer skoreTimer;
-        private System.Windows.Forms.Label label_updateSkore;
         private System.Windows.Forms.TableLayoutPanel tabulka;
         private System.Windows.Forms.PictureBox box1;
         private System.Windows.Forms.PictureBox box2;

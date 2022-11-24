@@ -81,7 +81,6 @@ namespace Tetris
             }
 
 
-            label_updateSkore.Text = "";
             rychlostHryTimer.Start();
             casHryTimer.Start();
 
@@ -470,14 +469,12 @@ namespace Tetris
         {
             skore += 100;
             label_skore.Text = "Skóre: " + skore;
-            label_updateSkore.Text = "+";//Dodělat
-            skoreTimer.Start();
         }
 
         //Uloží Nick, skore, čas hry a režim hry(pokud hra na čas tak jak dlouho mohl hrát)
         private void SaveScore()
         {
-            FileStream fs = new FileStream(@"../../skore.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.Create, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
             sw.WriteLine(jmeno);
             sw.WriteLine(skore);
@@ -489,14 +486,6 @@ namespace Tetris
             sw.Close();
             fs.Close();
         }
-
-        //Každou sekundu smaže notifikaci o skóre
-        private void SkoreTimer_Tick(object sender, EventArgs e)
-        {
-            label_updateSkore.Text = "";
-            skoreTimer.Stop();
-        }
-
 
 
         //**************************Ovládání******************************
