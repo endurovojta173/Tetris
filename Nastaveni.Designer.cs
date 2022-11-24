@@ -38,6 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label_aktualniJmeno = new System.Windows.Forms.Label();
+            this.label_delka = new System.Windows.Forms.Label();
+            this.label_herniMod = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -125,11 +128,41 @@
             this.radioButton2.Text = "Časově omezený mód";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // label_aktualniJmeno
+            // 
+            this.label_aktualniJmeno.AutoSize = true;
+            this.label_aktualniJmeno.Location = new System.Drawing.Point(74, 325);
+            this.label_aktualniJmeno.Name = "label_aktualniJmeno";
+            this.label_aktualniJmeno.Size = new System.Drawing.Size(41, 13);
+            this.label_aktualniJmeno.TabIndex = 9;
+            this.label_aktualniJmeno.Text = "Jméno:";
+            // 
+            // label_delka
+            // 
+            this.label_delka.AutoSize = true;
+            this.label_delka.Location = new System.Drawing.Point(74, 338);
+            this.label_delka.Name = "label_delka";
+            this.label_delka.Size = new System.Drawing.Size(162, 13);
+            this.label_delka.TabIndex = 10;
+            this.label_delka.Text = "Délka módu s omezeným časem:";
+            // 
+            // label_herniMod
+            // 
+            this.label_herniMod.AutoSize = true;
+            this.label_herniMod.Location = new System.Drawing.Point(74, 351);
+            this.label_herniMod.Name = "label_herniMod";
+            this.label_herniMod.Size = new System.Drawing.Size(60, 13);
+            this.label_herniMod.TabIndex = 11;
+            this.label_herniMod.Text = "Herní mód:";
+            // 
             // Nastaveni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.label_herniMod);
+            this.Controls.Add(this.label_delka);
+            this.Controls.Add(this.label_aktualniJmeno);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label3);
@@ -159,5 +192,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label_aktualniJmeno;
+        private System.Windows.Forms.Label label_delka;
+        private System.Windows.Forms.Label label_herniMod;
     }
 }

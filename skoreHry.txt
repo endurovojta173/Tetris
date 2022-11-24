@@ -1,6 +1,6 @@
-Ignác
-0
-8
-True
-20
+Žany
+100
+18
+False
+Neomezený
 ;

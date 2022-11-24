@@ -57,7 +57,7 @@ namespace Tetris
                     FileStream fs1 = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Write);
                     StreamWriter sw = new StreamWriter(fs1);
                     string[] splitRadek = radek.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-                    radek = "Jméno: " + splitRadek[0] + " Skóre: " + splitRadek[1] + " Délka hry: " + splitRadek[2] + " s Herní mód " + splitRadek[3] + " "+splitRadek[4] + " Maximální délka hry: " + splitRadek[5];
+                    radek = "Jméno: " + splitRadek[0] + " Skóre: " + splitRadek[1] + " Délka hry: " + splitRadek[2] + " s Herní mód: " + splitRadek[3] + " "+splitRadek[4] + " Maximální délka hry: " + splitRadek[5];
                     sw.BaseStream.Seek(0, SeekOrigin.End);
                     sw.WriteLine(radek);
                     sw.Close();

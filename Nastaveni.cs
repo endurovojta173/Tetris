@@ -16,6 +16,7 @@ namespace Tetris
         public Nastaveni()
         {
             InitializeComponent();
+            ZobrazitAktualniNastaveni();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -32,6 +33,20 @@ namespace Tetris
                 sw.WriteLine("true");
             }
             sw.Close();
+            fs.Close();
+            ZobrazitAktualniNastaveni();
+        }
+
+        private void ZobrazitAktualniNastaveni()
+        {
+
+            FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.OpenOrCreate, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            label_aktualniJmeno.Text = "Jméno: " + sr.ReadLine();
+            label_delka.Text = "Délka módu s omezeným časem:  " + sr.ReadLine()+" s";
+            bool mod = bool.Parse(sr.ReadLine());
+            if (mod) label_herniMod.Text = "Herní mód: Časový mód";
+            else label_herniMod.Text = "Herní mód: Nekonečný mód";
             fs.Close();
         }
 

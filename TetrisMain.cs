@@ -155,9 +155,10 @@ namespace Tetris
             {
                 if (box.BackColor != Color.White & box.BackColor != Color.LightGray)
                 {
-                    //Konec hry
+                    //Konec hry //Zde je konec hry pokud je Nekonečný mód
                     rychlostHryTimer.Stop();
                     casHryTimer.Stop();
+                    SaveScore();
                     konecHry = true;
                     MessageBox.Show("Game over!");
                     return;
