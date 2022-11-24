@@ -260,6 +260,8 @@
             this.box252 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label_herniRezim = new System.Windows.Forms.Label();
+            this.label_jmeno = new System.Windows.Forms.Label();
+            this.label_delkaHry = new System.Windows.Forms.Label();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -532,7 +534,7 @@
             // 
             this.label_updateSkore.AutoSize = true;
             this.label_updateSkore.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_updateSkore.Location = new System.Drawing.Point(389, 153);
+            this.label_updateSkore.Location = new System.Drawing.Point(392, 296);
             this.label_updateSkore.Name = "label_updateSkore";
             this.label_updateSkore.Size = new System.Drawing.Size(246, 44);
             this.label_updateSkore.TabIndex = 5;
@@ -3230,12 +3232,34 @@
             this.label_herniRezim.TabIndex = 8;
             this.label_herniRezim.Text = "TETRIS -";
             // 
+            // label_jmeno
+            // 
+            this.label_jmeno.AutoSize = true;
+            this.label_jmeno.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_jmeno.Location = new System.Drawing.Point(389, 153);
+            this.label_jmeno.Name = "label_jmeno";
+            this.label_jmeno.Size = new System.Drawing.Size(125, 44);
+            this.label_jmeno.TabIndex = 9;
+            this.label_jmeno.Text = "Guest";
+            // 
+            // label_delkaHry
+            // 
+            this.label_delkaHry.AutoSize = true;
+            this.label_delkaHry.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_delkaHry.Location = new System.Drawing.Point(389, 203);
+            this.label_delkaHry.Name = "label_delkaHry";
+            this.label_delkaHry.Size = new System.Drawing.Size(199, 44);
+            this.label_delkaHry.TabIndex = 10;
+            this.label_delkaHry.Text = "Délka hry:";
+            // 
             // TetrisMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.label_delkaHry);
+            this.Controls.Add(this.label_jmeno);
             this.Controls.Add(this.label_herniRezim);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabulka);
@@ -3705,6 +3729,8 @@
         private System.Windows.Forms.PictureBox box252;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_herniRezim;
+        private System.Windows.Forms.Label label_jmeno;
+        private System.Windows.Forms.Label label_delkaHry;
     }
 }
 

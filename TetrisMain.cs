@@ -39,13 +39,18 @@ namespace Tetris
         
         System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(); //Konstruktor zvuku //Soundtrack
 
+
+
+
         //Hra
         public TetrisMain()
         {
             InitializeComponent();
             soundtrack.SoundLocation=@"../../zvuky/soundtrack.wav";//Lokace soundtracku
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
-            FileStream fs = new FileStream("pomocny.txt", FileMode.Open, FileAccess.Read);
+
+
+            /*FileStream fs = new FileStream("pomocny.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             bool herniRezim = bool.Parse(sr.ReadLine());
             fs.Close();
@@ -57,7 +62,26 @@ namespace Tetris
             else 
             {
                 label_herniRezim.Text += " Nekonečný mód";
+            }*/
+
+            FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            string jmeno = sr.ReadLine();
+            int delkaHry = int.Parse(sr.ReadLine());
+            bool herniMod = bool.Parse(sr.ReadLine());
+
+            label_jmeno.Text = jmeno;
+            if (herniMod)
+            {
+                label_herniRezim.Text += " Časový mód";
+                label_delkaHry.Text += " " + delkaHry;
             }
+            else
+            {
+                label_herniRezim.Text += " Nekonečný mód";
+                label_delkaHry.Visible = false;
+            }
+
 
             label_updateSkore.Text = "";
             rychlostHryTimer.Start();
@@ -411,7 +435,9 @@ namespace Tetris
                     konecHry= true;
                 }
             }
-            //dostat sem rezimHry
+            //dostat sem rezimHry //!!!!!!!!!!!!!!!!!!!!!!!!!!Nefunguje, změna do souboru nastaveni.txt
+
+
             FileStream fs = new FileStream("pomocny.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             bool herniRezim = bool.Parse(sr.ReadLine());
@@ -486,8 +512,8 @@ namespace Tetris
             {
                 soundtrack.Stop();
                 this.Hide();
-                this.Close();
                 menu.ShowDialog();
+                this.Close();
             }
 
 

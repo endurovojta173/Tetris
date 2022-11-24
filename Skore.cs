@@ -23,6 +23,7 @@ namespace Tetris
             this.Hide();
             Menu menu = new Menu();
             menu.ShowDialog();
+            this.Dispose();
         }
 
         private void NacistSkore()

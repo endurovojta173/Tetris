@@ -24,12 +24,15 @@ namespace Tetris
             this.Hide();
             TetrisMain main = new TetrisMain();
             main.ShowDialog();
+            this.Dispose();
         }
         private void button3_nastaveni_Click(object sender, EventArgs e)
         {
             this.Hide();
             Nastaveni nastaveni = new Nastaveni();
             nastaveni.ShowDialog();
+            this.Dispose();
+
         }
 
         private void button4_skore_Click(object sender, EventArgs e)
@@ -37,12 +40,13 @@ namespace Tetris
             this.Hide();
             Skore skore = new Skore();
             skore.ShowDialog();
+            this.Dispose();
         }
 
         private void button5_konec_Click(object sender, EventArgs e)
         {
-            //Dořešit,samotná hra stále běží
-            this.Close();
+            //Dořešit,samotná hra stále běží // Vyřešeno
+            this.Dispose();
         }
 
         

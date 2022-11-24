@@ -21,8 +21,8 @@ namespace Tetris
         {
             FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine(textBox1.Text+";");
-            sw.WriteLine(textBox2.Text+";");
+            sw.WriteLine(textBox1.Text);
+            sw.WriteLine(textBox2.Text);
             if(radioButton1.Checked)
             {
                 sw.WriteLine("false");
@@ -40,6 +40,7 @@ namespace Tetris
             this.Hide();
             Menu menu = new Menu();
             menu.ShowDialog();
+            this.Dispose();
         }
     }
 }
