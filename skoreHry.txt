@@ -1,6 +1,6 @@
 Guest
-900
-118
-False
-Neomezený
+0
+30
+True
+30
 ;

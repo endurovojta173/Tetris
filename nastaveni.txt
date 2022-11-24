@@ -1,6 +1,6 @@
-Pepa
-50
+Guest
+30
 true
-e
+
 
 e

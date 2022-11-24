@@ -175,7 +175,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Nastaveni";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nastaveni";
+            this.Text = "Tetris";
             this.ResumeLayout(false);
             this.PerformLayout();
 
