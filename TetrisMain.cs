@@ -455,6 +455,19 @@ namespace Tetris
             label_updateSkore.Text = "+";//Dodělat
             skoreTimer.Start();
         }
+
+        //Uloží Nick, skore, čas hry a režim hry
+        private void SaveScore()
+        {
+            if (CheckGameOver() == true)
+            {
+                FileStream fs = new FileStream(@"../../skore.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                FileStream fs2 = new FileStream(@"../../skore.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs);
+                sw.WriteLine(skore);
+            }
+        }
+
         //Každou sekundu smaže notifikaci o skóre
         private void SkoreTimer_Tick(object sender, EventArgs e)
         {

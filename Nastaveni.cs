@@ -17,13 +17,20 @@ namespace Tetris
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine(";"+textBox1.Text);
-            sw.WriteLine(";" + textBox2.Text);
+            sw.WriteLine(textBox1.Text+";");
+            sw.WriteLine(textBox2.Text+";");
+            if(radioButton1.Checked)
+            {
+                sw.WriteLine("false");
+            }
+            else
+            {
+                sw.WriteLine("true");
+            }
             sw.Close();
             fs.Close();
         }

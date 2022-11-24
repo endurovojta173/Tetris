@@ -21,28 +21,6 @@ namespace Tetris
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Zapíše false
-            FileStream fs = new FileStream("pomocny.txt", FileMode.Create, FileAccess.Write);
-            StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine("false");
-            sw.Close();
-            fs.Close();
-
-            this.Hide();
-            TetrisMain main = new TetrisMain();
-            main.ShowDialog();
-        }
-
-
-        private void button2_rezimNaCas_Click(object sender, EventArgs e)
-        {
-            //Zapíše do souboru true
-            FileStream fs = new FileStream("pomocny.txt", FileMode.Create, FileAccess.Write);
-            StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine("true");
-            sw.Close();
-            fs.Close();
-
             this.Hide();
             TetrisMain main = new TetrisMain();
             main.ShowDialog();
@@ -64,12 +42,6 @@ namespace Tetris
         private void button5_konec_Click(object sender, EventArgs e)
         {
             //Dořešit,samotná hra stále běží
-            TetrisMain main = new TetrisMain();
-            Skore skore = new Skore();
-            Nastaveni nastaveni = new Nastaveni();
-            main.Close();
-            skore.Close();
-            nastaveni.Close();
             this.Close();
         }
 
