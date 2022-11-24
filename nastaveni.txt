@@ -1,6 +1,6 @@
-Žany
-25
-false
-
+Pepa
+50
+true
+e
 
 e

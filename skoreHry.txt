@@ -1,6 +1,6 @@
-Žany
-100
-18
+Guest
+900
+118
 False
 Neomezený
 ;

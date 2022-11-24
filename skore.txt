@@ -1,5 +1,2 @@
-Jméno: Ignác Skóre: 0 Délka hry: 20 s Herní mód Časový mód Maximální délka hry: 20
-
-Jméno: Ignác Skóre: 0 Délka hry: 8 s Herní mód Časový mód Maximální délka hry: 20
-Jméno: Ignác Skóre: 0 Délka hry: 8 s Herní mód Časový mód Maximální délka hry: 20
-Jméno: Žany Skóre: 100 Délka hry: 18 s Herní mód Nekonečný mód Maximální délka hry: Neomezený
+Jméno: Guest Skóre: 900 Délka hry: 118 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
+Jméno: Pepa Skóre: 300 Délka hry: 50 s Herní mód: Časový mód Maximální délka hry: 50

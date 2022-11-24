@@ -66,6 +66,13 @@ namespace Tetris
                 }
             }
             fs.Close();
+            VycisteniSkore();
+        }
+        //vymaže obsah skoreHry.txt aby se znovu neukladalo
+        private void VycisteniSkore()
+        {
+            FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.Create, FileAccess.Write);
+            fs.Close();
         }
 
         private void NacistSkore()
@@ -76,12 +83,14 @@ namespace Tetris
             {
                 listBox1.Items.Add(sr.ReadLine());
             }
+            fs.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create, FileAccess.Write);
-            //fs.Close();
+            FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create, FileAccess.Write);
+            fs.Close();
+            NacistSkore();
         }
     }
 }
