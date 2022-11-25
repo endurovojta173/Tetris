@@ -1,6 +1,6 @@
-Guest
-0
-30
-True
-30
+Vojta
+2200
+288
+False
+Neomezený
 ;

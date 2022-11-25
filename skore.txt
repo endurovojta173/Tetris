@@ -2,3 +2,5 @@ Jméno: Guest Skóre: 900 Délka hry: 118 s Herní mód: Nekonečný mód Maxim�
 Jméno: Pepa Skóre: 300 Délka hry: 50 s Herní mód: Časový mód Maximální délka hry: 50
 Jméno: Guest Skóre: 900 Délka hry: 118 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
 Jméno: Guest Skóre: 0 Délka hry: 30 s Herní mód: Časový mód Maximální délka hry: 30
+Jméno: Guest Skóre: 0 Délka hry: 30 s Herní mód: Časový mód Maximální délka hry: 30
+Jméno: Vojta Skóre: 2200 Délka hry: 288 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
