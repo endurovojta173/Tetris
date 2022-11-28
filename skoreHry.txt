@@ -1,6 +1,0 @@
-Vojta
-2200
-288
-False
-Neomezený
-;

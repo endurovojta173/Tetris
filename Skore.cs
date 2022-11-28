@@ -33,6 +33,11 @@ namespace Tetris
             FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.OpenOrCreate, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             string radek="";
+            string jmeno = "";
+            string skore = "";
+            string delkaHry = "";
+            string herniMod = "";
+            string maxDelkaHry = "";
             char[] separators = { ' ' };
             while(!sr.EndOfStream)
             {
@@ -58,6 +63,11 @@ namespace Tetris
                     StreamWriter sw = new StreamWriter(fs1);
                     string[] splitRadek = radek.Split(separators, StringSplitOptions.RemoveEmptyEntries);
                     radek = "Jméno: " + splitRadek[0] + " Skóre: " + splitRadek[1] + " Délka hry: " + splitRadek[2] + " s Herní mód: " + splitRadek[3] + " "+splitRadek[4] + " Maximální délka hry: " + splitRadek[5];
+                    /*jmeno = splitRadek[0];
+                    skore = splitRadek[1];
+                    delkaHry = splitRadek[2];
+                    herniMod = splitRadek[3] + splitRadek[4];
+                    maxDelkaHry=splitRadek[5];*/
                     sw.BaseStream.Seek(0, SeekOrigin.End);
                     sw.WriteLine(radek);
                     sw.Close();
@@ -68,6 +78,8 @@ namespace Tetris
             fs.Close();
             VycisteniSkore();
         }
+
+
         //vymaže obsah skoreHry.txt aby se znovu neukladalo
         private void VycisteniSkore()
         {
@@ -76,12 +88,15 @@ namespace Tetris
         }
 
         private void NacistSkore()
-        {
+        {   
             FileStream fs = new FileStream(@"../../skore.txt",FileMode.OpenOrCreate,FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             while(!sr.EndOfStream)
             {
                 listBox1.Items.Add(sr.ReadLine());
+
+                //dataGridView1.Rows[i].ce
+
             }
             fs.Close();
         }

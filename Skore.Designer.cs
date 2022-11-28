@@ -71,6 +71,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Jméno,
@@ -80,7 +81,7 @@
             this.HerniMod});
             this.dataGridView1.Location = new System.Drawing.Point(34, 441);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(542, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(532, 234);
             this.dataGridView1.TabIndex = 3;
             // 
             // Jméno
