@@ -32,10 +32,22 @@ namespace Tetris
             {
                 sw.WriteLine("true");
             }
+            if(radioButton3.Checked)
+            {
+                sw.WriteLine("false");
+            }
+            else
+            {
+                sw.WriteLine("true");
+            }
             sw.Close();
             fs.Close();
             ZobrazitAktualniNastaveni();
         }
+
+
+
+        //Nutno vyřešit co když je nastavení prázdné // nastavit defaultní hodnoty
 
         private void ZobrazitAktualniNastaveni()
         {
@@ -45,8 +57,11 @@ namespace Tetris
             label_aktualniJmeno.Text = "Jméno: " + sr.ReadLine();
             label_delka.Text = "Délka módu s omezeným časem:  " + sr.ReadLine()+" s";
             bool mod = bool.Parse(sr.ReadLine());
+            bool obtiznost = bool.Parse(sr.ReadLine());
             if (mod) label_herniMod.Text = "Herní mód: Časový mód";
             else label_herniMod.Text = "Herní mód: Nekonečný mód";
+            if (obtiznost) label_obtiznost.Text = "Obtížnost: Těžká";
+            else label_obtiznost.Text = "Obtížnost: Lehká";
             fs.Close();
         }
 

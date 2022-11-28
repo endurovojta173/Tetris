@@ -41,6 +41,14 @@
             this.label_aktualniJmeno = new System.Windows.Forms.Label();
             this.label_delka = new System.Windows.Forms.Label();
             this.label_herniMod = new System.Windows.Forms.Label();
+            this.label_obtiznost = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -110,7 +118,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(304, 244);
+            this.radioButton1.Location = new System.Drawing.Point(3, 3);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(103, 17);
             this.radioButton1.TabIndex = 7;
@@ -121,7 +129,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(403, 244);
+            this.radioButton2.Location = new System.Drawing.Point(112, 3);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(129, 17);
             this.radioButton2.TabIndex = 8;
@@ -155,16 +163,76 @@
             this.label_herniMod.TabIndex = 11;
             this.label_herniMod.Text = "Herní mód:";
             // 
+            // label_obtiznost
+            // 
+            this.label_obtiznost.AutoSize = true;
+            this.label_obtiznost.Location = new System.Drawing.Point(74, 364);
+            this.label_obtiznost.Name = "label_obtiznost";
+            this.label_obtiznost.Size = new System.Drawing.Size(56, 13);
+            this.label_obtiznost.TabIndex = 12;
+            this.label_obtiznost.Text = "Obtížnost:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Location = new System.Drawing.Point(304, 237);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(257, 25);
+            this.panel1.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.radioButton3);
+            this.panel2.Controls.Add(this.radioButton4);
+            this.panel2.Location = new System.Drawing.Point(304, 268);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(257, 25);
+            this.panel2.TabIndex = 14;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(3, 3);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(55, 17);
+            this.radioButton3.TabIndex = 7;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Lehká";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(112, 3);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(55, 17);
+            this.radioButton4.TabIndex = 8;
+            this.radioButton4.Text = "Těžká";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(74, 280);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Obtížnost";
+            // 
             // Nastaveni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label_obtiznost);
             this.Controls.Add(this.label_herniMod);
             this.Controls.Add(this.label_delka);
             this.Controls.Add(this.label_aktualniJmeno);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
@@ -176,6 +244,10 @@
             this.Name = "Nastaveni";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +267,11 @@
         private System.Windows.Forms.Label label_aktualniJmeno;
         private System.Windows.Forms.Label label_delka;
         private System.Windows.Forms.Label label_herniMod;
+        private System.Windows.Forms.Label label_obtiznost;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Label label4;
     }
 }

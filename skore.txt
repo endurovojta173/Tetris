@@ -5,3 +5,6 @@ Jméno: Guest Skóre: 0 Délka hry: 30 s Herní mód: Časový mód Maximální 
 Jméno: Guest Skóre: 0 Délka hry: 30 s Herní mód: Časový mód Maximální délka hry: 30
 Jméno: Vojta Skóre: 2200 Délka hry: 288 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
 Jméno: Vojta Skóre: 2200 Délka hry: 288 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
+Jméno: Guest Skóre: 0 Délka hry: 44 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
+Jméno: Guest Skóre: 0 Délka hry: 8 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený Obtížnost: Lehká
+Jméno: Guest Skóre: 0 Délka hry: 8 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený Obtížnost: Lehká

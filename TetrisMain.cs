@@ -26,10 +26,11 @@ namespace Tetris
         int PieceSequenceIteration = 0;
         Menu menu = new Menu();
 
-
+        //Proměnné pro nastavní
         string jmeno = "Guest";
         int delkaHry = 0;
         bool herniMod;
+        bool obtiznost;
 
         readonly Color[] seznamBarev =
         {
@@ -60,6 +61,8 @@ namespace Tetris
             jmeno = sr.ReadLine();
             delkaHry = int.Parse(sr.ReadLine());
             herniMod = bool.Parse(sr.ReadLine());
+            obtiznost = bool.Parse(sr.ReadLine());
+
             fs.Close();
 
             label_jmeno.Text = jmeno;
@@ -77,7 +80,15 @@ namespace Tetris
             else
             {
                 label_herniRezim.Text += " Nekonečný mód";
-                label_delkaHry.Visible = false;
+                label_delkaHry.Text += " Nekonečná";
+            }
+            if(obtiznost)
+            {
+                label_obtiznost.Text += " Těžká";
+            }
+            else
+            {
+                label_obtiznost.Text += " Lehká";
             }
 
 
@@ -472,7 +483,7 @@ namespace Tetris
             label_skore.Text = "Skóre: " + skore;
         }
 
-        //Uloží Nick, skore, čas hry a režim hry(pokud hra na čas tak jak dlouho mohl hrát)
+        //Uloží Nick, skore, čas hry a režim hry(pokud hra na čas tak jak dlouho mohl hrát) a obtižnost
         private void SaveScore()
         {
             FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.Create, FileAccess.Write);
@@ -483,6 +494,8 @@ namespace Tetris
             sw.WriteLine(herniMod);
             if (herniMod) sw.WriteLine(delkaHry);
             else sw.WriteLine("Neomezený");
+            if (obtiznost) sw.WriteLine("Těžká");
+            else sw.WriteLine("Lehká");
             sw.WriteLine(";");
             sw.Close();
             fs.Close();
