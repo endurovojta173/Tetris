@@ -17,6 +17,10 @@ namespace Tetris
         {
             InitializeComponent();
         }
+
+        //Funguje, ale nefiltruje režim podle času a taky je potřeba otestovat když se vymažou save soubory
+
+
         //Načte skore při otevření
         private void Skore_Load(object sender, EventArgs e)
         {
