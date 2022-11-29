@@ -1,7 +1,0 @@
-Guest;
-100;
-29;
-False;
-Neomezený;
-Lehká;
-#

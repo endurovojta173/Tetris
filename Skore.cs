@@ -16,12 +16,15 @@ namespace Tetris
         public Skore()
         {
             InitializeComponent();
-
-            CreateTable();  
+        }
+        //Načte skore při otevření
+        private void Skore_Load(object sender, EventArgs e)
+        {
+            CreateTable();
             SaveSkore();
             LoadData();
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -34,6 +37,7 @@ namespace Tetris
         {
             FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create, FileAccess.Write);
             fs.Close();
+            LoadData();
         }
 
         private void SaveSkore()
@@ -65,15 +69,16 @@ namespace Tetris
                     FileStream fs1 = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Write);
                     StreamWriter sw = new StreamWriter(fs1);
                     string[] splitRadek = radek.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-                    radek = splitRadek[0]+";" +splitRadek[1]+";"+splitRadek[2]+";"+splitRadek[3] + ";" + splitRadek[4]+";" + splitRadek[5]+"#";
+                    radek = splitRadek[0]+";" +splitRadek[1]+";"+splitRadek[2]+";"+splitRadek[3] + ";" + splitRadek[4]+";" + splitRadek[5];
                     sw.BaseStream.Seek(0, SeekOrigin.End);
                     sw.WriteLine(radek);
                     sw.Close();
                     fs1.Close();
-                    //radek = "";
                 }
             }
             fs.Close();
+            FileStream fs2 = new FileStream(@"../../skoreHry.txt", FileMode.Create, FileAccess.Write);
+            fs2.Close();
         }
 
         private void LoadData()
@@ -92,9 +97,19 @@ namespace Tetris
 
         private void AddRow(string jmeno,string skore,string delkaHry,string herniMod, string maxDelkaHry, string obtiznost)
         {
+            if(int.Parse(delkaHry)>60)
+            {
+                int delkaPomoc = int.Parse(delkaHry);
+                delkaHry=delkaPomoc/60+" m " + delkaPomoc%60+" s";
+            }
+            else
+            {
+                delkaHry += " s";
+            }
             String[] radek = {jmeno,skore,delkaHry,herniMod,maxDelkaHry,obtiznost};
             dataGridView1.Rows.Add(radek);
         }
+
         private void CreateTable()
         {
             dataGridView1.ColumnCount = 6;
