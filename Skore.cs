@@ -18,9 +18,8 @@ namespace Tetris
             InitializeComponent();
 
             CreateTable();  
-
-            GetSkore();
-            NacistSkore();
+            SaveSkore();
+            LoadData();
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -31,84 +30,10 @@ namespace Tetris
             this.Dispose();
         }
 
-        private void GetSkore()
-        {
-            FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.OpenOrCreate, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            string radek="";
-            string jmeno = "";
-            string skore = "";
-            string delkaHry = "";
-            string herniMod = "";
-            string maxDelkaHry = "";
-            char[] separators = { ' ' };
-            while(!sr.EndOfStream)
-            {
-                string polozka = sr.ReadLine();
-                if(polozka!=";")
-                {
-                    if (polozka == "True")
-                    {
-                        radek += " Časový mód";
-                    }
-                    else if (polozka == "False")
-                    {
-                        radek += " Nekonečný mód";
-                    }
-                    else
-                    {
-                        radek += " " + polozka;
-                    }
-                }
-                else
-                {
-                    FileStream fs1 = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Write);
-                    StreamWriter sw = new StreamWriter(fs1);
-                    string[] splitRadek = radek.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-                    radek = "Jméno: " + splitRadek[0] + " Skóre: " + splitRadek[1] + " Délka hry: " + splitRadek[2] + " s Herní mód: " + splitRadek[3] + " "+splitRadek[4] + " Maximální délka hry: " + splitRadek[5] + " Obtížnost: " + splitRadek[6];
-                    /*jmeno = splitRadek[0];
-                    skore = splitRadek[1];
-                    delkaHry = splitRadek[2];
-                    herniMod = splitRadek[3] + splitRadek[4];
-                    maxDelkaHry=splitRadek[5];*/
-                    sw.BaseStream.Seek(0, SeekOrigin.End);
-                    sw.WriteLine(radek);
-                    sw.Close();
-                    fs1.Close();
-                    radek = "";
-                }
-            }
-            fs.Close();
-            VycisteniSkore();
-        }
-
-
-        //vymaže obsah skoreHry.txt aby se znovu neukladalo
-        private void VycisteniSkore()
-        {
-            FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.Create, FileAccess.Write);
-            fs.Close();
-        }
-
-        private void NacistSkore()
-        {   
-            FileStream fs = new FileStream(@"../../skore.txt",FileMode.OpenOrCreate,FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            while(!sr.EndOfStream)
-            {
-                listBox1.Items.Add(sr.ReadLine());
-
-                //dataGridView1.Rows[i].ce
-
-            }
-            fs.Close();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create, FileAccess.Write);
             fs.Close();
-            NacistSkore();
         }
 
         private void SaveSkore()
@@ -116,16 +41,11 @@ namespace Tetris
             FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.OpenOrCreate, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             string radek = "";
-            string jmeno = "";
-            string skore = "";
-            string delkaHry = "";
-            string herniMod = "";
-            string maxDelkaHry = "";
-            char[] separators = { ' ' };
+            char[] separators = { ';' };
             while (!sr.EndOfStream)
             {
                 string polozka = sr.ReadLine();
-                if (polozka != ";")
+                if (polozka != "#")
                 {
                     if (polozka == "True")
                     {
@@ -137,7 +57,7 @@ namespace Tetris
                     }
                     else
                     {
-                        radek += " " + polozka;
+                        radek += polozka;
                     }
                 }
                 else
@@ -145,26 +65,34 @@ namespace Tetris
                     FileStream fs1 = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Write);
                     StreamWriter sw = new StreamWriter(fs1);
                     string[] splitRadek = radek.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-                    radek = splitRadek[0]+";" +splitRadek[1]+";"+splitRadek[2]+";"+splitRadek[3] + " " + splitRadek[4]+";" + splitRadek[5] + ";" + splitRadek[6]+"#";
-                    /*jmeno = splitRadek[0];
-                    skore = splitRadek[1];
-                    delkaHry = splitRadek[2];
-                    herniMod = splitRadek[3] + splitRadek[4];
-                    maxDelkaHry=splitRadek[5];*/
+                    radek = splitRadek[0]+";" +splitRadek[1]+";"+splitRadek[2]+";"+splitRadek[3] + ";" + splitRadek[4]+";" + splitRadek[5]+"#";
                     sw.BaseStream.Seek(0, SeekOrigin.End);
                     sw.WriteLine(radek);
                     sw.Close();
                     fs1.Close();
-                    radek = "";
+                    //radek = "";
                 }
             }
             fs.Close();
-            VycisteniSkore();
         }
 
-        private void AddRow(string jmeno,string skore,string delkaHry,string herniMod, string maxDelkaHry)
+        private void LoadData()
         {
-            String[] radek = {jmeno,skore,delkaHry,herniMod,maxDelkaHry};
+            FileStream fs = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Read);
+            StreamReader sr = new StreamReader(fs);
+            char[] separator = { ';' };
+            while (!sr.EndOfStream)
+            {
+                string radek = sr.ReadLine();
+                string[] splitRadek = radek.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+                AddRow(splitRadek[0], splitRadek[1], splitRadek[2], splitRadek[3], splitRadek[4], splitRadek[5]);
+            }
+            fs.Close();
+        }
+
+        private void AddRow(string jmeno,string skore,string delkaHry,string herniMod, string maxDelkaHry, string obtiznost)
+        {
+            String[] radek = {jmeno,skore,delkaHry,herniMod,maxDelkaHry,obtiznost};
             dataGridView1.Rows.Add(radek);
         }
         private void CreateTable()

@@ -1,10 +1,5 @@
-Jméno: Guest Skóre: 900 Délka hry: 118 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
-Jméno: Pepa Skóre: 300 Délka hry: 50 s Herní mód: Časový mód Maximální délka hry: 50
-Jméno: Guest Skóre: 900 Délka hry: 118 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
-Jméno: Guest Skóre: 0 Délka hry: 30 s Herní mód: Časový mód Maximální délka hry: 30
-Jméno: Guest Skóre: 0 Délka hry: 30 s Herní mód: Časový mód Maximální délka hry: 30
-Jméno: Vojta Skóre: 2200 Délka hry: 288 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
-Jméno: Vojta Skóre: 2200 Délka hry: 288 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
-Jméno: Guest Skóre: 0 Délka hry: 44 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený
-Jméno: Guest Skóre: 0 Délka hry: 8 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený Obtížnost: Lehká
-Jméno: Guest Skóre: 0 Délka hry: 8 s Herní mód: Nekonečný mód Maximální délka hry: Neomezený Obtížnost: Lehká
+Guest;0;13;False;Neomezený;Lehká#
+Guest;0;13;False;Neomezený;Lehká#
+Guest;0;13;False;Neomezený;Lehká#
+Guest;100;29;False;Neomezený;Lehká#
+Guest;100;29;False;Neomezený;Lehká#

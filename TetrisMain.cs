@@ -488,15 +488,15 @@ namespace Tetris
         {
             FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.Create, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine(jmeno);
-            sw.WriteLine(skore);
-            sw.WriteLine(ubehlyCas);
-            sw.WriteLine(herniMod);
-            if (herniMod) sw.WriteLine(delkaHry);
-            else sw.WriteLine("Neomezený");
-            if (obtiznost) sw.WriteLine("Těžká");
-            else sw.WriteLine("Lehká");
-            sw.WriteLine(";");
+            sw.WriteLine(jmeno+";");
+            sw.WriteLine(skore+";");
+            sw.WriteLine(ubehlyCas+";");
+            sw.WriteLine(herniMod+";");
+            if (herniMod) sw.WriteLine(delkaHry + ";");
+            else sw.WriteLine("Neomezený"+ ";");
+            if (obtiznost) sw.WriteLine("Těžká" + ";");
+            else sw.WriteLine("Lehká" + ";");
+            sw.WriteLine("#");
             sw.Close();
             fs.Close();
         }
