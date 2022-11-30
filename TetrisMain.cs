@@ -27,11 +27,11 @@ namespace Tetris
         int PieceSequenceIteration = 0;
         Menu menu = new Menu();
 
-        //Proměnné pro nastavní
+        //Proměnné pro nastavení
         string jmeno = "Guest";
         int delkaHry = 0;
-        bool herniMod;
-        bool obtiznost;
+        bool herniMod = false;
+        bool obtiznost = false;
 
         readonly Color[] seznamBarev =
         {
@@ -147,18 +147,21 @@ namespace Tetris
 
             //**************************************************Pridano
 
-            // If not first move, clear next piece panel
-            if (dalsiPolozka.Contains(null) == false)
+            if (!obtiznost)
             {
-                foreach (Control x in dalsiPolozka)
-                {
-                    x.BackColor = Color.White;
-                }
-            }
 
-            // Layout options for next piece
-            Control[,] poleDalsiPolozky =
-            {
+                // If not first move, clear next piece panel
+                if (dalsiPolozka.Contains(null) == false)
+                {
+                    foreach (Control x in dalsiPolozka)
+                    {
+                        x.BackColor = Color.White;
+                    }
+                }
+
+                // Layout options for next piece
+                Control[,] poleDalsiPolozky =
+                {
                 { box203, box207, box211, box215 }, // I piece
                 { box202, box206, box210, box211 }, // L piece
                 { box203, box207, box211, box210 }, // J piece
@@ -166,23 +169,22 @@ namespace Tetris
                 { box202, box203, box207, box208 }, // Z piece
                 { box206, box207, box210, box211 }, // O piece
                 { box207, box210, box211, box212 }  // T piece
-            };
+                };
 
-            // Retrieve layout for next piece
-            for (int x = 0; x < 4; x++)
-            {
-                dalsiPolozka[x] = poleDalsiPolozky[dalsiPolozkaInt, x];
+                // Retrieve layout for next piece
+                for (int x = 0; x < 4; x++)
+                {
+                    dalsiPolozka[x] = poleDalsiPolozky[dalsiPolozkaInt, x];
+                }
+
+                // Populate next piece panel with correct color
+                foreach (Control square in dalsiPolozka)
+                {
+                    square.BackColor = seznamBarev[dalsiPolozkaInt];
+                }
+
             }
-
-            // Populate next piece panel with correct color
-            foreach (Control square in dalsiPolozka)
-            {
-                square.BackColor = seznamBarev[dalsiPolozkaInt];
-            }
-
-
             //********************************Pridano
-
 
 
             //Rozvržení padajícího kousku //1
