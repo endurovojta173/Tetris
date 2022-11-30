@@ -7,3 +7,4 @@ Vojta;0;8;False;Neomezený;Těžká
 a;0;8;False;Neomezený;Lehká
 a;0;8;False;Neomezený;Lehká
 a;100;48;False;Neomezený;Lehká
+a;100;48;False;Neomezený;Lehká

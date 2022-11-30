@@ -1,6 +1,6 @@
 a;
-100;
-48;
+300;
+43;
 False;
 Neomezený;
 Lehká;

@@ -189,8 +189,8 @@ namespace Tetris
             Control[,] activePieceArray =
             {
                 { box6, box16, box26, box36 }, // I
-                { box4, box14, box24, box25 }, // L
-                { box5, box15, box25, box24 }, // J
+                { box5, box15, box25, box26 }, // L
+                { box6, box16, box26, box25 }, // J
                 { box14, box15, box5, box6 },  // S
                 { box5, box6, box16, box17 },  // Z
                 { box5, box6, box15, box16 },  // O
