@@ -145,7 +145,7 @@ namespace Tetris
             PieceSequenceIteration++;
 
 
-            //**************************************************Pridano
+            //**************************************************Box s napovědou
 
             if (!obtiznost)
             {
@@ -159,7 +159,7 @@ namespace Tetris
                     }
                 }
 
-                // Layout options for next piece
+                //Rozložení
                 Control[,] poleDalsiPolozky =
                 {
                 { box203, box207, box211, box215 }, // I piece
@@ -171,7 +171,6 @@ namespace Tetris
                 { box207, box210, box211, box212 }  // T piece
                 };
 
-                // Retrieve layout for next piece
                 for (int x = 0; x < 4; x++)
                 {
                     dalsiPolozka[x] = poleDalsiPolozky[dalsiPolozkaInt, x];
@@ -184,7 +183,7 @@ namespace Tetris
                 }
 
             }
-            //********************************Pridano
+            //********************************Box s napovědou
 
 
             //Rozvržení padajícího kousku //1
