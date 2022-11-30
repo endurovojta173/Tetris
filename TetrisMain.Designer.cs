@@ -262,6 +262,23 @@
             this.label_delkaHry = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label_obtiznost = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.box201 = new System.Windows.Forms.PictureBox();
+            this.box202 = new System.Windows.Forms.PictureBox();
+            this.box203 = new System.Windows.Forms.PictureBox();
+            this.box204 = new System.Windows.Forms.PictureBox();
+            this.box205 = new System.Windows.Forms.PictureBox();
+            this.box206 = new System.Windows.Forms.PictureBox();
+            this.box207 = new System.Windows.Forms.PictureBox();
+            this.box208 = new System.Windows.Forms.PictureBox();
+            this.box209 = new System.Windows.Forms.PictureBox();
+            this.box210 = new System.Windows.Forms.PictureBox();
+            this.box211 = new System.Windows.Forms.PictureBox();
+            this.box212 = new System.Windows.Forms.PictureBox();
+            this.box213 = new System.Windows.Forms.PictureBox();
+            this.box214 = new System.Windows.Forms.PictureBox();
+            this.box215 = new System.Windows.Forms.PictureBox();
+            this.box216 = new System.Windows.Forms.PictureBox();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -483,6 +500,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.box250)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box251)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box252)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.box201)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box202)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box203)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box204)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box205)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box206)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box207)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box208)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box209)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box210)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box211)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box212)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box213)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box214)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box215)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box216)).BeginInit();
             this.SuspendLayout();
             // 
             // label_skore
@@ -499,7 +533,7 @@
             // 
             this.label_cas.AutoSize = true;
             this.label_cas.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_cas.Location = new System.Drawing.Point(358, 72);
+            this.label_cas.Location = new System.Drawing.Point(358, 102);
             this.label_cas.Name = "label_cas";
             this.label_cas.Size = new System.Drawing.Size(120, 32);
             this.label_cas.TabIndex = 2;
@@ -509,7 +543,7 @@
             // 
             this.label_radky.AutoSize = true;
             this.label_radky.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_radky.Location = new System.Drawing.Point(358, 103);
+            this.label_radky.Location = new System.Drawing.Point(358, 165);
             this.label_radky.Name = "label_radky";
             this.label_radky.Size = new System.Drawing.Size(129, 32);
             this.label_radky.TabIndex = 4;
@@ -3221,7 +3255,7 @@
             // 
             this.label_jmeno.AutoSize = true;
             this.label_jmeno.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_jmeno.Location = new System.Drawing.Point(358, 165);
+            this.label_jmeno.Location = new System.Drawing.Point(358, 71);
             this.label_jmeno.Name = "label_jmeno";
             this.label_jmeno.Size = new System.Drawing.Size(91, 32);
             this.label_jmeno.TabIndex = 9;
@@ -3256,12 +3290,207 @@
             this.label_obtiznost.TabIndex = 12;
             this.label_obtiznost.Text = "Obtížnost:";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.box201, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.box202, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.box203, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.box204, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.box205, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.box206, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.box207, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.box208, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.box209, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.box210, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.box211, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.box212, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.box213, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.box214, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.box215, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.box216, 3, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(392, 460);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(133, 130);
+            this.tableLayoutPanel1.TabIndex = 13;
+            // 
+            // box201
+            // 
+            this.box201.BackColor = System.Drawing.Color.White;
+            this.box201.Location = new System.Drawing.Point(2, 2);
+            this.box201.Margin = new System.Windows.Forms.Padding(2);
+            this.box201.Name = "box201";
+            this.box201.Size = new System.Drawing.Size(29, 28);
+            this.box201.TabIndex = 0;
+            this.box201.TabStop = false;
+            // 
+            // box202
+            // 
+            this.box202.BackColor = System.Drawing.Color.White;
+            this.box202.Location = new System.Drawing.Point(35, 2);
+            this.box202.Margin = new System.Windows.Forms.Padding(2);
+            this.box202.Name = "box202";
+            this.box202.Size = new System.Drawing.Size(29, 28);
+            this.box202.TabIndex = 1;
+            this.box202.TabStop = false;
+            // 
+            // box203
+            // 
+            this.box203.BackColor = System.Drawing.Color.White;
+            this.box203.Location = new System.Drawing.Point(68, 2);
+            this.box203.Margin = new System.Windows.Forms.Padding(2);
+            this.box203.Name = "box203";
+            this.box203.Size = new System.Drawing.Size(29, 28);
+            this.box203.TabIndex = 2;
+            this.box203.TabStop = false;
+            // 
+            // box204
+            // 
+            this.box204.BackColor = System.Drawing.Color.White;
+            this.box204.Location = new System.Drawing.Point(101, 2);
+            this.box204.Margin = new System.Windows.Forms.Padding(2);
+            this.box204.Name = "box204";
+            this.box204.Size = new System.Drawing.Size(29, 28);
+            this.box204.TabIndex = 3;
+            this.box204.TabStop = false;
+            // 
+            // box205
+            // 
+            this.box205.BackColor = System.Drawing.Color.White;
+            this.box205.Location = new System.Drawing.Point(2, 34);
+            this.box205.Margin = new System.Windows.Forms.Padding(2);
+            this.box205.Name = "box205";
+            this.box205.Size = new System.Drawing.Size(29, 28);
+            this.box205.TabIndex = 4;
+            this.box205.TabStop = false;
+            // 
+            // box206
+            // 
+            this.box206.BackColor = System.Drawing.Color.White;
+            this.box206.Location = new System.Drawing.Point(35, 34);
+            this.box206.Margin = new System.Windows.Forms.Padding(2);
+            this.box206.Name = "box206";
+            this.box206.Size = new System.Drawing.Size(29, 28);
+            this.box206.TabIndex = 5;
+            this.box206.TabStop = false;
+            // 
+            // box207
+            // 
+            this.box207.BackColor = System.Drawing.Color.White;
+            this.box207.Location = new System.Drawing.Point(68, 34);
+            this.box207.Margin = new System.Windows.Forms.Padding(2);
+            this.box207.Name = "box207";
+            this.box207.Size = new System.Drawing.Size(29, 28);
+            this.box207.TabIndex = 6;
+            this.box207.TabStop = false;
+            // 
+            // box208
+            // 
+            this.box208.BackColor = System.Drawing.Color.White;
+            this.box208.Location = new System.Drawing.Point(101, 34);
+            this.box208.Margin = new System.Windows.Forms.Padding(2);
+            this.box208.Name = "box208";
+            this.box208.Size = new System.Drawing.Size(29, 28);
+            this.box208.TabIndex = 7;
+            this.box208.TabStop = false;
+            // 
+            // box209
+            // 
+            this.box209.BackColor = System.Drawing.Color.White;
+            this.box209.Location = new System.Drawing.Point(2, 66);
+            this.box209.Margin = new System.Windows.Forms.Padding(2);
+            this.box209.Name = "box209";
+            this.box209.Size = new System.Drawing.Size(29, 28);
+            this.box209.TabIndex = 8;
+            this.box209.TabStop = false;
+            // 
+            // box210
+            // 
+            this.box210.BackColor = System.Drawing.Color.White;
+            this.box210.Location = new System.Drawing.Point(35, 66);
+            this.box210.Margin = new System.Windows.Forms.Padding(2);
+            this.box210.Name = "box210";
+            this.box210.Size = new System.Drawing.Size(29, 28);
+            this.box210.TabIndex = 9;
+            this.box210.TabStop = false;
+            // 
+            // box211
+            // 
+            this.box211.BackColor = System.Drawing.Color.White;
+            this.box211.Location = new System.Drawing.Point(68, 66);
+            this.box211.Margin = new System.Windows.Forms.Padding(2);
+            this.box211.Name = "box211";
+            this.box211.Size = new System.Drawing.Size(29, 28);
+            this.box211.TabIndex = 10;
+            this.box211.TabStop = false;
+            // 
+            // box212
+            // 
+            this.box212.BackColor = System.Drawing.Color.White;
+            this.box212.Location = new System.Drawing.Point(101, 66);
+            this.box212.Margin = new System.Windows.Forms.Padding(2);
+            this.box212.Name = "box212";
+            this.box212.Size = new System.Drawing.Size(29, 28);
+            this.box212.TabIndex = 11;
+            this.box212.TabStop = false;
+            // 
+            // box213
+            // 
+            this.box213.BackColor = System.Drawing.Color.White;
+            this.box213.Location = new System.Drawing.Point(2, 98);
+            this.box213.Margin = new System.Windows.Forms.Padding(2);
+            this.box213.Name = "box213";
+            this.box213.Size = new System.Drawing.Size(29, 29);
+            this.box213.TabIndex = 12;
+            this.box213.TabStop = false;
+            // 
+            // box214
+            // 
+            this.box214.BackColor = System.Drawing.Color.White;
+            this.box214.Location = new System.Drawing.Point(35, 98);
+            this.box214.Margin = new System.Windows.Forms.Padding(2);
+            this.box214.Name = "box214";
+            this.box214.Size = new System.Drawing.Size(29, 29);
+            this.box214.TabIndex = 13;
+            this.box214.TabStop = false;
+            // 
+            // box215
+            // 
+            this.box215.BackColor = System.Drawing.Color.White;
+            this.box215.Location = new System.Drawing.Point(68, 98);
+            this.box215.Margin = new System.Windows.Forms.Padding(2);
+            this.box215.Name = "box215";
+            this.box215.Size = new System.Drawing.Size(29, 29);
+            this.box215.TabIndex = 14;
+            this.box215.TabStop = false;
+            // 
+            // box216
+            // 
+            this.box216.BackColor = System.Drawing.Color.White;
+            this.box216.Location = new System.Drawing.Point(101, 98);
+            this.box216.Margin = new System.Windows.Forms.Padding(2);
+            this.box216.Name = "box216";
+            this.box216.Size = new System.Drawing.Size(29, 29);
+            this.box216.TabIndex = 15;
+            this.box216.TabStop = false;
+            // 
             // TetrisMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_obtiznost);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label_delkaHry);
@@ -3498,6 +3727,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.box250)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box251)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box252)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.box201)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box202)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box203)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box204)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box205)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box206)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box207)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box208)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box209)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box210)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box211)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box212)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box213)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box214)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box215)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box216)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3736,6 +3982,23 @@
         private System.Windows.Forms.Label label_delkaHry;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_obtiznost;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox box201;
+        private System.Windows.Forms.PictureBox box202;
+        private System.Windows.Forms.PictureBox box203;
+        private System.Windows.Forms.PictureBox box204;
+        private System.Windows.Forms.PictureBox box205;
+        private System.Windows.Forms.PictureBox box206;
+        private System.Windows.Forms.PictureBox box207;
+        private System.Windows.Forms.PictureBox box208;
+        private System.Windows.Forms.PictureBox box209;
+        private System.Windows.Forms.PictureBox box210;
+        private System.Windows.Forms.PictureBox box211;
+        private System.Windows.Forms.PictureBox box212;
+        private System.Windows.Forms.PictureBox box213;
+        private System.Windows.Forms.PictureBox box214;
+        private System.Windows.Forms.PictureBox box215;
+        private System.Windows.Forms.PictureBox box216;
     }
 }
 

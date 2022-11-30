@@ -1,0 +1,7 @@
+a;
+100;
+48;
+False;
+Neomezený;
+Lehká;
+#

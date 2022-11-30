@@ -15,6 +15,7 @@ namespace Tetris
         //***INICIALIZACE***
         Control[] aktivniPolozka = { null, null, null, null };
         Control[] aktivniPolozka2 = { null, null, null, null };
+        Control[] dalsiPolozka = {null,null, null, null};
         List<int> PieceSequence = new List<int>();
         int ubehlyCas = 0;
         int momentalniPolozka;
@@ -143,7 +144,48 @@ namespace Tetris
             dalsiPolozkaInt = PieceSequence[PieceSequenceIteration];
             PieceSequenceIteration++;
 
-            //Rozvržení padajícího kousku
+
+            //**************************************************Pridano
+
+            // If not first move, clear next piece panel
+            if (dalsiPolozka.Contains(null) == false)
+            {
+                foreach (Control x in dalsiPolozka)
+                {
+                    x.BackColor = Color.White;
+                }
+            }
+
+            // Layout options for next piece
+            Control[,] poleDalsiPolozky =
+            {
+                { box203, box207, box211, box215 }, // I piece
+                { box202, box206, box210, box211 }, // L piece
+                { box203, box207, box211, box210 }, // J piece
+                { box206, box207, box203, box204 }, // S piece
+                { box202, box203, box207, box208 }, // Z piece
+                { box206, box207, box210, box211 }, // O piece
+                { box207, box210, box211, box212 }  // T piece
+            };
+
+            // Retrieve layout for next piece
+            for (int x = 0; x < 4; x++)
+            {
+                dalsiPolozka[x] = poleDalsiPolozky[dalsiPolozkaInt, x];
+            }
+
+            // Populate next piece panel with correct color
+            foreach (Control square in dalsiPolozka)
+            {
+                square.BackColor = seznamBarev[dalsiPolozkaInt];
+            }
+
+
+            //********************************Pridano
+
+
+
+            //Rozvržení padajícího kousku //1
             Control[,] activePieceArray =
             {
                 { box6, box16, box26, box36 }, // I
@@ -155,13 +197,18 @@ namespace Tetris
                 { box6, box15, box16, box17 }  // T
             };
 
-            //Vybere padající kousek
+
+
+
+            //Vybere padající kousek //1
             for (int x = 0; x < 4; x++)
             {
                 aktivniPolozka[x] = activePieceArray[momentalniPolozka, x];
             }
 
-            //Zkontroluje jestli není konec hry
+
+
+            //Zkontroluje jestli není konec hry //1
             foreach (Control box in aktivniPolozka)
             {
                 if (box.BackColor != Color.White & box.BackColor != Color.LightGray)
@@ -176,12 +223,15 @@ namespace Tetris
                 }
             }
 
-            // Populate falling piece squares with correct color
+            // Populate falling piece squares with correct color //1
             foreach (Control square in aktivniPolozka)
             {
                 square.BackColor = seznamBarev[momentalniPolozka];
             }
         }
+
+
+
 
         //Otestuje jestli budoucí pohyb (doprava,doleva,dolů) byl mimo tabulku nebo jiný kousek
         public bool TestMove(string direction)
@@ -500,6 +550,47 @@ namespace Tetris
             sw.Close();
             fs.Close();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //**************************Ovládání******************************
