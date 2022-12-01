@@ -1,3 +1,0 @@
-Ignác;0;7;Časově omezený mód;Neomezený;Lehká;
-Ignác;0;6;Časově omezený mód;Neomezený;Lehká;
-Ignác;0;18;Časově omezený mód;Neomezený;Lehká;
