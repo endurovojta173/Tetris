@@ -587,8 +587,10 @@ namespace Tetris
                 button_novaHra.Enabled = true;
                 button_menu.Enabled = true;
                 button_konec.Enabled = true;
+                button_skore.Enabled = true;
+
             }
-            foreach(PictureBox pbx in tableLayoutPanel1.Controls)
+            foreach(PictureBox pbx in tabulkaNapoveda.Controls)
             {
                 pbx.Enabled=false;
                 if (pbx.BackColor == Color.White)
@@ -600,6 +602,8 @@ namespace Tetris
                     pbx.BackColor = Color.Black;
                 }
             }
+            tabulka.BackColor = Color.Black;
+            tabulkaNapoveda.BackColor = Color.Black;
         }
 
 
@@ -1146,6 +1150,14 @@ namespace Tetris
             this.Hide();
             TetrisMain main = new TetrisMain();
             main.ShowDialog();
+            this.Dispose();
+        }
+
+        private void button_skore_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Skore skore = new Skore();
+            skore.ShowDialog();
             this.Dispose();
         }
     }

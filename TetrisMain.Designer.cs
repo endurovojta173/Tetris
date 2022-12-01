@@ -262,7 +262,7 @@
             this.label_delkaHry = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label_obtiznost = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tabulkaNapoveda = new System.Windows.Forms.TableLayoutPanel();
             this.box202 = new System.Windows.Forms.PictureBox();
             this.box203 = new System.Windows.Forms.PictureBox();
             this.box204 = new System.Windows.Forms.PictureBox();
@@ -282,6 +282,7 @@
             this.button_novaHra = new System.Windows.Forms.Button();
             this.button_menu = new System.Windows.Forms.Button();
             this.button_konec = new System.Windows.Forms.Button();
+            this.button_skore = new System.Windows.Forms.Button();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -503,7 +504,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.box250)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box251)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box252)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tabulkaNapoveda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box202)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box203)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box204)).BeginInit();
@@ -3294,42 +3295,42 @@
             this.label_obtiznost.TabIndex = 12;
             this.label_obtiznost.Text = "Obtížnost:";
             // 
-            // tableLayoutPanel1
+            // tabulkaNapoveda
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.box202, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.box203, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.box204, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.box205, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.box206, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.box207, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.box208, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.box209, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.box210, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.box211, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.box212, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.box213, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.box214, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.box215, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.box216, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.box201, 0, 0);
-            this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.No;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(364, 262);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(133, 130);
-            this.tableLayoutPanel1.TabIndex = 13;
+            this.tabulkaNapoveda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.tabulkaNapoveda.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tabulkaNapoveda.ColumnCount = 4;
+            this.tabulkaNapoveda.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tabulkaNapoveda.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tabulkaNapoveda.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tabulkaNapoveda.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tabulkaNapoveda.Controls.Add(this.box202, 1, 0);
+            this.tabulkaNapoveda.Controls.Add(this.box203, 2, 0);
+            this.tabulkaNapoveda.Controls.Add(this.box204, 3, 0);
+            this.tabulkaNapoveda.Controls.Add(this.box205, 0, 1);
+            this.tabulkaNapoveda.Controls.Add(this.box206, 1, 1);
+            this.tabulkaNapoveda.Controls.Add(this.box207, 2, 1);
+            this.tabulkaNapoveda.Controls.Add(this.box208, 3, 1);
+            this.tabulkaNapoveda.Controls.Add(this.box209, 0, 2);
+            this.tabulkaNapoveda.Controls.Add(this.box210, 1, 2);
+            this.tabulkaNapoveda.Controls.Add(this.box211, 2, 2);
+            this.tabulkaNapoveda.Controls.Add(this.box212, 3, 2);
+            this.tabulkaNapoveda.Controls.Add(this.box213, 0, 3);
+            this.tabulkaNapoveda.Controls.Add(this.box214, 1, 3);
+            this.tabulkaNapoveda.Controls.Add(this.box215, 2, 3);
+            this.tabulkaNapoveda.Controls.Add(this.box216, 3, 3);
+            this.tabulkaNapoveda.Controls.Add(this.box201, 0, 0);
+            this.tabulkaNapoveda.Cursor = System.Windows.Forms.Cursors.No;
+            this.tabulkaNapoveda.Location = new System.Drawing.Point(364, 262);
+            this.tabulkaNapoveda.Margin = new System.Windows.Forms.Padding(2);
+            this.tabulkaNapoveda.Name = "tabulkaNapoveda";
+            this.tabulkaNapoveda.RowCount = 4;
+            this.tabulkaNapoveda.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tabulkaNapoveda.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tabulkaNapoveda.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tabulkaNapoveda.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tabulkaNapoveda.Size = new System.Drawing.Size(133, 130);
+            this.tabulkaNapoveda.TabIndex = 13;
             // 
             // box202
             // 
@@ -3494,7 +3495,7 @@
             // button_novaHra
             // 
             this.button_novaHra.Enabled = false;
-            this.button_novaHra.Location = new System.Drawing.Point(364, 397);
+            this.button_novaHra.Location = new System.Drawing.Point(512, 262);
             this.button_novaHra.Name = "button_novaHra";
             this.button_novaHra.Size = new System.Drawing.Size(133, 29);
             this.button_novaHra.TabIndex = 14;
@@ -3505,7 +3506,7 @@
             // button_menu
             // 
             this.button_menu.Enabled = false;
-            this.button_menu.Location = new System.Drawing.Point(364, 432);
+            this.button_menu.Location = new System.Drawing.Point(512, 327);
             this.button_menu.Name = "button_menu";
             this.button_menu.Size = new System.Drawing.Size(133, 29);
             this.button_menu.TabIndex = 15;
@@ -3516,7 +3517,7 @@
             // button_konec
             // 
             this.button_konec.Enabled = false;
-            this.button_konec.Location = new System.Drawing.Point(364, 467);
+            this.button_konec.Location = new System.Drawing.Point(512, 361);
             this.button_konec.Name = "button_konec";
             this.button_konec.Size = new System.Drawing.Size(133, 29);
             this.button_konec.TabIndex = 16;
@@ -3524,16 +3525,28 @@
             this.button_konec.UseVisualStyleBackColor = true;
             this.button_konec.Click += new System.EventHandler(this.button_konec_Click);
             // 
+            // button_skore
+            // 
+            this.button_skore.Enabled = false;
+            this.button_skore.Location = new System.Drawing.Point(512, 295);
+            this.button_skore.Name = "button_skore";
+            this.button_skore.Size = new System.Drawing.Size(133, 29);
+            this.button_skore.TabIndex = 17;
+            this.button_skore.Text = "Skóre";
+            this.button_skore.UseVisualStyleBackColor = true;
+            this.button_skore.Click += new System.EventHandler(this.button_skore_Click);
+            // 
             // TetrisMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.button_skore);
             this.Controls.Add(this.button_konec);
             this.Controls.Add(this.button_menu);
             this.Controls.Add(this.button_novaHra);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tabulkaNapoveda);
             this.Controls.Add(this.label_obtiznost);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label_delkaHry);
@@ -3774,7 +3787,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.box250)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box251)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box252)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tabulkaNapoveda.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.box202)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box203)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box204)).EndInit();
@@ -4029,7 +4042,7 @@
         private System.Windows.Forms.Label label_delkaHry;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_obtiznost;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tabulkaNapoveda;
         private System.Windows.Forms.PictureBox box201;
         private System.Windows.Forms.PictureBox box202;
         private System.Windows.Forms.PictureBox box203;
@@ -4049,6 +4062,7 @@
         private System.Windows.Forms.Button button_novaHra;
         private System.Windows.Forms.Button button_menu;
         private System.Windows.Forms.Button button_konec;
+        private System.Windows.Forms.Button button_skore;
     }
 }
 
