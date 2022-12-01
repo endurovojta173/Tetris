@@ -1,7 +1,7 @@
-Vojta;
-2300;
-307;
-False;
-Neomezený;
+Guest;
+0;
+5;
+True;
+5;
 Lehká;
 #

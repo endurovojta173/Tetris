@@ -10,3 +10,4 @@ a;100;48;False;Neomezený;Lehká
 a;100;48;False;Neomezený;Lehká
 Guest;6900;627;False;Neomezený;Těžká
 Vojta;2300;307;False;Neomezený;Lehká
+Guest;0;78;False;Neomezený;Těžká

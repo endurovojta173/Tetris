@@ -1,5 +1,6 @@
-Vojta
-200
+Guest
+5
+true
 false
-false
+e
 

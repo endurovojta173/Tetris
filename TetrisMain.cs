@@ -219,6 +219,7 @@ namespace Tetris
                     rychlostHryTimer.Stop();
                     casHryTimer.Stop();
                     SaveScore();
+                    DisableIfEnd();
                     konecHry = true;
                     MessageBox.Show("Game over!");
                     return;
@@ -509,6 +510,7 @@ namespace Tetris
             {
                 //uloží skóre
                 SaveScore();
+                DisableIfEnd();
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Ukončí hru
                 return true;
             }
@@ -551,6 +553,26 @@ namespace Tetris
             sw.WriteLine("#");
             sw.Close();
             fs.Close();
+        }
+
+        private void DisableIfEnd()
+        {
+            foreach(PictureBox pbx in tabulka.Controls)
+            {
+                pbx.Enabled = false;
+                if(pbx.BackColor==Color.White)
+                {
+                    pbx.BackColor = Color.Gray;
+                }
+            }
+            foreach(PictureBox pbx in tableLayoutPanel1.Controls)
+            {
+                pbx.Enabled=false;
+                if (pbx.BackColor == Color.White)
+                {
+                    pbx.BackColor = Color.Gray;
+                }
+            }
         }
 
 
@@ -1035,7 +1057,7 @@ namespace Tetris
                             }
                         }
                     }
-
+                    
                     //Nastaví starou poziic na bílo
                     foreach (PictureBox square in aktivniPolozka)
                     {
@@ -1052,7 +1074,8 @@ namespace Tetris
                         x++;
                     }
                 }
-                else if (!CheckGameOver() & e.KeyCode == Keys.ShiftKey)
+                //Feature se shiftem
+                /*else if (!CheckGameOver() & e.KeyCode == Keys.ShiftKey)
                 {
                     otaceni = 0;
 
@@ -1073,7 +1096,7 @@ namespace Tetris
                     {
                         x.BackColor = Color.White;
                     }
-                }
+                }*/
             }
         }
     }
