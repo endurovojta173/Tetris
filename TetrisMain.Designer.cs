@@ -263,7 +263,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label_obtiznost = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.box201 = new System.Windows.Forms.PictureBox();
             this.box202 = new System.Windows.Forms.PictureBox();
             this.box203 = new System.Windows.Forms.PictureBox();
             this.box204 = new System.Windows.Forms.PictureBox();
@@ -279,6 +278,10 @@
             this.box214 = new System.Windows.Forms.PictureBox();
             this.box215 = new System.Windows.Forms.PictureBox();
             this.box216 = new System.Windows.Forms.PictureBox();
+            this.box201 = new System.Windows.Forms.PictureBox();
+            this.button_novaHra = new System.Windows.Forms.Button();
+            this.button_menu = new System.Windows.Forms.Button();
+            this.button_konec = new System.Windows.Forms.Button();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -501,7 +504,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.box251)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box252)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.box201)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box202)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box203)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box204)).BeginInit();
@@ -517,6 +519,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.box214)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box215)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box216)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box201)).BeginInit();
             this.SuspendLayout();
             // 
             // label_skore
@@ -3328,16 +3331,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(133, 130);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
-            // box201
-            // 
-            this.box201.BackColor = System.Drawing.Color.White;
-            this.box201.Location = new System.Drawing.Point(3, 3);
-            this.box201.Margin = new System.Windows.Forms.Padding(2);
-            this.box201.Name = "box201";
-            this.box201.Size = new System.Drawing.Size(28, 27);
-            this.box201.TabIndex = 0;
-            this.box201.TabStop = false;
-            // 
             // box202
             // 
             this.box202.BackColor = System.Drawing.Color.White;
@@ -3488,12 +3481,58 @@
             this.box216.TabIndex = 15;
             this.box216.TabStop = false;
             // 
+            // box201
+            // 
+            this.box201.BackColor = System.Drawing.Color.White;
+            this.box201.Location = new System.Drawing.Point(3, 3);
+            this.box201.Margin = new System.Windows.Forms.Padding(2);
+            this.box201.Name = "box201";
+            this.box201.Size = new System.Drawing.Size(28, 27);
+            this.box201.TabIndex = 0;
+            this.box201.TabStop = false;
+            // 
+            // button_novaHra
+            // 
+            this.button_novaHra.Enabled = false;
+            this.button_novaHra.Location = new System.Drawing.Point(374, 575);
+            this.button_novaHra.Name = "button_novaHra";
+            this.button_novaHra.Size = new System.Drawing.Size(75, 23);
+            this.button_novaHra.TabIndex = 14;
+            this.button_novaHra.Text = "Začít znovu";
+            this.button_novaHra.UseVisualStyleBackColor = true;
+            this.button_novaHra.Click += new System.EventHandler(this.button_novaHra_Click);
+            // 
+            // button_menu
+            // 
+            this.button_menu.Enabled = false;
+            this.button_menu.Location = new System.Drawing.Point(374, 606);
+            this.button_menu.Name = "button_menu";
+            this.button_menu.Size = new System.Drawing.Size(75, 23);
+            this.button_menu.TabIndex = 15;
+            this.button_menu.Text = "Menu";
+            this.button_menu.UseVisualStyleBackColor = true;
+            this.button_menu.Click += new System.EventHandler(this.button_menu_Click);
+            // 
+            // button_konec
+            // 
+            this.button_konec.Enabled = false;
+            this.button_konec.Location = new System.Drawing.Point(374, 637);
+            this.button_konec.Name = "button_konec";
+            this.button_konec.Size = new System.Drawing.Size(75, 23);
+            this.button_konec.TabIndex = 16;
+            this.button_konec.Text = "Konec";
+            this.button_konec.UseVisualStyleBackColor = true;
+            this.button_konec.Click += new System.EventHandler(this.button_konec_Click);
+            // 
             // TetrisMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.button_konec);
+            this.Controls.Add(this.button_menu);
+            this.Controls.Add(this.button_novaHra);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_obtiznost);
             this.Controls.Add(this.label2);
@@ -3732,7 +3771,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.box251)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box252)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.box201)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box202)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box203)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box204)).EndInit();
@@ -3748,6 +3786,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.box214)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box215)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box216)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.box201)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4003,6 +4042,9 @@
         private System.Windows.Forms.PictureBox box214;
         private System.Windows.Forms.PictureBox box215;
         private System.Windows.Forms.PictureBox box216;
+        private System.Windows.Forms.Button button_novaHra;
+        private System.Windows.Forms.Button button_menu;
+        private System.Windows.Forms.Button button_konec;
     }
 }
 

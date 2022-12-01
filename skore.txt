@@ -1,13 +1,3 @@
-Guest;1100;115;False;Neomezený;Lehká#
-Guest;0;10;False;Neomezený;Lehká
-Guest;0;6;False;Neomezený;Lehká
-Vojta;1900;252;False;Neomezený;Těžká
-Vojta;0;8;False;Neomezený;Těžká
-Vojta;0;8;False;Neomezený;Těžká
-a;0;8;False;Neomezený;Lehká
-a;0;8;False;Neomezený;Lehká
-a;100;48;False;Neomezený;Lehká
-a;100;48;False;Neomezený;Lehká
-Guest;6900;627;False;Neomezený;Těžká
-Vojta;2300;307;False;Neomezený;Lehká
-Guest;0;78;False;Neomezený;Těžká
+Ignác;0;7;Časově omezený mód;Neomezený;Lehká;
+Ignác;0;6;Časově omezený mód;Neomezený;Lehká;
+Ignác;0;18;Časově omezený mód;Neomezený;Lehká;

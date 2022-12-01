@@ -537,20 +537,22 @@ namespace Tetris
             label_skore.Text = "Skóre: " + skore;
         }
 
-        //Uloží Nick, skore, čas hry a režim hry(pokud hra na čas tak jak dlouho mohl hrát) a obtižnost
+        //Uloží Nick, skore, čas hry a režim hry(pokud hra na čas tak jak dlouho mohl hrát) a obtižnost //předělat aby rovnou ukládalo do skore.txt //!!!!!!!!!!!!!!Už funguje ale je potřeba otestovat
         private void SaveScore()
         {
-            FileStream fs = new FileStream(@"../../skoreHry.txt", FileMode.Create, FileAccess.Write);
+            FileStream fs = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine(jmeno+";");
-            sw.WriteLine(skore+";");
-            sw.WriteLine(ubehlyCas+";");
-            sw.WriteLine(herniMod+";");
-            if (herniMod) sw.WriteLine(delkaHry + ";");
-            else sw.WriteLine("Neomezený"+ ";");
-            if (obtiznost) sw.WriteLine("Těžká" + ";");
-            else sw.WriteLine("Lehká" + ";");
-            sw.WriteLine("#");
+            string delkaHryString = delkaHry.ToString();
+            string obtiznostString = "Lehká;";
+            string herniModString = "Nekonečný mód";
+            if (!herniMod)
+            {
+                delkaHryString = "Neomezený;";
+                herniModString = "Časově omezený mód;";
+            }
+            if (obtiznost) obtiznostString = "Těžká;";
+            sw.BaseStream.Seek(0, SeekOrigin.End);
+            sw.WriteLine(jmeno+";"+ skore + ";"+ubehlyCas + ";"+herniModString + delkaHryString + obtiznostString);
             sw.Close();
             fs.Close();
         }
@@ -564,6 +566,9 @@ namespace Tetris
                 {
                     pbx.BackColor = Color.Gray;
                 }
+                button_novaHra.Enabled = true;
+                button_menu.Enabled = true;
+                button_konec.Enabled = true;
             }
             foreach(PictureBox pbx in tableLayoutPanel1.Controls)
             {
@@ -1098,6 +1103,28 @@ namespace Tetris
                     }
                 }*/
             }
+        }
+
+        //Tlacitko pro menu
+        private void button_menu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu menu = new Menu();
+            menu.ShowDialog();
+            this.Dispose();
+        }
+        //ukonci app
+        private void button_konec_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+        //zacne novou hru
+        private void button_novaHra_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TetrisMain main = new TetrisMain();
+            main.ShowDialog();
+            this.Dispose();
         }
     }
 }
