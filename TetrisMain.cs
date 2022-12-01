@@ -33,6 +33,8 @@ namespace Tetris
         bool herniMod = false;
         bool obtiznost = false;
 
+        bool jedinecnyPruchod = false;
+
         readonly Color[] seznamBarev =
         {
             Color.Cyan,     // I 
@@ -488,23 +490,21 @@ namespace Tetris
         {
             Control[] topRow = { box1, box2, box3, box4, box5, box6, box7, box8, box9, box10 };
 
-            foreach (Control box in topRow)
-            {
-                if ((box.BackColor != Color.White & box.BackColor != Color.LightGray) & !aktivniPolozka.Contains(box))
+                foreach (Control box in topRow)
                 {
-                    
-                    konecHry = true;
+                    if ((box.BackColor != Color.White & box.BackColor != Color.LightGray) & !aktivniPolozka.Contains(box))
+                    {
+                        konecHry = true;
+                    }
                 }
-            }
 
-            if(herniMod)
-            {
-                if(ubehlyCas==delkaHry)
+                if (herniMod)
                 {
-                    konecHry = true;
+                    if (ubehlyCas == delkaHry)
+                    {
+                        konecHry = true;
+                    }
                 }
-            }
-
             //pořád se opakuje dokola, kvůli tomu se skore uloží 3x // vyřešení pomocí bool
             if (konecHry == true)
             {
@@ -543,26 +543,30 @@ namespace Tetris
         //Uloží Nick, skore, čas hry a režim hry(pokud hra na čas tak jak dlouho mohl hrát) a obtižnost //předělat aby rovnou ukládalo do skore.txt //!!!!!!!!!!!!!!Už funguje ale je potřeba otestovat
         private void SaveScore()
         {
-            FileStream fs = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Write);
-            StreamWriter sw = new StreamWriter(fs);
-            string delkaHryString = delkaHry.ToString();
-            string obtiznostString = "Lehká;";
-            string herniModString = "Časově omezený;";
-            if (!herniMod)
+            if (!jedinecnyPruchod) //Pomocná podmínka, aby funkce neproběhla 3x // nevim proč sa opakuje
             {
-                herniModString = "Nekonečný mód;";
-                delkaHryString = "Nekonečná;";
+                FileStream fs = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs);
+                string delkaHryString = delkaHry.ToString();
+                string obtiznostString = "Lehká;";
+                string herniModString = "Časově omezený;";
+                if (!herniMod)
+                {
+                    herniModString = "Nekonečný mód;";
+                    delkaHryString = "Nekonečná;";
 
+                }
+                else
+                {
+                    // delkaHryString = "Neomezená;";
+                }
+                if (obtiznost) obtiznostString = "Těžká;";
+                sw.BaseStream.Seek(0, SeekOrigin.End);
+                sw.WriteLine(jmeno + ";" + skore + ";" + ubehlyCas + ";" + herniModString + delkaHryString + ";" + obtiznostString);
+                sw.Close();
+                fs.Close();
+                jedinecnyPruchod = true;
             }
-            else 
-            {
-               // delkaHryString = "Neomezená;";
-            }
-            if (obtiznost) obtiznostString = "Těžká;";
-            sw.BaseStream.Seek(0, SeekOrigin.End);
-            sw.WriteLine(jmeno+";"+ skore + ";"+ubehlyCas + ";"+herniModString + delkaHryString+";" + obtiznostString);
-            sw.Close();
-            fs.Close();
         }
 
 

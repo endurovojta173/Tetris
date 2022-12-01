@@ -3494,9 +3494,9 @@
             // button_novaHra
             // 
             this.button_novaHra.Enabled = false;
-            this.button_novaHra.Location = new System.Drawing.Point(374, 575);
+            this.button_novaHra.Location = new System.Drawing.Point(364, 397);
             this.button_novaHra.Name = "button_novaHra";
-            this.button_novaHra.Size = new System.Drawing.Size(75, 23);
+            this.button_novaHra.Size = new System.Drawing.Size(133, 29);
             this.button_novaHra.TabIndex = 14;
             this.button_novaHra.Text = "Začít znovu";
             this.button_novaHra.UseVisualStyleBackColor = true;
@@ -3505,9 +3505,9 @@
             // button_menu
             // 
             this.button_menu.Enabled = false;
-            this.button_menu.Location = new System.Drawing.Point(374, 606);
+            this.button_menu.Location = new System.Drawing.Point(364, 432);
             this.button_menu.Name = "button_menu";
-            this.button_menu.Size = new System.Drawing.Size(75, 23);
+            this.button_menu.Size = new System.Drawing.Size(133, 29);
             this.button_menu.TabIndex = 15;
             this.button_menu.Text = "Menu";
             this.button_menu.UseVisualStyleBackColor = true;
@@ -3516,9 +3516,9 @@
             // button_konec
             // 
             this.button_konec.Enabled = false;
-            this.button_konec.Location = new System.Drawing.Point(374, 637);
+            this.button_konec.Location = new System.Drawing.Point(364, 467);
             this.button_konec.Name = "button_konec";
-            this.button_konec.Size = new System.Drawing.Size(75, 23);
+            this.button_konec.Size = new System.Drawing.Size(133, 29);
             this.button_konec.TabIndex = 16;
             this.button_konec.Text = "Konec";
             this.button_konec.UseVisualStyleBackColor = true;
