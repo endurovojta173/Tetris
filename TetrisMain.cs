@@ -565,6 +565,8 @@ namespace Tetris
             fs.Close();
         }
 
+
+        //Cool feature -- Změní položené bloky na černé 
         private void DisableIfEnd()
         {
             foreach(PictureBox pbx in tabulka.Controls)
@@ -573,6 +575,10 @@ namespace Tetris
                 if(pbx.BackColor==Color.White)
                 {
                     pbx.BackColor = Color.Gray;
+                }
+                else //Cool feature
+                {
+                    pbx.BackColor = Color.Black;
                 }
                 button_novaHra.Enabled = true;
                 button_menu.Enabled = true;
@@ -584,6 +590,10 @@ namespace Tetris
                 if (pbx.BackColor == Color.White)
                 {
                     pbx.BackColor = Color.Gray;
+                }
+                else //Cool feature
+                {
+                    pbx.BackColor = Color.Black;
                 }
             }
         }

@@ -14,3 +14,5 @@ Ignác;0;15;Časově omezený mód;15;Lehká;
 Pepek;0;4;Časově omezený;4;Lehká;
 Pepek;0;4;Časově omezený;4;Lehká;
 Pepek;0;4;Časově omezený;4;Lehká;
+Pepek;0;4;Časově omezený;4;Lehká;
+Pepek;100;25;Nekonečný mód;Nekonečná;;Lehká;
