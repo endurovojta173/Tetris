@@ -24,7 +24,7 @@ namespace Tetris
             StreamWriter sw = new StreamWriter(fs);
             sw.WriteLine(textBox1.Text);
             sw.WriteLine(textBox2.Text);
-            if(radioButton1.Checked)
+            if(radioButton_nekonecnyMod.Checked)
             {
                 sw.WriteLine("false");
             }
@@ -32,7 +32,7 @@ namespace Tetris
             {
                 sw.WriteLine("true");
             }
-            if(radioButton3.Checked)
+            if(radioButton_lehka.Checked)
             {
                 sw.WriteLine("false");
             }
@@ -61,29 +61,31 @@ namespace Tetris
 
             label_aktualniJmeno.Text = "Jméno: " + jmeno;
             textBox1.Text = jmeno;
-            label_delka.Text = "Délka módu s omezeným časem:  " + delka +" s";
             textBox2.Text = delka;
-
 
             if (obtiznost)
             {
                 label_obtiznost.Text = "Obtížnost: Těžká";
-                radioButton4.Checked = true;
+                radioButton_tezka.Checked = true;
             }
             else
             {
                 label_obtiznost.Text = "Obtížnost: Lehká";
-                radioButton3.Checked = true;
+                radioButton_lehka.Checked = true;
             }
             if(mod)
             {
-                label_herniMod.Text = "Herní mód: Nekonečný mód";
-                label_delkaModuSOmezenymCasem.Visible = false;
-                textBox2.Visible = false;
+                label_herniMod.Text = "Herní mód: Časový mód";
+                label_delka.Text = "Délka hry: " + delka + " s";
+                radioButton_casoveOmezenyMod.Checked = true;
+                textBox2.Enabled = true;
             }
             else
             {
-
+                label_herniMod.Text = "Herní mód: Nekonečný mód";
+                label_delka.Text = "Délka hry: Neomezená";
+                radioButton_nekonecnyMod.Checked = true;
+                textBox2.Enabled = false;
             }
             fs.Close();
         }
@@ -96,28 +98,14 @@ namespace Tetris
             this.Dispose();
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void radioButton_casoveOmezenyMod_Click(object sender, EventArgs e)
         {
-            label_herniMod.Text = "Herní mód: Nekonečný mód";
-            label_delkaModuSOmezenymCasem.Visible = false;
-            textBox2.Visible = false;
+            textBox2.Enabled = true;
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void radioButton_nekonecnyMod_Click(object sender, EventArgs e)
         {
-            label_herniMod.Text = "Herní mód: Časový mód";
-            label_delkaModuSOmezenymCasem.Visible = true;
-            textBox2.Visible = true;
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            label_obtiznost.Text = "Obtížnost: Těžká";
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            label_obtiznost.Text = "Obtížnost: Lehká";
+            textBox2.Enabled = false;
         }
     }
 }

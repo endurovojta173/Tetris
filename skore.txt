@@ -1,1 +1,10 @@
-Filip;500;137;Časově omezený mód;Neomezený;Těžká;
+Filip;200;30;Nekonečný mód;40;Těžká;
+Filip;0;7;Nekonečný mód;Neomezený;;Těžká;
+Filip;0;10;Nekonečný mód;Neomezená;;Těžká;
+Filip;0;40;Nekonečný mód;Neomezená;;Těžká;
+Filip;0;24;Nekonečný mód;Neomezená;;Těžká;
+Filip;0;12;Nekonečný mód;40;Těžká;
+Filip;0;12;Nekonečný mód;40;Těžká;
+Igor;200;40;Nekonečný mód;40;Lehká;
+Igor;200;40;Nekonečný mód;40;Lehká;
+Igor;200;40;Nekonečný mód;40;Lehká;

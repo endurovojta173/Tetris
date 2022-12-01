@@ -36,16 +36,16 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label_delkaModuSOmezenymCasem = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton_nekonecnyMod = new System.Windows.Forms.RadioButton();
+            this.radioButton_casoveOmezenyMod = new System.Windows.Forms.RadioButton();
             this.label_aktualniJmeno = new System.Windows.Forms.Label();
             this.label_delka = new System.Windows.Forms.Label();
             this.label_herniMod = new System.Windows.Forms.Label();
             this.label_obtiznost = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton_lehka = new System.Windows.Forms.RadioButton();
+            this.radioButton_tezka = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,12 +90,12 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(304, 249);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(171, 20);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "200";
-            this.textBox2.Visible = false;
             // 
             // label_delkaModuSOmezenymCasem
             // 
@@ -105,7 +105,6 @@
             this.label_delkaModuSOmezenymCasem.Size = new System.Drawing.Size(224, 13);
             this.label_delkaModuSOmezenymCasem.TabIndex = 5;
             this.label_delkaModuSOmezenymCasem.Text = "Délka módu s omezeným časem v sekundách";
-            this.label_delkaModuSOmezenymCasem.Visible = false;
             // 
             // label3
             // 
@@ -116,29 +115,29 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Herní mód";
             // 
-            // radioButton1
+            // radioButton_nekonecnyMod
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(103, 17);
-            this.radioButton1.TabIndex = 7;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nekonečný mód";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton_nekonecnyMod.AutoSize = true;
+            this.radioButton_nekonecnyMod.Checked = true;
+            this.radioButton_nekonecnyMod.Location = new System.Drawing.Point(3, 3);
+            this.radioButton_nekonecnyMod.Name = "radioButton_nekonecnyMod";
+            this.radioButton_nekonecnyMod.Size = new System.Drawing.Size(103, 17);
+            this.radioButton_nekonecnyMod.TabIndex = 7;
+            this.radioButton_nekonecnyMod.TabStop = true;
+            this.radioButton_nekonecnyMod.Text = "Nekonečný mód";
+            this.radioButton_nekonecnyMod.UseVisualStyleBackColor = true;
+            this.radioButton_nekonecnyMod.Click += new System.EventHandler(this.radioButton_nekonecnyMod_Click);
             // 
-            // radioButton2
+            // radioButton_casoveOmezenyMod
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(112, 3);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(129, 17);
-            this.radioButton2.TabIndex = 8;
-            this.radioButton2.Text = "Časově omezený mód";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButton_casoveOmezenyMod.AutoSize = true;
+            this.radioButton_casoveOmezenyMod.Location = new System.Drawing.Point(112, 3);
+            this.radioButton_casoveOmezenyMod.Name = "radioButton_casoveOmezenyMod";
+            this.radioButton_casoveOmezenyMod.Size = new System.Drawing.Size(129, 17);
+            this.radioButton_casoveOmezenyMod.TabIndex = 8;
+            this.radioButton_casoveOmezenyMod.Text = "Časově omezený mód";
+            this.radioButton_casoveOmezenyMod.UseVisualStyleBackColor = true;
+            this.radioButton_casoveOmezenyMod.Click += new System.EventHandler(this.radioButton_casoveOmezenyMod_Click);
             // 
             // label_aktualniJmeno
             // 
@@ -154,9 +153,9 @@
             this.label_delka.AutoSize = true;
             this.label_delka.Location = new System.Drawing.Point(74, 364);
             this.label_delka.Name = "label_delka";
-            this.label_delka.Size = new System.Drawing.Size(162, 13);
+            this.label_delka.Size = new System.Drawing.Size(55, 13);
             this.label_delka.TabIndex = 10;
-            this.label_delka.Text = "Délka módu s omezeným časem:";
+            this.label_delka.Text = "Délka hry:";
             // 
             // label_herniMod
             // 
@@ -178,8 +177,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton_nekonecnyMod);
+            this.panel1.Controls.Add(this.radioButton_casoveOmezenyMod);
             this.panel1.Location = new System.Drawing.Point(304, 218);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(257, 25);
@@ -187,36 +186,34 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.radioButton3);
-            this.panel2.Controls.Add(this.radioButton4);
+            this.panel2.Controls.Add(this.radioButton_lehka);
+            this.panel2.Controls.Add(this.radioButton_tezka);
             this.panel2.Location = new System.Drawing.Point(304, 187);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(257, 25);
             this.panel2.TabIndex = 14;
             // 
-            // radioButton3
+            // radioButton_lehka
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(3, 3);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(55, 17);
-            this.radioButton3.TabIndex = 7;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Lehká";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.radioButton_lehka.AutoSize = true;
+            this.radioButton_lehka.Checked = true;
+            this.radioButton_lehka.Location = new System.Drawing.Point(3, 3);
+            this.radioButton_lehka.Name = "radioButton_lehka";
+            this.radioButton_lehka.Size = new System.Drawing.Size(55, 17);
+            this.radioButton_lehka.TabIndex = 7;
+            this.radioButton_lehka.TabStop = true;
+            this.radioButton_lehka.Text = "Lehká";
+            this.radioButton_lehka.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // radioButton_tezka
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(112, 3);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(55, 17);
-            this.radioButton4.TabIndex = 8;
-            this.radioButton4.Text = "Těžká";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.radioButton_tezka.AutoSize = true;
+            this.radioButton_tezka.Location = new System.Drawing.Point(112, 3);
+            this.radioButton_tezka.Name = "radioButton_tezka";
+            this.radioButton_tezka.Size = new System.Drawing.Size(55, 17);
+            this.radioButton_tezka.TabIndex = 8;
+            this.radioButton_tezka.Text = "Těžká";
+            this.radioButton_tezka.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -247,6 +244,10 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(673, 789);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(673, 789);
             this.Name = "Nastaveni";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";
@@ -268,16 +269,16 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label_delkaModuSOmezenymCasem;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton_nekonecnyMod;
+        private System.Windows.Forms.RadioButton radioButton_casoveOmezenyMod;
         private System.Windows.Forms.Label label_aktualniJmeno;
         private System.Windows.Forms.Label label_delka;
         private System.Windows.Forms.Label label_herniMod;
         private System.Windows.Forms.Label label_obtiznost;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton_lehka;
+        private System.Windows.Forms.RadioButton radioButton_tezka;
         private System.Windows.Forms.Label label4;
     }
 }

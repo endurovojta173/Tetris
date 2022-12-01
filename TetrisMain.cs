@@ -543,15 +543,20 @@ namespace Tetris
             StreamWriter sw = new StreamWriter(fs);
             string delkaHryString = delkaHry.ToString();
             string obtiznostString = "Lehká;";
-            string herniModString = "Nekonečný mód";
+            string herniModString = "Nekonečný mód;";
             if (!herniMod)
             {
-                delkaHryString = "Neomezený;";
                 herniModString = "Časově omezený mód;";
+                delkaHryString = "Neomezená;";
+
+            }
+            else 
+            {
+               // delkaHryString = "Neomezená;";
             }
             if (obtiznost) obtiznostString = "Těžká;";
             sw.BaseStream.Seek(0, SeekOrigin.End);
-            sw.WriteLine(jmeno+";"+ skore + ";"+ubehlyCas + ";"+herniModString + delkaHryString + obtiznostString);
+            sw.WriteLine(jmeno+";"+ skore + ";"+ubehlyCas + ";"+herniModString + delkaHryString+";" + obtiznostString);
             sw.Close();
             fs.Close();
         }

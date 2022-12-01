@@ -1,7 +1,8 @@
-Filip
-20
-false
+Igor
+40
 true
+false
+
 
 
 
