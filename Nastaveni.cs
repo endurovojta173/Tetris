@@ -54,14 +54,37 @@ namespace Tetris
 
             FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.OpenOrCreate, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
-            label_aktualniJmeno.Text = "Jméno: " + sr.ReadLine();
-            label_delka.Text = "Délka módu s omezeným časem:  " + sr.ReadLine()+" s";
+            string jmeno = sr.ReadLine();
+            string delka = sr.ReadLine();
             bool mod = bool.Parse(sr.ReadLine());
             bool obtiznost = bool.Parse(sr.ReadLine());
-            if (mod) label_herniMod.Text = "Herní mód: Časový mód";
-            else label_herniMod.Text = "Herní mód: Nekonečný mód";
-            if (obtiznost) label_obtiznost.Text = "Obtížnost: Těžká";
-            else label_obtiznost.Text = "Obtížnost: Lehká";
+
+            label_aktualniJmeno.Text = "Jméno: " + jmeno;
+            textBox1.Text = jmeno;
+            label_delka.Text = "Délka módu s omezeným časem:  " + delka +" s";
+            textBox2.Text = delka;
+
+
+            if (obtiznost)
+            {
+                label_obtiznost.Text = "Obtížnost: Těžká";
+                radioButton4.Checked = true;
+            }
+            else
+            {
+                label_obtiznost.Text = "Obtížnost: Lehká";
+                radioButton3.Checked = true;
+            }
+            if(mod)
+            {
+                label_herniMod.Text = "Herní mód: Nekonečný mód";
+                label_delkaModuSOmezenymCasem.Visible = false;
+                textBox2.Visible = false;
+            }
+            else
+            {
+
+            }
             fs.Close();
         }
 
@@ -71,6 +94,30 @@ namespace Tetris
             Menu menu = new Menu();
             menu.ShowDialog();
             this.Dispose();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            label_herniMod.Text = "Herní mód: Nekonečný mód";
+            label_delkaModuSOmezenymCasem.Visible = false;
+            textBox2.Visible = false;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            label_herniMod.Text = "Herní mód: Časový mód";
+            label_delkaModuSOmezenymCasem.Visible = true;
+            textBox2.Visible = true;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            label_obtiznost.Text = "Obtížnost: Těžká";
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            label_obtiznost.Text = "Obtížnost: Lehká";
         }
     }
 }
