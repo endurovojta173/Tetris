@@ -36,11 +36,17 @@ namespace Tetris
             this.Dispose();
         }
 
+
+        //Vymaže obsah tabulky a refreshne formulář
         private void button2_Click(object sender, EventArgs e)
         {
             FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create, FileAccess.Write);
             fs.Close();
             LoadData();
+            this.Hide();
+            Skore skore = new Skore();
+            skore.ShowDialog();
+            this.Dispose();
         }
 
         private void LoadData()

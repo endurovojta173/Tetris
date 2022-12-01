@@ -210,7 +210,7 @@ namespace Tetris
 
 
             //Zkontroluje jestli není konec hry //1
-            /*foreach (Control box in aktivniPolozka)
+            foreach (Control box in aktivniPolozka)
             {
                 if (box.BackColor != Color.White & box.BackColor != Color.LightGray)
                 {
@@ -223,7 +223,7 @@ namespace Tetris
                     MessageBox.Show("Game over!");
                     return;
                 }
-            }*/
+            }
 
             // Populate falling piece squares with correct color //1
             foreach (Control square in aktivniPolozka)
@@ -389,9 +389,8 @@ namespace Tetris
             {
                 rychlostHryTimer.Stop();
                 casHryTimer.Stop();
-                MessageBox.Show("Game over!");
+                MessageBox.Show("Game over!X");
             }
-
             else
             {
                 //Posune dál nebo vytvoří nový, když se nemůže hýbat
@@ -415,6 +414,7 @@ namespace Tetris
                 }
             }
         }
+
 
         //Vyčistí nejnižší plný řádek
         private void ClearFullRow()
@@ -493,7 +493,7 @@ namespace Tetris
                 if ((box.BackColor != Color.White & box.BackColor != Color.LightGray) & !aktivniPolozka.Contains(box))
                 {
                     
-                    konecHry= true;
+                    konecHry = true;
                 }
             }
 
@@ -505,17 +505,20 @@ namespace Tetris
                 }
             }
 
+            //pořád se opakuje dokola, kvůli tomu se skore uloží 3x // vyřešení pomocí bool
             if (konecHry == true)
             {
                 //uloží skóre
+
                 SaveScore();
                 DisableIfEnd();
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Ukončí hru
                 return true;
             }
-
-            return false;
+            else return false;
         }
+
+
         //Updatuje čas hry
         private void CasHryTimer_Tick(object sender, EventArgs e)
         {
@@ -529,6 +532,7 @@ namespace Tetris
                 label_cas.Text = "Čas: " + ubehlyCas+" s";
             }
         }
+
         //Updatuje skóre
         private void UpdateScore()
         {
@@ -543,11 +547,11 @@ namespace Tetris
             StreamWriter sw = new StreamWriter(fs);
             string delkaHryString = delkaHry.ToString();
             string obtiznostString = "Lehká;";
-            string herniModString = "Nekonečný mód;";
+            string herniModString = "Časově omezený;";
             if (!herniMod)
             {
-                herniModString = "Časově omezený mód;";
-                delkaHryString = "Neomezená;";
+                herniModString = "Nekonečný mód;";
+                delkaHryString = "Nekonečná;";
 
             }
             else 
