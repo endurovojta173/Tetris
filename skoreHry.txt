@@ -1,6 +1,6 @@
-a;
-0;
-69;
+Vojta;
+2300;
+307;
 False;
 Neomezený;
 Lehká;
