@@ -210,7 +210,7 @@ namespace Tetris
 
 
             //Zkontroluje jestli není konec hry //1
-            foreach (Control box in aktivniPolozka)
+            /*foreach (Control box in aktivniPolozka)
             {
                 if (box.BackColor != Color.White & box.BackColor != Color.LightGray)
                 {
@@ -223,7 +223,7 @@ namespace Tetris
                     MessageBox.Show("Game over!");
                     return;
                 }
-            }
+            }*/
 
             // Populate falling piece squares with correct color //1
             foreach (Control square in aktivniPolozka)

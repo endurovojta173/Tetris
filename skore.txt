@@ -5,3 +5,6 @@ Tester;0;8;Nekonečný mód;40;Lehká;
 Tester;0;5;Nekonečný mód;5;Lehká;
 Tester;0;5;Nekonečný mód;5;Lehká;
 Tester;0;5;Nekonečný mód;5;Lehká;
+Tester;0;5;Nekonečný mód;5;Lehká;
+Tester;0;5;Nekonečný mód;5;Lehká;
+Tester;0;5;Nekonečný mód;5;Lehká;
