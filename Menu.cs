@@ -49,6 +49,41 @@ namespace Tetris
             this.Dispose();
         }
 
-        
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            //Ošetření souboru nastaveni.txt
+            if(!File.Exists(@"../../nastaveni.txt"))
+            {
+                FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.Create, FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs);
+                sw.WriteLine("Guest");
+                sw.WriteLine("100");
+                sw.WriteLine("false");
+                sw.WriteLine("false");
+                sw.Close();
+                fs.Close();
+            }
+            FileStream fs1 = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Read);
+            if(fs1.Length<1)
+            {
+                fs1.Close();
+                FileStream fs2 = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs2);
+                sw.WriteLine("Guest");
+                sw.WriteLine("100");
+                sw.WriteLine("false");
+                sw.WriteLine("false");
+                sw.Close();
+                fs2.Close();
+            }
+            fs1.Close();
+
+            //Ošetření souboru skore.txt
+            if(!File.Exists(@"../../skore.txt"))
+            {
+                FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create);
+                fs.Close();
+            }
+        }
     }
 }

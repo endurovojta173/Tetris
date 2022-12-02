@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            this.button1_nekonecnyMod = new System.Windows.Forms.Button();
+            this.button1_novaHra = new System.Windows.Forms.Button();
             this.button3_nastaveni = new System.Windows.Forms.Button();
             this.button4_skore = new System.Windows.Forms.Button();
             this.button5_konec = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1_nekonecnyMod
+            // button1_novaHra
             // 
-            this.button1_nekonecnyMod.Location = new System.Drawing.Point(238, 264);
-            this.button1_nekonecnyMod.Name = "button1_nekonecnyMod";
-            this.button1_nekonecnyMod.Size = new System.Drawing.Size(152, 57);
-            this.button1_nekonecnyMod.TabIndex = 0;
-            this.button1_nekonecnyMod.Text = "Nová hra";
-            this.button1_nekonecnyMod.UseVisualStyleBackColor = true;
-            this.button1_nekonecnyMod.Click += new System.EventHandler(this.button1_Click);
+            this.button1_novaHra.Location = new System.Drawing.Point(238, 264);
+            this.button1_novaHra.Name = "button1_novaHra";
+            this.button1_novaHra.Size = new System.Drawing.Size(152, 57);
+            this.button1_novaHra.TabIndex = 0;
+            this.button1_novaHra.Text = "Nová hra";
+            this.button1_novaHra.UseVisualStyleBackColor = true;
+            this.button1_novaHra.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3_nastaveni
             // 
@@ -85,7 +85,7 @@
             this.Controls.Add(this.button5_konec);
             this.Controls.Add(this.button4_skore);
             this.Controls.Add(this.button3_nastaveni);
-            this.Controls.Add(this.button1_nekonecnyMod);
+            this.Controls.Add(this.button1_novaHra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(673, 789);
@@ -94,13 +94,14 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1_nekonecnyMod;
+        private System.Windows.Forms.Button button1_novaHra;
         private System.Windows.Forms.Button button3_nastaveni;
         private System.Windows.Forms.Button button4_skore;
         private System.Windows.Forms.Button button5_konec;

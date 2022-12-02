@@ -55,7 +55,7 @@ namespace Tetris
         public TetrisMain()
         {
             InitializeComponent();
-            soundtrack.SoundLocation=@"../../zvuky/soundtrack.wav";//Lokace soundtracku
+            soundtrack.SoundLocation=@"../../soundtrack.wav";//Lokace soundtracku
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
 
             //Načte nastavení 
