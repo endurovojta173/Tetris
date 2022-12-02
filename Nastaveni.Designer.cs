@@ -47,8 +47,19 @@
             this.radioButton_lehka = new System.Windows.Forms.RadioButton();
             this.radioButton_tezka = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox_ovladaniDoleva = new System.Windows.Forms.TextBox();
+            this.textBox_ovladaniDoprava = new System.Windows.Forms.TextBox();
+            this.textBox_ovladaniOtaceni = new System.Windows.Forms.TextBox();
+            this.textBox_ovladaniDolu = new System.Windows.Forms.TextBox();
+            this.label_nadpisOvladani = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radioButton_ovladaniDoporucene = new System.Windows.Forms.RadioButton();
+            this.radioButton_ovladaniVlastni = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label_typOvladani = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -224,11 +235,111 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Obtížnost";
             // 
+            // textBox_ovladaniDoleva
+            // 
+            this.textBox_ovladaniDoleva.Location = new System.Drawing.Point(364, 348);
+            this.textBox_ovladaniDoleva.MaxLength = 1;
+            this.textBox_ovladaniDoleva.Name = "textBox_ovladaniDoleva";
+            this.textBox_ovladaniDoleva.Size = new System.Drawing.Size(20, 20);
+            this.textBox_ovladaniDoleva.TabIndex = 16;
+            // 
+            // textBox_ovladaniDoprava
+            // 
+            this.textBox_ovladaniDoprava.Location = new System.Drawing.Point(416, 348);
+            this.textBox_ovladaniDoprava.MaxLength = 1;
+            this.textBox_ovladaniDoprava.Name = "textBox_ovladaniDoprava";
+            this.textBox_ovladaniDoprava.Size = new System.Drawing.Size(20, 20);
+            this.textBox_ovladaniDoprava.TabIndex = 17;
+            // 
+            // textBox_ovladaniOtaceni
+            // 
+            this.textBox_ovladaniOtaceni.Location = new System.Drawing.Point(390, 322);
+            this.textBox_ovladaniOtaceni.MaxLength = 1;
+            this.textBox_ovladaniOtaceni.Name = "textBox_ovladaniOtaceni";
+            this.textBox_ovladaniOtaceni.Size = new System.Drawing.Size(20, 20);
+            this.textBox_ovladaniOtaceni.TabIndex = 18;
+            // 
+            // textBox_ovladaniDolu
+            // 
+            this.textBox_ovladaniDolu.Location = new System.Drawing.Point(390, 348);
+            this.textBox_ovladaniDolu.MaxLength = 1;
+            this.textBox_ovladaniDolu.Name = "textBox_ovladaniDolu";
+            this.textBox_ovladaniDolu.Size = new System.Drawing.Size(20, 20);
+            this.textBox_ovladaniDolu.TabIndex = 19;
+            // 
+            // label_nadpisOvladani
+            // 
+            this.label_nadpisOvladani.AutoSize = true;
+            this.label_nadpisOvladani.Location = new System.Drawing.Point(375, 303);
+            this.label_nadpisOvladani.Name = "label_nadpisOvladani";
+            this.label_nadpisOvladani.Size = new System.Drawing.Size(51, 13);
+            this.label_nadpisOvladani.TabIndex = 20;
+            this.label_nadpisOvladani.Text = "Ovládání";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radioButton_ovladaniDoporucene);
+            this.panel3.Controls.Add(this.radioButton_ovladaniVlastni);
+            this.panel3.Location = new System.Drawing.Point(304, 275);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(257, 25);
+            this.panel3.TabIndex = 15;
+            // 
+            // radioButton_ovladaniDoporucene
+            // 
+            this.radioButton_ovladaniDoporucene.AutoSize = true;
+            this.radioButton_ovladaniDoporucene.Checked = true;
+            this.radioButton_ovladaniDoporucene.Location = new System.Drawing.Point(3, 3);
+            this.radioButton_ovladaniDoporucene.Name = "radioButton_ovladaniDoporucene";
+            this.radioButton_ovladaniDoporucene.Size = new System.Drawing.Size(84, 17);
+            this.radioButton_ovladaniDoporucene.TabIndex = 7;
+            this.radioButton_ovladaniDoporucene.TabStop = true;
+            this.radioButton_ovladaniDoporucene.Text = "Doporučené";
+            this.radioButton_ovladaniDoporucene.UseVisualStyleBackColor = true;
+            this.radioButton_ovladaniDoporucene.Click += new System.EventHandler(this.radioButton_ovladaniDoporucene_Click);
+            // 
+            // radioButton_ovladaniVlastni
+            // 
+            this.radioButton_ovladaniVlastni.AutoSize = true;
+            this.radioButton_ovladaniVlastni.Location = new System.Drawing.Point(112, 3);
+            this.radioButton_ovladaniVlastni.Name = "radioButton_ovladaniVlastni";
+            this.radioButton_ovladaniVlastni.Size = new System.Drawing.Size(58, 17);
+            this.radioButton_ovladaniVlastni.TabIndex = 8;
+            this.radioButton_ovladaniVlastni.Text = "Vlastní";
+            this.radioButton_ovladaniVlastni.UseVisualStyleBackColor = true;
+            this.radioButton_ovladaniVlastni.Click += new System.EventHandler(this.radioButton_ovladaniVlastni_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(74, 280);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Typ ovládání";
+            // 
+            // label_typOvladani
+            // 
+            this.label_typOvladani.AutoSize = true;
+            this.label_typOvladani.Location = new System.Drawing.Point(74, 377);
+            this.label_typOvladani.Name = "label_typOvladani";
+            this.label_typOvladani.Size = new System.Drawing.Size(73, 13);
+            this.label_typOvladani.TabIndex = 22;
+            this.label_typOvladani.Text = "Typ ovládání:";
+            // 
             // Nastaveni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.label_typOvladani);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label_nadpisOvladani);
+            this.Controls.Add(this.textBox_ovladaniDolu);
+            this.Controls.Add(this.textBox_ovladaniOtaceni);
+            this.Controls.Add(this.textBox_ovladaniDoprava);
+            this.Controls.Add(this.textBox_ovladaniDoleva);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -255,6 +366,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +393,15 @@
         private System.Windows.Forms.RadioButton radioButton_lehka;
         private System.Windows.Forms.RadioButton radioButton_tezka;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox_ovladaniDoleva;
+        private System.Windows.Forms.TextBox textBox_ovladaniDoprava;
+        private System.Windows.Forms.TextBox textBox_ovladaniOtaceni;
+        private System.Windows.Forms.TextBox textBox_ovladaniDolu;
+        private System.Windows.Forms.Label label_nadpisOvladani;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.RadioButton radioButton_ovladaniDoporucene;
+        private System.Windows.Forms.RadioButton radioButton_ovladaniVlastni;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_typOvladani;
     }
 }

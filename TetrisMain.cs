@@ -689,19 +689,19 @@ namespace Tetris
             }
             if (!pozastaveno)
             {
-                if (!CheckGameOver() & ((e.KeyCode == Keys.Left | e.KeyCode == Keys.A) & TestMove("left") == true))
+                if (!CheckGameOver() & ((e.KeyCode == Keys.Left) & TestMove("left") == true))
                 {
                     MovePiece("left");
                 }
-                else if (!CheckGameOver() & ((e.KeyCode == Keys.Right | e.KeyCode == Keys.D) & TestMove("right") == true))
+                else if (!CheckGameOver() & ((e.KeyCode == Keys.Right) & TestMove("right") == true))
                 {
                     MovePiece("right");
                 }
-                else if ((e.KeyCode == Keys.Down | e.KeyCode == Keys.S) & TestMove("down") == true)
+                else if ((e.KeyCode == Keys.Down) & TestMove("down") == true)
                 {
                     MovePiece("down");
                 }
-                else if (e.KeyCode == Keys.Up | e.KeyCode == Keys.W)
+                else if (e.KeyCode == Keys.Up)
                 {
                     //Otáčení
 
@@ -1089,7 +1089,7 @@ namespace Tetris
                         }
                     }
                     
-                    //Nastaví starou poziic na bílo
+                    //Nastaví starou pozici na bílo
                     foreach (PictureBox square in aktivniPolozka)
                     {
                         square.BackColor = Color.White;

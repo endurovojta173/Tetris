@@ -60,6 +60,7 @@ namespace Tetris
                 sw.WriteLine("100");
                 sw.WriteLine("false");
                 sw.WriteLine("false");
+                sw.WriteLine("true");
                 sw.Close();
                 fs.Close();
             }
@@ -73,6 +74,7 @@ namespace Tetris
                 sw.WriteLine("100");
                 sw.WriteLine("false");
                 sw.WriteLine("false");
+                sw.WriteLine("true");
                 sw.Close();
                 fs2.Close();
             }
