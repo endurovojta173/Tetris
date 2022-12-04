@@ -1160,5 +1160,10 @@ namespace Tetris
             skore.ShowDialog();
             this.Dispose();
         }
+
+        private void TetrisMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

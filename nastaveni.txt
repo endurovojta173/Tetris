@@ -2,5 +2,8 @@ Guest
 100
 false
 false
-true
-
+false
+a
+d
+s
+w

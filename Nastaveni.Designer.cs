@@ -57,9 +57,17 @@
             this.radioButton_ovladaniVlastni = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label_typOvladani = new System.Windows.Forms.Label();
+            this.pictureBox_nahoru = new System.Windows.Forms.PictureBox();
+            this.pictureBox_dolu = new System.Windows.Forms.PictureBox();
+            this.pictureBox_doleva = new System.Windows.Forms.PictureBox();
+            this.pictureBox_doprava = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_nahoru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_dolu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doleva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doprava)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -237,7 +245,7 @@
             // 
             // textBox_ovladaniDoleva
             // 
-            this.textBox_ovladaniDoleva.Location = new System.Drawing.Point(364, 348);
+            this.textBox_ovladaniDoleva.Location = new System.Drawing.Point(416, 351);
             this.textBox_ovladaniDoleva.MaxLength = 1;
             this.textBox_ovladaniDoleva.Name = "textBox_ovladaniDoleva";
             this.textBox_ovladaniDoleva.Size = new System.Drawing.Size(20, 20);
@@ -245,7 +253,7 @@
             // 
             // textBox_ovladaniDoprava
             // 
-            this.textBox_ovladaniDoprava.Location = new System.Drawing.Point(416, 348);
+            this.textBox_ovladaniDoprava.Location = new System.Drawing.Point(468, 351);
             this.textBox_ovladaniDoprava.MaxLength = 1;
             this.textBox_ovladaniDoprava.Name = "textBox_ovladaniDoprava";
             this.textBox_ovladaniDoprava.Size = new System.Drawing.Size(20, 20);
@@ -253,7 +261,7 @@
             // 
             // textBox_ovladaniOtaceni
             // 
-            this.textBox_ovladaniOtaceni.Location = new System.Drawing.Point(390, 322);
+            this.textBox_ovladaniOtaceni.Location = new System.Drawing.Point(442, 325);
             this.textBox_ovladaniOtaceni.MaxLength = 1;
             this.textBox_ovladaniOtaceni.Name = "textBox_ovladaniOtaceni";
             this.textBox_ovladaniOtaceni.Size = new System.Drawing.Size(20, 20);
@@ -261,7 +269,7 @@
             // 
             // textBox_ovladaniDolu
             // 
-            this.textBox_ovladaniDolu.Location = new System.Drawing.Point(390, 348);
+            this.textBox_ovladaniDolu.Location = new System.Drawing.Point(442, 351);
             this.textBox_ovladaniDolu.MaxLength = 1;
             this.textBox_ovladaniDolu.Name = "textBox_ovladaniDolu";
             this.textBox_ovladaniDolu.Size = new System.Drawing.Size(20, 20);
@@ -327,11 +335,48 @@
             this.label_typOvladani.TabIndex = 22;
             this.label_typOvladani.Text = "Typ ovládání:";
             // 
+            // pictureBox_nahoru
+            // 
+            this.pictureBox_nahoru.Location = new System.Drawing.Point(330, 325);
+            this.pictureBox_nahoru.Name = "pictureBox_nahoru";
+            this.pictureBox_nahoru.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox_nahoru.TabIndex = 23;
+            this.pictureBox_nahoru.TabStop = false;
+            // 
+            // pictureBox_dolu
+            // 
+            this.pictureBox_dolu.Location = new System.Drawing.Point(330, 351);
+            this.pictureBox_dolu.Name = "pictureBox_dolu";
+            this.pictureBox_dolu.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox_dolu.TabIndex = 24;
+            this.pictureBox_dolu.TabStop = false;
+            // 
+            // pictureBox_doleva
+            // 
+            this.pictureBox_doleva.Location = new System.Drawing.Point(304, 351);
+            this.pictureBox_doleva.Name = "pictureBox_doleva";
+            this.pictureBox_doleva.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox_doleva.TabIndex = 25;
+            this.pictureBox_doleva.TabStop = false;
+            // 
+            // pictureBox_doprava
+            // 
+            this.pictureBox_doprava.Location = new System.Drawing.Point(356, 351);
+            this.pictureBox_doprava.Name = "pictureBox_doprava";
+            this.pictureBox_doprava.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox_doprava.TabIndex = 26;
+            this.pictureBox_doprava.TabStop = false;
+            // 
             // Nastaveni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.pictureBox_doprava);
+            this.Controls.Add(this.pictureBox_doleva);
+            this.Controls.Add(this.pictureBox_dolu);
+            this.Controls.Add(this.pictureBox_nahoru);
             this.Controls.Add(this.label_typOvladani);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel3);
@@ -368,6 +413,10 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_nahoru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_dolu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doleva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doprava)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,5 +452,9 @@
         private System.Windows.Forms.RadioButton radioButton_ovladaniVlastni;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_typOvladani;
+        private System.Windows.Forms.PictureBox pictureBox_nahoru;
+        private System.Windows.Forms.PictureBox pictureBox_dolu;
+        private System.Windows.Forms.PictureBox pictureBox_doleva;
+        private System.Windows.Forms.PictureBox pictureBox_doprava;
     }
 }

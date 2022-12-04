@@ -3565,6 +3565,7 @@
             this.Name = "TetrisMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";
+            this.Load += new System.EventHandler(this.TetrisMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainWindow_KeyDown);
             this.tabulka.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.box100)).EndInit();

@@ -49,26 +49,38 @@ namespace Tetris
             }
             else //Ověřuje rovnou vstupy 
             {
-                sw.WriteLine("false");
+                //sw.WriteLine("false");
                 string doleva=textBox_ovladaniDoleva.Text;
                 string doprava=textBox_ovladaniDoprava.Text;
                 string dolu=textBox_ovladaniDolu.Text;
                 string otaceni=textBox_ovladaniOtaceni.Text;
                 if(doleva.Length<1)
                 {
-                    textBox_ovladaniDoleva.Focus();
+                    MessageBox.Show("Chybně zadané ovládání doleva, bylo nastaveno Doporučené nastavení");
+                    sw.WriteLine("true");
                 }
-                if(doprava.Length<1)
+                else if(doprava.Length<1)
                 {
-                    textBox_ovladaniDoprava.Focus();
+                    MessageBox.Show("Chybně zadané ovládání doprava, bylo nastaveno Doporučené nastavení");
+                    sw.WriteLine("true");
                 }
-                if(dolu.Length<1)
+                else if(dolu.Length<1)
                 {
-                    textBox_ovladaniDolu.Focus();
+                    MessageBox.Show("Chybně zadané ovládání dolů, bylo nastaveno Doporučené nastavení");
+                    sw.WriteLine("true");
                 }
-                if(otaceni.Length<1)
+                else if(otaceni.Length<1)
                 {
-                    textBox_ovladaniOtaceni.Focus();
+                    MessageBox.Show("Chybně zadané ovládání otáčení, bylo nastaveno Doporučené nastavení");
+                    sw.WriteLine("true");
+                }
+                else
+                {
+                    sw.WriteLine("false");
+                    sw.WriteLine(doleva);
+                    sw.WriteLine(doprava);
+                    sw.WriteLine(dolu);
+                    sw.WriteLine(otaceni);
                 }
             }
             sw.Close();
@@ -93,6 +105,13 @@ namespace Tetris
             label_aktualniJmeno.Text = "Jméno: " + jmeno;
             textBox1.Text = jmeno;
             textBox2.Text = delka;
+
+            //nacteni sipek
+            pictureBox_nahoru.ImageLocation = @"../../sipkaNahoru.png";
+            pictureBox_dolu.ImageLocation = @"../../sipkaDolu.png";
+            pictureBox_doleva.ImageLocation = @"../../sipkaDoleva.png";
+            pictureBox_doprava.ImageLocation = @"../../sipkaDoprava.png";
+
 
             if (obtiznost)
             {
@@ -126,6 +145,13 @@ namespace Tetris
                 textBox_ovladaniDoprava.Enabled = false;
                 textBox_ovladaniOtaceni.Enabled = false;
                 radioButton_ovladaniDoporucene.Checked = true;
+
+                
+
+                textBox_ovladaniDoleva.Text = "";
+                textBox_ovladaniDoprava.Text = "";
+                textBox_ovladaniDolu.Text = "";
+                textBox_ovladaniOtaceni.Text = "";
             }
             else
             {
@@ -135,6 +161,18 @@ namespace Tetris
                 textBox_ovladaniDoprava.Enabled = true;
                 textBox_ovladaniOtaceni.Enabled = true;
                 radioButton_ovladaniVlastni.Checked = true;
+
+                pictureBox_nahoru.Enabled = false;
+
+
+                string doleva = sr.ReadLine();
+                string doprava = sr.ReadLine();
+                string dolu = sr.ReadLine();
+                string otaceni = sr.ReadLine();
+                textBox_ovladaniDoleva.Text = doleva;
+                textBox_ovladaniDoprava.Text = doprava;
+                textBox_ovladaniDolu.Text = dolu;
+                textBox_ovladaniOtaceni.Text = otaceni;
             }
             fs.Close();
         }
