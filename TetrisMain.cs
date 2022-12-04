@@ -32,6 +32,11 @@ namespace Tetris
         int delkaHry = 0;
         bool herniMod = false;
         bool obtiznost = false;
+        bool doporuceneOvladani = true;
+        char doleva;
+        char doprava;
+        char dolu;
+        char nahoru;
 
         bool jedinecnyPruchod = false;
 
@@ -65,6 +70,19 @@ namespace Tetris
             delkaHry = int.Parse(sr.ReadLine());
             herniMod = bool.Parse(sr.ReadLine());
             obtiznost = bool.Parse(sr.ReadLine());
+            doporuceneOvladani = bool.Parse(sr.ReadLine());
+            if(doporuceneOvladani==false)
+            {
+                doleva = char.Parse(sr.ReadLine());
+                doprava = char.Parse(sr.ReadLine());
+                dolu = char.Parse(sr.ReadLine());
+                nahoru = char.Parse(sr.ReadLine());
+                label_typOvladani.Text = "Ovládání: Vlastní";
+            }
+            else
+            {
+                label_typOvladani.Text = "Ovládání: Doporučené";
+            }
 
             fs.Close();
 
@@ -687,21 +705,38 @@ namespace Tetris
                 rychlostHryTimer.Start();
                 soundtrack.PlayLooping();
             }
+            //nastaveniOvladacich klaves
+            Keys dolevaKlavesa = Keys.Left;
+            Keys dopravaKlavesa = Keys.Right;
+            Keys doluKlavesa = Keys.Down;
+            Keys nahoruKlavesa= Keys.Up;
+            if(!doporuceneOvladani)
+            {
+                int dolevaInt = (int)doleva;
+                int dopravaInt = (int)doprava;
+                int doluInt = (int)dolu;
+                int nahoruInt = (int)nahoru;
+                dolevaKlavesa = (Keys)dolevaInt;
+                dopravaKlavesa = (Keys)dopravaInt;
+                doluKlavesa = (Keys)doluInt;
+                nahoruKlavesa = (Keys)nahoruInt;
+            }
+
             if (!pozastaveno)
             {
-                if (!CheckGameOver() & ((e.KeyCode == Keys.Left) & TestMove("left") == true))
+                if (!CheckGameOver() & ((e.KeyCode == dolevaKlavesa) & TestMove("left") == true))
                 {
                     MovePiece("left");
                 }
-                else if (!CheckGameOver() & ((e.KeyCode == Keys.Right) & TestMove("right") == true))
+                else if (!CheckGameOver() & ((e.KeyCode == dopravaKlavesa) & TestMove("right") == true))
                 {
                     MovePiece("right");
                 }
-                else if ((e.KeyCode == Keys.Down) & TestMove("down") == true)
+                else if ((e.KeyCode == doluKlavesa) & TestMove("down") == true)
                 {
                     MovePiece("down");
                 }
-                else if (e.KeyCode == Keys.Up)
+                else if (e.KeyCode == nahoruKlavesa)
                 {
                     //Otáčení
 

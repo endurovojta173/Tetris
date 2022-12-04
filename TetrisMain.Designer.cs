@@ -283,6 +283,7 @@
             this.button_menu = new System.Windows.Forms.Button();
             this.button_konec = new System.Windows.Forms.Button();
             this.button_skore = new System.Windows.Forms.Button();
+            this.label_typOvladani = new System.Windows.Forms.Label();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -3289,7 +3290,7 @@
             // 
             this.label_obtiznost.AutoSize = true;
             this.label_obtiznost.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_obtiznost.Location = new System.Drawing.Point(358, 228);
+            this.label_obtiznost.Location = new System.Drawing.Point(361, 283);
             this.label_obtiznost.Name = "label_obtiznost";
             this.label_obtiznost.Size = new System.Drawing.Size(151, 32);
             this.label_obtiznost.TabIndex = 12;
@@ -3321,7 +3322,7 @@
             this.tabulkaNapoveda.Controls.Add(this.box216, 3, 3);
             this.tabulkaNapoveda.Controls.Add(this.box201, 0, 0);
             this.tabulkaNapoveda.Cursor = System.Windows.Forms.Cursors.No;
-            this.tabulkaNapoveda.Location = new System.Drawing.Point(364, 262);
+            this.tabulkaNapoveda.Location = new System.Drawing.Point(367, 317);
             this.tabulkaNapoveda.Margin = new System.Windows.Forms.Padding(2);
             this.tabulkaNapoveda.Name = "tabulkaNapoveda";
             this.tabulkaNapoveda.RowCount = 4;
@@ -3495,7 +3496,7 @@
             // button_novaHra
             // 
             this.button_novaHra.Enabled = false;
-            this.button_novaHra.Location = new System.Drawing.Point(512, 262);
+            this.button_novaHra.Location = new System.Drawing.Point(523, 317);
             this.button_novaHra.Name = "button_novaHra";
             this.button_novaHra.Size = new System.Drawing.Size(133, 29);
             this.button_novaHra.TabIndex = 14;
@@ -3506,7 +3507,7 @@
             // button_menu
             // 
             this.button_menu.Enabled = false;
-            this.button_menu.Location = new System.Drawing.Point(512, 327);
+            this.button_menu.Location = new System.Drawing.Point(523, 382);
             this.button_menu.Name = "button_menu";
             this.button_menu.Size = new System.Drawing.Size(133, 29);
             this.button_menu.TabIndex = 15;
@@ -3517,7 +3518,7 @@
             // button_konec
             // 
             this.button_konec.Enabled = false;
-            this.button_konec.Location = new System.Drawing.Point(512, 361);
+            this.button_konec.Location = new System.Drawing.Point(523, 416);
             this.button_konec.Name = "button_konec";
             this.button_konec.Size = new System.Drawing.Size(133, 29);
             this.button_konec.TabIndex = 16;
@@ -3528,7 +3529,7 @@
             // button_skore
             // 
             this.button_skore.Enabled = false;
-            this.button_skore.Location = new System.Drawing.Point(512, 295);
+            this.button_skore.Location = new System.Drawing.Point(523, 350);
             this.button_skore.Name = "button_skore";
             this.button_skore.Size = new System.Drawing.Size(133, 29);
             this.button_skore.TabIndex = 17;
@@ -3536,12 +3537,23 @@
             this.button_skore.UseVisualStyleBackColor = true;
             this.button_skore.Click += new System.EventHandler(this.button_skore_Click);
             // 
+            // label_typOvladani
+            // 
+            this.label_typOvladani.AutoSize = true;
+            this.label_typOvladani.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_typOvladani.Location = new System.Drawing.Point(358, 228);
+            this.label_typOvladani.Name = "label_typOvladani";
+            this.label_typOvladani.Size = new System.Drawing.Size(140, 32);
+            this.label_typOvladani.TabIndex = 18;
+            this.label_typOvladani.Text = "Ovládání:";
+            // 
             // TetrisMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(657, 750);
+            this.Controls.Add(this.label_typOvladani);
             this.Controls.Add(this.button_skore);
             this.Controls.Add(this.button_konec);
             this.Controls.Add(this.button_menu);
@@ -4064,6 +4076,7 @@
         private System.Windows.Forms.Button button_menu;
         private System.Windows.Forms.Button button_konec;
         private System.Windows.Forms.Button button_skore;
+        private System.Windows.Forms.Label label_typOvladani;
     }
 }
 

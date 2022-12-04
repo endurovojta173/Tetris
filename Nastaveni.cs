@@ -76,11 +76,12 @@ namespace Tetris
                 }
                 else
                 {
+                    //Znaky se musí nastavit ToUpper, protože Keys pracuje s ascii kody velkych pismen
                     sw.WriteLine("false");
-                    sw.WriteLine(doleva);
-                    sw.WriteLine(doprava);
-                    sw.WriteLine(dolu);
-                    sw.WriteLine(otaceni);
+                    sw.WriteLine(doleva.ToUpper());
+                    sw.WriteLine(doprava.ToUpper());
+                    sw.WriteLine(dolu.ToUpper());
+                    sw.WriteLine(otaceni.ToUpper());
                 }
             }
             sw.Close();
