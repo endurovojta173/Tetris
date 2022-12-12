@@ -41,9 +41,9 @@ namespace Tetris
         public bool overitVstup(string vstup)
         {
             bool jeValidni = false;
-            char znak=char.Parse(vstup);
-            if (znak > 1)
+            if (vstup.Length > 1)
             {
+                char znak = char.Parse(vstup);
                 if (znak >= 'a' && znak <= 'z') jeValidni = true;
                 else if (znak >= 'A' && znak <= 'Z') jeValidni = true;
                 else if (znak >= '0' && znak <= '9') jeValidni = true;
