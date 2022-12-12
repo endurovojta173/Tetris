@@ -54,42 +54,25 @@ namespace Tetris
                 string doprava=textBox_ovladaniDoprava.Text;
                 string dolu=textBox_ovladaniDolu.Text;
                 string otaceni=textBox_ovladaniOtaceni.Text;
-                if(doleva.Length<1)
+                PrirazeniKlaves prirazeniKlaves= new PrirazeniKlaves();
+                if(!prirazeniKlaves.overitVstup(doleva)||!prirazeniKlaves.overitVstup(doprava)||!prirazeniKlaves.overitVstup(dolu)||!prirazeniKlaves.overitVstup(otaceni))
                 {
-                    MessageBox.Show("Chybně zadané ovládání doleva, bylo nastaveno Doporučené nastavení");
-                    sw.WriteLine("true");
-                }
-                else if(doprava.Length<1)
-                {
-                    MessageBox.Show("Chybně zadané ovládání doprava, bylo nastaveno Doporučené nastavení");
-                    sw.WriteLine("true");
-                }
-                else if(dolu.Length<1)
-                {
-                    MessageBox.Show("Chybně zadané ovládání dolů, bylo nastaveno Doporučené nastavení");
-                    sw.WriteLine("true");
-                }
-                else if(otaceni.Length<1)
-                {
-                    MessageBox.Show("Chybně zadané ovládání otáčení, bylo nastaveno Doporučené nastavení");
+                    MessageBox.Show("Chybně zadané ovládání, bylo nastaveno Doporučené nastavení");
                     sw.WriteLine("true");
                 }
                 else
                 {
-                    //Znaky se musí nastavit ToUpper, protože Keys pracuje s ascii kody velkych pismen
                     sw.WriteLine("false");
-                    sw.WriteLine(doleva.ToUpper());
-                    sw.WriteLine(doprava.ToUpper());
-                    sw.WriteLine(dolu.ToUpper());
-                    sw.WriteLine(otaceni.ToUpper());
+                    sw.WriteLine(doleva);
+                    sw.WriteLine(doprava);
+                    sw.WriteLine(dolu);
+                    sw.WriteLine(otaceni);
                 }
             }
             sw.Close();
             fs.Close();
             ZobrazitAktualniNastaveni();
         }
-
-
 
         //Nutno vyřešit co když je nastavení prázdné // nastavit defaultní hodnoty //Vyřešeno, nastavuje se v menu //Bude potřeba udělat ovládání
 

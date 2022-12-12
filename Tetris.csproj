@@ -61,6 +61,7 @@
     <Compile Include="Nastaveni.Designer.cs">
       <DependentUpon>Nastaveni.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrirazeniKlaves.cs" />
     <Compile Include="SaveScore.cs" />
     <Compile Include="Skore.cs">
       <SubType>Form</SubType>

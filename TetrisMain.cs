@@ -712,14 +712,11 @@ namespace Tetris
             Keys nahoruKlavesa= Keys.Up;
             if(!doporuceneOvladani)
             {
-                int dolevaInt = (int)doleva;
-                int dopravaInt = (int)doprava;
-                int doluInt = (int)dolu;
-                int nahoruInt = (int)nahoru;
-                dolevaKlavesa = (Keys)dolevaInt;
-                dopravaKlavesa = (Keys)dopravaInt;
-                doluKlavesa = (Keys)doluInt;
-                nahoruKlavesa = (Keys)nahoruInt;
+                PrirazeniKlaves prirazeniKlaves= new PrirazeniKlaves();
+                dolevaKlavesa=prirazeniKlaves.priraditKlavesu(doleva);
+                dopravaKlavesa = prirazeniKlaves.priraditKlavesu(doprava);
+                doluKlavesa = prirazeniKlaves.priraditKlavesu(dolu);
+                nahoruKlavesa = prirazeniKlaves.priraditKlavesu(nahoru);
             }
 
             if (!pozastaveno)

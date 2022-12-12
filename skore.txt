@@ -1,0 +1,2 @@
+Guest;800;95;Nekonečný mód;Nekonečná;;Lehká;
+Guest;0;62;Nekonečný mód;Nekonečná;;Lehká;
