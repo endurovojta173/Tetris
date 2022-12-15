@@ -38,10 +38,10 @@ namespace Tetris
             else if (znak=='+')klavesa=Keys.Add;
             return klavesa;
         }
-        public bool overitVstup(string vstup)
+        public bool jeVstupValidni(string vstup)
         {
             bool jeValidni = false;
-            if (vstup.Length > 1)
+            if (vstup.Length > 0)
             {
                 char znak = char.Parse(vstup);
                 if (znak >= 'a' && znak <= 'z') jeValidni = true;

@@ -39,6 +39,7 @@ namespace Tetris
         char nahoru;
 
         bool jedinecnyPruchod = false;
+        bool pozastaveno = false;
 
         readonly Color[] seznamBarev =
         {
@@ -623,7 +624,34 @@ namespace Tetris
             tabulka.BackColor = Color.Black;
             tabulkaNapoveda.BackColor = Color.Black;
         }
-
+        //Tlacitko pro menu
+        private void button_menu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu menu = new Menu();
+            menu.ShowDialog();
+            this.Dispose();
+        }
+        private void button_skore_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Skore skore = new Skore();
+            skore.ShowDialog();
+            this.Dispose();
+        }
+        //ukonci app
+        private void button_konec_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+        //zacne novou hru
+        private void button_novaHra_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TetrisMain main = new TetrisMain();
+            main.ShowDialog();
+            this.Dispose();
+        }
 
 
 
@@ -670,41 +698,32 @@ namespace Tetris
         //Pracuje s inputem, zatím pouzde WASD a šipky
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
-            //Přesune do menu
-            if(e.KeyCode==Keys.M)
+            //Pozastavuje hru
+            if (e.KeyCode == Keys.Escape&&!pozastaveno)
             {
-                soundtrack.Stop();
-                this.Hide();
-                menu.ShowDialog();
-                this.Close();
-            }
-            //Vypne tetris
-            if (e.KeyCode == Keys.K)
-            {
-                soundtrack.Stop();
-                this.Hide();
-                this.Close();
-            }
-
-            bool pozastaveno = false;
-            if (e.KeyCode == Keys.Q)
-            {
-                e.SuppressKeyPress = (e.KeyCode == Keys.Up);
-                e.SuppressKeyPress = (e.KeyCode == Keys.Down);
-                e.SuppressKeyPress = (e.KeyCode == Keys.Left);
-                e.SuppressKeyPress = (e.KeyCode == Keys.Right);
                 casHryTimer.Stop();
                 rychlostHryTimer.Stop();
                 soundtrack.Stop();
                 pozastaveno = true;
+                /*button_novaHra.Enabled = true;
+                button_menu.Enabled = true;
+                button_skore.Enabled = true;
+                button_konec.Enabled = true;*/
+                label_pozastaveni.Text = "Hra je POZASTAVENA - stiskněte ESC pro pokračování";
             }
-            else if (e.KeyCode == Keys.E)
+            else if (e.KeyCode == Keys.Escape&&pozastaveno)
             {
-                pozastaveno = false;
                 casHryTimer.Start();
                 rychlostHryTimer.Start();
                 soundtrack.PlayLooping();
+                pozastaveno = false;
+                /*button_novaHra.Enabled = false;
+                button_menu.Enabled = false;
+                button_skore.Enabled = false;
+                button_konec.Enabled = false;*/
+                label_pozastaveni.Text = "Pro pozastavení stiskněte ESC";
             }
+
             //nastaveniOvladacich klaves
             Keys dolevaKlavesa = Keys.Left;
             Keys dopravaKlavesa = Keys.Right;
@@ -718,6 +737,7 @@ namespace Tetris
                 doluKlavesa = prirazeniKlaves.priraditKlavesu(dolu);
                 nahoruKlavesa = prirazeniKlaves.priraditKlavesu(nahoru);
             }
+
 
             if (!pozastaveno)
             {
@@ -1137,65 +1157,11 @@ namespace Tetris
                         x++;
                     }
                 }
-                //Feature se shiftem
-                /*else if (!CheckGameOver() & e.KeyCode == Keys.ShiftKey)
-                {
-                    otaceni = 0;
-
-
-                    Control[,] activePieceArray =
-                    {
-                        { box6, box16, box26, box36 }, // I
-                        { box4, box14,box24, box25 }, // L
-                        { box5, box15, box25, box24 }, // J
-                        { box14, box15, box5, box6 },  // S
-                        { box5, box6, box16, box17 },  // Z
-                        { box5, box6, box15, box16 },  // O
-                        { box6, box15, box16, box17 }  // T
-                };
-
-
-                    foreach (Control x in aktivniPolozka)
-                    {
-                        x.BackColor = Color.White;
-                    }
-                }*/
             }
         }
 
-        //Tlacitko pro menu
-        private void button_menu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu menu = new Menu();
-            menu.ShowDialog();
-            this.Dispose();
-        }
-        //ukonci app
-        private void button_konec_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-        //zacne novou hru
-        private void button_novaHra_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TetrisMain main = new TetrisMain();
-            main.ShowDialog();
-            this.Dispose();
-        }
+        
 
-        private void button_skore_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Skore skore = new Skore();
-            skore.ShowDialog();
-            this.Dispose();
-        }
-
-        private void TetrisMain_Load(object sender, EventArgs e)
-        {
-
-        }
     }
+
 }

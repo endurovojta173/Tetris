@@ -4,8 +4,9 @@ false
 false
 true
 
-b
-m
-n
-j
+a
+d
+s
+w
+
 
