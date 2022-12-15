@@ -39,6 +39,7 @@ namespace Tetris
         char nahoru;
 
         bool jedinecnyPruchod = false;
+        bool pozastaveno = false;
 
         readonly Color[] seznamBarev =
         {
@@ -623,7 +624,34 @@ namespace Tetris
             tabulka.BackColor = Color.Black;
             tabulkaNapoveda.BackColor = Color.Black;
         }
-
+        //Tlacitko pro menu
+        private void button_menu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu menu = new Menu();
+            menu.ShowDialog();
+            this.Dispose();
+        }
+        private void button_skore_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Skore skore = new Skore();
+            skore.ShowDialog();
+            this.Dispose();
+        }
+        //ukonci app
+        private void button_konec_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+        //zacne novou hru
+        private void button_novaHra_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TetrisMain main = new TetrisMain();
+            main.ShowDialog();
+            this.Dispose();
+        }
 
 
 
@@ -670,41 +698,31 @@ namespace Tetris
         //Pracuje s inputem, zatím pouzde WASD a šipky
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
-            //Přesune do menu
-            if(e.KeyCode==Keys.M)
+            //Pozastavuje hru
+            if (e.KeyCode == Keys.Escape&&!pozastaveno)
             {
-                soundtrack.Stop();
-                this.Hide();
-                menu.ShowDialog();
-                this.Close();
-            }
-            //Vypne tetris
-            if (e.KeyCode == Keys.K)
-            {
-                soundtrack.Stop();
-                this.Hide();
-                this.Close();
-            }
-
-            bool pozastaveno = false;
-            if (e.KeyCode == Keys.Q)
-            {
-                e.SuppressKeyPress = (e.KeyCode == Keys.Up);
-                e.SuppressKeyPress = (e.KeyCode == Keys.Down);
-                e.SuppressKeyPress = (e.KeyCode == Keys.Left);
-                e.SuppressKeyPress = (e.KeyCode == Keys.Right);
                 casHryTimer.Stop();
                 rychlostHryTimer.Stop();
                 soundtrack.Stop();
                 pozastaveno = true;
+                button_novaHra.Enabled = true;
+                button_menu.Enabled = true;
+                button_skore.Enabled = true;
+                button_konec.Enabled = true;
             }
-            else if (e.KeyCode == Keys.E)
+            else if (e.KeyCode == Keys.Escape&&pozastaveno)
             {
-                pozastaveno = false;
                 casHryTimer.Start();
                 rychlostHryTimer.Start();
                 soundtrack.PlayLooping();
+                pozastaveno = false;
+                button_novaHra.Enabled = false;
+                button_menu.Enabled = false;
+                button_skore.Enabled = false;
+                button_konec.Enabled = false;
+               
             }
+
             //nastaveniOvladacich klaves
             Keys dolevaKlavesa = Keys.Left;
             Keys dopravaKlavesa = Keys.Right;
@@ -718,6 +736,7 @@ namespace Tetris
                 doluKlavesa = prirazeniKlaves.priraditKlavesu(dolu);
                 nahoruKlavesa = prirazeniKlaves.priraditKlavesu(nahoru);
             }
+
 
             if (!pozastaveno)
             {
@@ -1140,40 +1159,8 @@ namespace Tetris
             }
         }
 
-        //Tlacitko pro menu
-        private void button_menu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Menu menu = new Menu();
-            menu.ShowDialog();
-            this.Dispose();
-        }
-        private void button_skore_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Skore skore = new Skore();
-            skore.ShowDialog();
-            this.Dispose();
-        }
-        //ukonci app
-        private void button_konec_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-        //zacne novou hru
-        private void button_novaHra_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            TetrisMain main = new TetrisMain();
-            main.ShowDialog();
-            this.Dispose();
-        }
+        
 
-      
-
-        private void TetrisMain_Load(object sender, EventArgs e)
-        {
-
-        }
     }
+
 }
