@@ -705,10 +705,11 @@ namespace Tetris
                 rychlostHryTimer.Stop();
                 soundtrack.Stop();
                 pozastaveno = true;
-                button_novaHra.Enabled = true;
+                /*button_novaHra.Enabled = true;
                 button_menu.Enabled = true;
                 button_skore.Enabled = true;
-                button_konec.Enabled = true;
+                button_konec.Enabled = true;*/
+                label_pozastaveni.Text = "Hra je POZASTAVENA - stiskněte ESC pro pokračování";
             }
             else if (e.KeyCode == Keys.Escape&&pozastaveno)
             {
@@ -716,11 +717,11 @@ namespace Tetris
                 rychlostHryTimer.Start();
                 soundtrack.PlayLooping();
                 pozastaveno = false;
-                button_novaHra.Enabled = false;
+                /*button_novaHra.Enabled = false;
                 button_menu.Enabled = false;
                 button_skore.Enabled = false;
-                button_konec.Enabled = false;
-               
+                button_konec.Enabled = false;*/
+                label_pozastaveni.Text = "Pro pozastavení stiskněte ESC";
             }
 
             //nastaveniOvladacich klaves

@@ -256,11 +256,10 @@
             this.box250 = new System.Windows.Forms.PictureBox();
             this.box251 = new System.Windows.Forms.PictureBox();
             this.box252 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_pozastaveni = new System.Windows.Forms.Label();
             this.label_herniRezim = new System.Windows.Forms.Label();
             this.label_jmeno = new System.Windows.Forms.Label();
             this.label_delkaHry = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label_obtiznost = new System.Windows.Forms.Label();
             this.tabulkaNapoveda = new System.Windows.Forms.TableLayoutPanel();
             this.box202 = new System.Windows.Forms.PictureBox();
@@ -530,7 +529,7 @@
             // 
             this.label_skore.AutoSize = true;
             this.label_skore.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_skore.Location = new System.Drawing.Point(358, 134);
+            this.label_skore.Location = new System.Drawing.Point(361, 132);
             this.label_skore.Name = "label_skore";
             this.label_skore.Size = new System.Drawing.Size(123, 32);
             this.label_skore.TabIndex = 1;
@@ -540,7 +539,7 @@
             // 
             this.label_cas.AutoSize = true;
             this.label_cas.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_cas.Location = new System.Drawing.Point(358, 102);
+            this.label_cas.Location = new System.Drawing.Point(361, 103);
             this.label_cas.Name = "label_cas";
             this.label_cas.Size = new System.Drawing.Size(120, 32);
             this.label_cas.TabIndex = 2;
@@ -550,7 +549,7 @@
             // 
             this.label_radky.AutoSize = true;
             this.label_radky.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_radky.Location = new System.Drawing.Point(358, 165);
+            this.label_radky.Location = new System.Drawing.Point(361, 164);
             this.label_radky.Name = "label_radky";
             this.label_radky.Size = new System.Drawing.Size(129, 32);
             this.label_radky.TabIndex = 4;
@@ -3240,14 +3239,15 @@
             this.box252.TabIndex = 219;
             this.box252.TabStop = false;
             // 
-            // label1
+            // label_pozastaveni
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(379, 668);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Menu - M";
+            this.label_pozastaveni.AutoSize = true;
+            this.label_pozastaveni.Font = new System.Drawing.Font("Arial Narrow", 10.5F, System.Drawing.FontStyle.Bold);
+            this.label_pozastaveni.Location = new System.Drawing.Point(363, 461);
+            this.label_pozastaveni.Name = "label_pozastaveni";
+            this.label_pozastaveni.Size = new System.Drawing.Size(171, 17);
+            this.label_pozastaveni.TabIndex = 7;
+            this.label_pozastaveni.Text = "Pro pozastavení stiskněte ESC";
             // 
             // label_herniRezim
             // 
@@ -3263,7 +3263,7 @@
             // 
             this.label_jmeno.AutoSize = true;
             this.label_jmeno.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_jmeno.Location = new System.Drawing.Point(358, 71);
+            this.label_jmeno.Location = new System.Drawing.Point(361, 71);
             this.label_jmeno.Name = "label_jmeno";
             this.label_jmeno.Size = new System.Drawing.Size(91, 32);
             this.label_jmeno.TabIndex = 9;
@@ -3273,26 +3273,17 @@
             // 
             this.label_delkaHry.AutoSize = true;
             this.label_delkaHry.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_delkaHry.Location = new System.Drawing.Point(358, 196);
+            this.label_delkaHry.Location = new System.Drawing.Point(361, 196);
             this.label_delkaHry.Name = "label_delkaHry";
             this.label_delkaHry.Size = new System.Drawing.Size(148, 32);
             this.label_delkaHry.TabIndex = 10;
             this.label_delkaHry.Text = "Délka hry:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(379, 681);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Vypnout hru - K";
-            // 
             // label_obtiznost
             // 
             this.label_obtiznost.AutoSize = true;
             this.label_obtiznost.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_obtiznost.Location = new System.Drawing.Point(361, 283);
+            this.label_obtiznost.Location = new System.Drawing.Point(361, 282);
             this.label_obtiznost.Name = "label_obtiznost";
             this.label_obtiznost.Size = new System.Drawing.Size(151, 32);
             this.label_obtiznost.TabIndex = 12;
@@ -3497,7 +3488,6 @@
             // 
             // button_novaHra
             // 
-            this.button_novaHra.Enabled = false;
             this.button_novaHra.Location = new System.Drawing.Point(3, 9);
             this.button_novaHra.Name = "button_novaHra";
             this.button_novaHra.Size = new System.Drawing.Size(133, 29);
@@ -3509,7 +3499,6 @@
             // 
             // button_menu
             // 
-            this.button_menu.Enabled = false;
             this.button_menu.Location = new System.Drawing.Point(3, 74);
             this.button_menu.Name = "button_menu";
             this.button_menu.Size = new System.Drawing.Size(133, 29);
@@ -3521,7 +3510,6 @@
             // 
             // button_konec
             // 
-            this.button_konec.Enabled = false;
             this.button_konec.Location = new System.Drawing.Point(3, 108);
             this.button_konec.Name = "button_konec";
             this.button_konec.Size = new System.Drawing.Size(133, 29);
@@ -3533,7 +3521,6 @@
             // 
             // button_skore
             // 
-            this.button_skore.Enabled = false;
             this.button_skore.Location = new System.Drawing.Point(3, 42);
             this.button_skore.Name = "button_skore";
             this.button_skore.Size = new System.Drawing.Size(133, 29);
@@ -3547,7 +3534,7 @@
             // 
             this.label_typOvladani.AutoSize = true;
             this.label_typOvladani.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_typOvladani.Location = new System.Drawing.Point(358, 228);
+            this.label_typOvladani.Location = new System.Drawing.Point(361, 228);
             this.label_typOvladani.Name = "label_typOvladani";
             this.label_typOvladani.Size = new System.Drawing.Size(140, 32);
             this.label_typOvladani.TabIndex = 18;
@@ -3569,25 +3556,24 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(657, 750);
+            this.ClientSize = new System.Drawing.Size(684, 761);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label_typOvladani);
             this.Controls.Add(this.tabulkaNapoveda);
             this.Controls.Add(this.label_obtiznost);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label_delkaHry);
             this.Controls.Add(this.label_jmeno);
             this.Controls.Add(this.label_herniRezim);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_pozastaveni);
             this.Controls.Add(this.tabulka);
             this.Controls.Add(this.label_radky);
             this.Controls.Add(this.label_cas);
             this.Controls.Add(this.label_skore);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(673, 789);
+            this.MaximumSize = new System.Drawing.Size(700, 800);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(673, 789);
+            this.MinimumSize = new System.Drawing.Size(700, 800);
             this.Name = "TetrisMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";
@@ -4063,11 +4049,10 @@
         private System.Windows.Forms.PictureBox box250;
         private System.Windows.Forms.PictureBox box251;
         private System.Windows.Forms.PictureBox box252;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_pozastaveni;
         private System.Windows.Forms.Label label_herniRezim;
         private System.Windows.Forms.Label label_jmeno;
         private System.Windows.Forms.Label label_delkaHry;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label_obtiznost;
         private System.Windows.Forms.TableLayoutPanel tabulkaNapoveda;
         private System.Windows.Forms.PictureBox box201;
