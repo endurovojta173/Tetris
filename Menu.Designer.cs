@@ -37,9 +37,15 @@
             // 
             // button1_novaHra
             // 
+            this.button1_novaHra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1_novaHra.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Bold);
             this.button1_novaHra.Location = new System.Drawing.Point(238, 264);
+            this.button1_novaHra.MaximumSize = new System.Drawing.Size(3000, 60);
+            this.button1_novaHra.MinimumSize = new System.Drawing.Size(230, 60);
             this.button1_novaHra.Name = "button1_novaHra";
-            this.button1_novaHra.Size = new System.Drawing.Size(152, 57);
+            this.button1_novaHra.Size = new System.Drawing.Size(230, 60);
             this.button1_novaHra.TabIndex = 0;
             this.button1_novaHra.Text = "Nová hra";
             this.button1_novaHra.UseVisualStyleBackColor = true;
@@ -47,9 +53,15 @@
             // 
             // button3_nastaveni
             // 
+            this.button3_nastaveni.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3_nastaveni.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Bold);
             this.button3_nastaveni.Location = new System.Drawing.Point(238, 327);
+            this.button3_nastaveni.MaximumSize = new System.Drawing.Size(3000, 60);
+            this.button3_nastaveni.MinimumSize = new System.Drawing.Size(230, 60);
             this.button3_nastaveni.Name = "button3_nastaveni";
-            this.button3_nastaveni.Size = new System.Drawing.Size(152, 57);
+            this.button3_nastaveni.Size = new System.Drawing.Size(230, 60);
             this.button3_nastaveni.TabIndex = 2;
             this.button3_nastaveni.Text = "Nastavení";
             this.button3_nastaveni.UseVisualStyleBackColor = true;
@@ -57,9 +69,15 @@
             // 
             // button4_skore
             // 
+            this.button4_skore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4_skore.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Bold);
             this.button4_skore.Location = new System.Drawing.Point(238, 390);
+            this.button4_skore.MaximumSize = new System.Drawing.Size(3000, 60);
+            this.button4_skore.MinimumSize = new System.Drawing.Size(230, 60);
             this.button4_skore.Name = "button4_skore";
-            this.button4_skore.Size = new System.Drawing.Size(152, 57);
+            this.button4_skore.Size = new System.Drawing.Size(230, 60);
             this.button4_skore.TabIndex = 3;
             this.button4_skore.Text = "Skóre";
             this.button4_skore.UseVisualStyleBackColor = true;
@@ -67,9 +85,15 @@
             // 
             // button5_konec
             // 
+            this.button5_konec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5_konec.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Bold);
             this.button5_konec.Location = new System.Drawing.Point(238, 453);
+            this.button5_konec.MaximumSize = new System.Drawing.Size(3000, 60);
+            this.button5_konec.MinimumSize = new System.Drawing.Size(230, 60);
             this.button5_konec.Name = "button5_konec";
-            this.button5_konec.Size = new System.Drawing.Size(152, 57);
+            this.button5_konec.Size = new System.Drawing.Size(230, 60);
             this.button5_konec.TabIndex = 4;
             this.button5_konec.Text = "Konec";
             this.button5_konec.UseVisualStyleBackColor = true;
@@ -81,16 +105,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(684, 761);
+            this.ClientSize = new System.Drawing.Size(684, 861);
             this.Controls.Add(this.button5_konec);
             this.Controls.Add(this.button4_skore);
             this.Controls.Add(this.button3_nastaveni);
             this.Controls.Add(this.button1_novaHra);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(700, 800);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(700, 800);
+            this.MinimumSize = new System.Drawing.Size(700, 900);
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";

@@ -72,9 +72,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 686);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(218, 697);
+            this.button1.MaximumSize = new System.Drawing.Size(100000, 52);
+            this.button1.MinimumSize = new System.Drawing.Size(250, 52);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(633, 52);
+            this.button1.Size = new System.Drawing.Size(250, 52);
             this.button1.TabIndex = 0;
             this.button1.Text = "Uložit změny";
             this.button1.UseVisualStyleBackColor = true;
@@ -82,26 +87,35 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(304, 161);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.textBox1.Location = new System.Drawing.Point(258, 131);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
+            this.textBox1.Size = new System.Drawing.Size(271, 32);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Guest";
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 168);
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(105, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Jméno";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 12);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(218, 12);
+            this.button2.MaximumSize = new System.Drawing.Size(100000, 52);
+            this.button2.MinimumSize = new System.Drawing.Size(250, 52);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(633, 52);
+            this.button2.Size = new System.Drawing.Size(250, 52);
             this.button2.TabIndex = 3;
             this.button2.Text = "Menu";
             this.button2.UseVisualStyleBackColor = true;
@@ -109,38 +123,47 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(304, 249);
+            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.textBox2.Location = new System.Drawing.Point(515, 254);
+            this.textBox2.MaximumSize = new System.Drawing.Size(100, 32);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(171, 20);
+            this.textBox2.Size = new System.Drawing.Size(100, 32);
             this.textBox2.TabIndex = 4;
             this.textBox2.Text = "200";
             // 
             // label_delkaModuSOmezenymCasem
             // 
+            this.label_delkaModuSOmezenymCasem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_delkaModuSOmezenymCasem.AutoSize = true;
-            this.label_delkaModuSOmezenymCasem.Location = new System.Drawing.Point(74, 252);
+            this.label_delkaModuSOmezenymCasem.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_delkaModuSOmezenymCasem.Location = new System.Drawing.Point(105, 254);
             this.label_delkaModuSOmezenymCasem.Name = "label_delkaModuSOmezenymCasem";
-            this.label_delkaModuSOmezenymCasem.Size = new System.Drawing.Size(224, 13);
+            this.label_delkaModuSOmezenymCasem.Size = new System.Drawing.Size(397, 25);
             this.label_delkaModuSOmezenymCasem.TabIndex = 5;
             this.label_delkaModuSOmezenymCasem.Text = "Délka módu s omezeným časem v sekundách";
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 223);
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(105, 214);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(99, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Herní mód";
             // 
             // radioButton_nekonecnyMod
             // 
+            this.radioButton_nekonecnyMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.radioButton_nekonecnyMod.AutoSize = true;
             this.radioButton_nekonecnyMod.Checked = true;
+            this.radioButton_nekonecnyMod.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
             this.radioButton_nekonecnyMod.Location = new System.Drawing.Point(3, 3);
             this.radioButton_nekonecnyMod.Name = "radioButton_nekonecnyMod";
-            this.radioButton_nekonecnyMod.Size = new System.Drawing.Size(103, 17);
+            this.radioButton_nekonecnyMod.Size = new System.Drawing.Size(167, 29);
             this.radioButton_nekonecnyMod.TabIndex = 7;
             this.radioButton_nekonecnyMod.TabStop = true;
             this.radioButton_nekonecnyMod.Text = "Nekonečný mód";
@@ -149,10 +172,12 @@
             // 
             // radioButton_casoveOmezenyMod
             // 
+            this.radioButton_casoveOmezenyMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.radioButton_casoveOmezenyMod.AutoSize = true;
-            this.radioButton_casoveOmezenyMod.Location = new System.Drawing.Point(112, 3);
+            this.radioButton_casoveOmezenyMod.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.radioButton_casoveOmezenyMod.Location = new System.Drawing.Point(188, 3);
             this.radioButton_casoveOmezenyMod.Name = "radioButton_casoveOmezenyMod";
-            this.radioButton_casoveOmezenyMod.Size = new System.Drawing.Size(129, 17);
+            this.radioButton_casoveOmezenyMod.Size = new System.Drawing.Size(216, 29);
             this.radioButton_casoveOmezenyMod.TabIndex = 8;
             this.radioButton_casoveOmezenyMod.Text = "Časově omezený mód";
             this.radioButton_casoveOmezenyMod.UseVisualStyleBackColor = true;
@@ -160,65 +185,83 @@
             // 
             // label_aktualniJmeno
             // 
+            this.label_aktualniJmeno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_aktualniJmeno.AutoSize = true;
-            this.label_aktualniJmeno.Location = new System.Drawing.Point(74, 325);
+            this.label_aktualniJmeno.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_aktualniJmeno.Location = new System.Drawing.Point(105, 402);
             this.label_aktualniJmeno.Name = "label_aktualniJmeno";
-            this.label_aktualniJmeno.Size = new System.Drawing.Size(41, 13);
+            this.label_aktualniJmeno.Size = new System.Drawing.Size(75, 25);
             this.label_aktualniJmeno.TabIndex = 9;
             this.label_aktualniJmeno.Text = "Jméno:";
             // 
             // label_delka
             // 
+            this.label_delka.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_delka.AutoSize = true;
-            this.label_delka.Location = new System.Drawing.Point(74, 364);
+            this.label_delka.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_delka.Location = new System.Drawing.Point(105, 477);
             this.label_delka.Name = "label_delka";
-            this.label_delka.Size = new System.Drawing.Size(55, 13);
+            this.label_delka.Size = new System.Drawing.Size(98, 25);
             this.label_delka.TabIndex = 10;
             this.label_delka.Text = "Délka hry:";
             // 
             // label_herniMod
             // 
+            this.label_herniMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_herniMod.AutoSize = true;
-            this.label_herniMod.Location = new System.Drawing.Point(74, 351);
+            this.label_herniMod.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_herniMod.Location = new System.Drawing.Point(105, 452);
             this.label_herniMod.Name = "label_herniMod";
-            this.label_herniMod.Size = new System.Drawing.Size(60, 13);
+            this.label_herniMod.Size = new System.Drawing.Size(105, 25);
             this.label_herniMod.TabIndex = 11;
             this.label_herniMod.Text = "Herní mód:";
             // 
             // label_obtiznost
             // 
+            this.label_obtiznost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_obtiznost.AutoSize = true;
-            this.label_obtiznost.Location = new System.Drawing.Point(74, 338);
+            this.label_obtiznost.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_obtiznost.Location = new System.Drawing.Point(105, 427);
             this.label_obtiznost.Name = "label_obtiznost";
-            this.label_obtiznost.Size = new System.Drawing.Size(56, 13);
+            this.label_obtiznost.Size = new System.Drawing.Size(100, 25);
             this.label_obtiznost.TabIndex = 12;
             this.label_obtiznost.Text = "Obtížnost:";
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Controls.Add(this.radioButton_nekonecnyMod);
             this.panel1.Controls.Add(this.radioButton_casoveOmezenyMod);
-            this.panel1.Location = new System.Drawing.Point(304, 218);
+            this.panel1.Location = new System.Drawing.Point(258, 209);
+            this.panel1.MaximumSize = new System.Drawing.Size(414, 36);
+            this.panel1.MinimumSize = new System.Drawing.Size(414, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 25);
+            this.panel1.Size = new System.Drawing.Size(414, 36);
             this.panel1.TabIndex = 13;
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.BackColor = System.Drawing.Color.DarkGray;
             this.panel2.Controls.Add(this.radioButton_lehka);
             this.panel2.Controls.Add(this.radioButton_tezka);
-            this.panel2.Location = new System.Drawing.Point(304, 187);
+            this.panel2.Location = new System.Drawing.Point(258, 169);
+            this.panel2.MaximumSize = new System.Drawing.Size(271, 34);
+            this.panel2.MinimumSize = new System.Drawing.Size(271, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(257, 25);
+            this.panel2.Size = new System.Drawing.Size(271, 34);
             this.panel2.TabIndex = 14;
             // 
             // radioButton_lehka
             // 
+            this.radioButton_lehka.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.radioButton_lehka.AutoSize = true;
             this.radioButton_lehka.Checked = true;
-            this.radioButton_lehka.Location = new System.Drawing.Point(3, 3);
+            this.radioButton_lehka.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.radioButton_lehka.Location = new System.Drawing.Point(3, 2);
             this.radioButton_lehka.Name = "radioButton_lehka";
-            this.radioButton_lehka.Size = new System.Drawing.Size(55, 17);
+            this.radioButton_lehka.Size = new System.Drawing.Size(82, 29);
             this.radioButton_lehka.TabIndex = 7;
             this.radioButton_lehka.TabStop = true;
             this.radioButton_lehka.Text = "Lehká";
@@ -226,26 +269,32 @@
             // 
             // radioButton_tezka
             // 
+            this.radioButton_tezka.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.radioButton_tezka.AutoSize = true;
-            this.radioButton_tezka.Location = new System.Drawing.Point(112, 3);
+            this.radioButton_tezka.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.radioButton_tezka.Location = new System.Drawing.Point(188, 2);
             this.radioButton_tezka.Name = "radioButton_tezka";
-            this.radioButton_tezka.Size = new System.Drawing.Size(55, 17);
+            this.radioButton_tezka.Size = new System.Drawing.Size(80, 29);
             this.radioButton_tezka.TabIndex = 8;
             this.radioButton_tezka.Text = "Těžká";
             this.radioButton_tezka.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 192);
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(105, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(94, 25);
             this.label4.TabIndex = 15;
             this.label4.Text = "Obtížnost";
             // 
             // textBox_ovladaniDoleva
             // 
-            this.textBox_ovladaniDoleva.Location = new System.Drawing.Point(416, 351);
+            this.textBox_ovladaniDoleva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBox_ovladaniDoleva.Location = new System.Drawing.Point(435, 376);
+            this.textBox_ovladaniDoleva.MaximumSize = new System.Drawing.Size(20, 20);
             this.textBox_ovladaniDoleva.MaxLength = 1;
             this.textBox_ovladaniDoleva.Name = "textBox_ovladaniDoleva";
             this.textBox_ovladaniDoleva.Size = new System.Drawing.Size(20, 20);
@@ -253,7 +302,9 @@
             // 
             // textBox_ovladaniDoprava
             // 
-            this.textBox_ovladaniDoprava.Location = new System.Drawing.Point(468, 351);
+            this.textBox_ovladaniDoprava.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBox_ovladaniDoprava.Location = new System.Drawing.Point(487, 376);
+            this.textBox_ovladaniDoprava.MaximumSize = new System.Drawing.Size(20, 20);
             this.textBox_ovladaniDoprava.MaxLength = 1;
             this.textBox_ovladaniDoprava.Name = "textBox_ovladaniDoprava";
             this.textBox_ovladaniDoprava.Size = new System.Drawing.Size(20, 20);
@@ -261,7 +312,9 @@
             // 
             // textBox_ovladaniOtaceni
             // 
-            this.textBox_ovladaniOtaceni.Location = new System.Drawing.Point(442, 325);
+            this.textBox_ovladaniOtaceni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBox_ovladaniOtaceni.Location = new System.Drawing.Point(461, 350);
+            this.textBox_ovladaniOtaceni.MaximumSize = new System.Drawing.Size(20, 20);
             this.textBox_ovladaniOtaceni.MaxLength = 1;
             this.textBox_ovladaniOtaceni.Name = "textBox_ovladaniOtaceni";
             this.textBox_ovladaniOtaceni.Size = new System.Drawing.Size(20, 20);
@@ -269,7 +322,9 @@
             // 
             // textBox_ovladaniDolu
             // 
-            this.textBox_ovladaniDolu.Location = new System.Drawing.Point(442, 351);
+            this.textBox_ovladaniDolu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBox_ovladaniDolu.Location = new System.Drawing.Point(461, 376);
+            this.textBox_ovladaniDolu.MaximumSize = new System.Drawing.Size(20, 20);
             this.textBox_ovladaniDolu.MaxLength = 1;
             this.textBox_ovladaniDolu.Name = "textBox_ovladaniDolu";
             this.textBox_ovladaniDolu.Size = new System.Drawing.Size(20, 20);
@@ -277,29 +332,37 @@
             // 
             // label_nadpisOvladani
             // 
+            this.label_nadpisOvladani.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_nadpisOvladani.AutoSize = true;
-            this.label_nadpisOvladani.Location = new System.Drawing.Point(375, 303);
+            this.label_nadpisOvladani.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_nadpisOvladani.Location = new System.Drawing.Point(370, 328);
             this.label_nadpisOvladani.Name = "label_nadpisOvladani";
-            this.label_nadpisOvladani.Size = new System.Drawing.Size(51, 13);
+            this.label_nadpisOvladani.Size = new System.Drawing.Size(87, 25);
             this.label_nadpisOvladani.TabIndex = 20;
             this.label_nadpisOvladani.Text = "Ovládání";
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel3.BackColor = System.Drawing.Color.DarkGray;
             this.panel3.Controls.Add(this.radioButton_ovladaniDoporucene);
             this.panel3.Controls.Add(this.radioButton_ovladaniVlastni);
-            this.panel3.Location = new System.Drawing.Point(304, 275);
+            this.panel3.Location = new System.Drawing.Point(258, 288);
+            this.panel3.MaximumSize = new System.Drawing.Size(357, 36);
+            this.panel3.MinimumSize = new System.Drawing.Size(357, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(257, 25);
+            this.panel3.Size = new System.Drawing.Size(357, 36);
             this.panel3.TabIndex = 15;
             // 
             // radioButton_ovladaniDoporucene
             // 
+            this.radioButton_ovladaniDoporucene.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.radioButton_ovladaniDoporucene.AutoSize = true;
             this.radioButton_ovladaniDoporucene.Checked = true;
+            this.radioButton_ovladaniDoporucene.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
             this.radioButton_ovladaniDoporucene.Location = new System.Drawing.Point(3, 3);
             this.radioButton_ovladaniDoporucene.Name = "radioButton_ovladaniDoporucene";
-            this.radioButton_ovladaniDoporucene.Size = new System.Drawing.Size(84, 17);
+            this.radioButton_ovladaniDoporucene.Size = new System.Drawing.Size(134, 29);
             this.radioButton_ovladaniDoporucene.TabIndex = 7;
             this.radioButton_ovladaniDoporucene.TabStop = true;
             this.radioButton_ovladaniDoporucene.Text = "Doporučené";
@@ -308,10 +371,12 @@
             // 
             // radioButton_ovladaniVlastni
             // 
+            this.radioButton_ovladaniVlastni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.radioButton_ovladaniVlastni.AutoSize = true;
-            this.radioButton_ovladaniVlastni.Location = new System.Drawing.Point(112, 3);
+            this.radioButton_ovladaniVlastni.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.radioButton_ovladaniVlastni.Location = new System.Drawing.Point(188, 3);
             this.radioButton_ovladaniVlastni.Name = "radioButton_ovladaniVlastni";
-            this.radioButton_ovladaniVlastni.Size = new System.Drawing.Size(58, 17);
+            this.radioButton_ovladaniVlastni.Size = new System.Drawing.Size(88, 29);
             this.radioButton_ovladaniVlastni.TabIndex = 8;
             this.radioButton_ovladaniVlastni.Text = "Vlastní";
             this.radioButton_ovladaniVlastni.UseVisualStyleBackColor = true;
@@ -319,25 +384,31 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 280);
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(105, 293);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(122, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "Typ ovládání";
             // 
             // label_typOvladani
             // 
+            this.label_typOvladani.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_typOvladani.AutoSize = true;
-            this.label_typOvladani.Location = new System.Drawing.Point(74, 377);
+            this.label_typOvladani.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_typOvladani.Location = new System.Drawing.Point(105, 502);
             this.label_typOvladani.Name = "label_typOvladani";
-            this.label_typOvladani.Size = new System.Drawing.Size(73, 13);
+            this.label_typOvladani.Size = new System.Drawing.Size(128, 25);
             this.label_typOvladani.TabIndex = 22;
             this.label_typOvladani.Text = "Typ ovládání:";
             // 
             // pictureBox_nahoru
             // 
-            this.pictureBox_nahoru.Location = new System.Drawing.Point(330, 325);
+            this.pictureBox_nahoru.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox_nahoru.Location = new System.Drawing.Point(349, 350);
+            this.pictureBox_nahoru.MaximumSize = new System.Drawing.Size(20, 20);
             this.pictureBox_nahoru.Name = "pictureBox_nahoru";
             this.pictureBox_nahoru.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_nahoru.TabIndex = 23;
@@ -345,7 +416,9 @@
             // 
             // pictureBox_dolu
             // 
-            this.pictureBox_dolu.Location = new System.Drawing.Point(330, 351);
+            this.pictureBox_dolu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox_dolu.Location = new System.Drawing.Point(349, 376);
+            this.pictureBox_dolu.MaximumSize = new System.Drawing.Size(20, 20);
             this.pictureBox_dolu.Name = "pictureBox_dolu";
             this.pictureBox_dolu.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_dolu.TabIndex = 24;
@@ -353,7 +426,9 @@
             // 
             // pictureBox_doleva
             // 
-            this.pictureBox_doleva.Location = new System.Drawing.Point(304, 351);
+            this.pictureBox_doleva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox_doleva.Location = new System.Drawing.Point(323, 376);
+            this.pictureBox_doleva.MaximumSize = new System.Drawing.Size(20, 20);
             this.pictureBox_doleva.Name = "pictureBox_doleva";
             this.pictureBox_doleva.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_doleva.TabIndex = 25;
@@ -361,7 +436,9 @@
             // 
             // pictureBox_doprava
             // 
-            this.pictureBox_doprava.Location = new System.Drawing.Point(356, 351);
+            this.pictureBox_doprava.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox_doprava.Location = new System.Drawing.Point(375, 376);
+            this.pictureBox_doprava.MaximumSize = new System.Drawing.Size(20, 20);
             this.pictureBox_doprava.Name = "pictureBox_doprava";
             this.pictureBox_doprava.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_doprava.TabIndex = 26;
@@ -400,8 +477,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(700, 800);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(700, 800);
             this.Name = "Nastaveni";
