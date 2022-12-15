@@ -1137,29 +1137,6 @@ namespace Tetris
                         x++;
                     }
                 }
-                //Feature se shiftem
-                /*else if (!CheckGameOver() & e.KeyCode == Keys.ShiftKey)
-                {
-                    otaceni = 0;
-
-
-                    Control[,] activePieceArray =
-                    {
-                        { box6, box16, box26, box36 }, // I
-                        { box4, box14,box24, box25 }, // L
-                        { box5, box15, box25, box24 }, // J
-                        { box14, box15, box5, box6 },  // S
-                        { box5, box6, box16, box17 },  // Z
-                        { box5, box6, box15, box16 },  // O
-                        { box6, box15, box16, box17 }  // T
-                };
-
-
-                    foreach (Control x in aktivniPolozka)
-                    {
-                        x.BackColor = Color.White;
-                    }
-                }*/
             }
         }
 
@@ -1169,6 +1146,13 @@ namespace Tetris
             this.Hide();
             Menu menu = new Menu();
             menu.ShowDialog();
+            this.Dispose();
+        }
+        private void button_skore_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Skore skore = new Skore();
+            skore.ShowDialog();
             this.Dispose();
         }
         //ukonci app
@@ -1185,13 +1169,7 @@ namespace Tetris
             this.Dispose();
         }
 
-        private void button_skore_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Skore skore = new Skore();
-            skore.ShowDialog();
-            this.Dispose();
-        }
+      
 
         private void TetrisMain_Load(object sender, EventArgs e)
         {
