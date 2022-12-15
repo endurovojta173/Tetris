@@ -75,7 +75,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(218, 697);
+            this.button1.Location = new System.Drawing.Point(218, 797);
             this.button1.MaximumSize = new System.Drawing.Size(100000, 52);
             this.button1.MinimumSize = new System.Drawing.Size(250, 52);
             this.button1.Name = "button1";
@@ -449,7 +449,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(684, 761);
+            this.ClientSize = new System.Drawing.Size(684, 861);
             this.Controls.Add(this.pictureBox_doprava);
             this.Controls.Add(this.pictureBox_doleva);
             this.Controls.Add(this.pictureBox_dolu);
@@ -478,7 +478,7 @@
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(700, 800);
+            this.MinimumSize = new System.Drawing.Size(700, 900);
             this.Name = "Nastaveni";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tetris";

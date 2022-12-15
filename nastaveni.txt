@@ -1,9 +1,8 @@
-Guest
+Vojta
 100
-true
+false
 false
 true
-
 
 a
 d

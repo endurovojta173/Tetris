@@ -410,7 +410,7 @@ namespace Tetris
             {
                 rychlostHryTimer.Stop();
                 casHryTimer.Stop();
-                MessageBox.Show("Game over!X");
+                MessageBox.Show("Game over!");
             }
             else
             {
@@ -624,16 +624,25 @@ namespace Tetris
             tabulka.BackColor = Color.Black;
             tabulkaNapoveda.BackColor = Color.Black;
         }
+
+        //Je potřeba udělat vypnutí soundtracku a pozastavení timeru
         //Tlacitko pro menu
         private void button_menu_Click(object sender, EventArgs e)
         {
+            rychlostHryTimer.Stop();
+            casHryTimer.Stop();
+            soundtrack.Stop();
             this.Hide();
             Menu menu = new Menu();
             menu.ShowDialog();
             this.Dispose();
         }
+        //Tlacitko pro skore
         private void button_skore_Click(object sender, EventArgs e)
         {
+            rychlostHryTimer.Stop();
+            casHryTimer.Stop();
+            soundtrack.Stop();
             this.Hide();
             Skore skore = new Skore();
             skore.ShowDialog();
@@ -647,6 +656,9 @@ namespace Tetris
         //zacne novou hru
         private void button_novaHra_Click(object sender, EventArgs e)
         {
+            rychlostHryTimer.Stop();
+            casHryTimer.Stop();
+            soundtrack.Stop();
             this.Hide();
             TetrisMain main = new TetrisMain();
             main.ShowDialog();

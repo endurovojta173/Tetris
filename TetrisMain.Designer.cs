@@ -284,6 +284,7 @@
             this.button_skore = new System.Windows.Forms.Button();
             this.label_typOvladani = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -523,13 +524,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.box216)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box201)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_skore
             // 
+            this.label_skore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_skore.AutoSize = true;
             this.label_skore.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_skore.Location = new System.Drawing.Point(361, 132);
+            this.label_skore.Location = new System.Drawing.Point(399, 724);
             this.label_skore.Name = "label_skore";
             this.label_skore.Size = new System.Drawing.Size(123, 32);
             this.label_skore.TabIndex = 1;
@@ -537,9 +540,10 @@
             // 
             // label_cas
             // 
+            this.label_cas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_cas.AutoSize = true;
             this.label_cas.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_cas.Location = new System.Drawing.Point(361, 103);
+            this.label_cas.Location = new System.Drawing.Point(399, 692);
             this.label_cas.Name = "label_cas";
             this.label_cas.Size = new System.Drawing.Size(120, 32);
             this.label_cas.TabIndex = 2;
@@ -547,9 +551,10 @@
             // 
             // label_radky
             // 
+            this.label_radky.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_radky.AutoSize = true;
             this.label_radky.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_radky.Location = new System.Drawing.Point(361, 164);
+            this.label_radky.Location = new System.Drawing.Point(399, 756);
             this.label_radky.Name = "label_radky";
             this.label_radky.Size = new System.Drawing.Size(129, 32);
             this.label_radky.TabIndex = 4;
@@ -567,6 +572,7 @@
             // 
             // tabulka
             // 
+            this.tabulka.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tabulka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.tabulka.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tabulka.ColumnCount = 10;
@@ -801,8 +807,10 @@
             this.tabulka.Controls.Add(this.box251, 8, 1);
             this.tabulka.Controls.Add(this.box252, 9, 1);
             this.tabulka.Cursor = System.Windows.Forms.Cursors.No;
-            this.tabulka.Location = new System.Drawing.Point(12, 74);
+            this.tabulka.Location = new System.Drawing.Point(178, 57);
             this.tabulka.Margin = new System.Windows.Forms.Padding(2);
+            this.tabulka.MaximumSize = new System.Drawing.Size(341, 624);
+            this.tabulka.MinimumSize = new System.Drawing.Size(341, 624);
             this.tabulka.Name = "tabulka";
             this.tabulka.RowCount = 22;
             this.tabulka.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
@@ -3241,19 +3249,21 @@
             // 
             // label_pozastaveni
             // 
+            this.label_pozastaveni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_pozastaveni.AutoSize = true;
-            this.label_pozastaveni.Font = new System.Drawing.Font("Arial Narrow", 10.5F, System.Drawing.FontStyle.Bold);
-            this.label_pozastaveni.Location = new System.Drawing.Point(363, 461);
+            this.label_pozastaveni.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.label_pozastaveni.Location = new System.Drawing.Point(14, 809);
             this.label_pozastaveni.Name = "label_pozastaveni";
-            this.label_pozastaveni.Size = new System.Drawing.Size(171, 17);
+            this.label_pozastaveni.Size = new System.Drawing.Size(363, 29);
             this.label_pozastaveni.TabIndex = 7;
             this.label_pozastaveni.Text = "Pro pozastavení stiskněte ESC";
             // 
             // label_herniRezim
             // 
+            this.label_herniRezim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_herniRezim.AutoSize = true;
             this.label_herniRezim.Font = new System.Drawing.Font("Arial Narrow", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_herniRezim.Location = new System.Drawing.Point(6, 30);
+            this.label_herniRezim.Location = new System.Drawing.Point(172, 11);
             this.label_herniRezim.Name = "label_herniRezim";
             this.label_herniRezim.Size = new System.Drawing.Size(116, 33);
             this.label_herniRezim.TabIndex = 8;
@@ -3261,9 +3271,10 @@
             // 
             // label_jmeno
             // 
+            this.label_jmeno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_jmeno.AutoSize = true;
             this.label_jmeno.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label_jmeno.Location = new System.Drawing.Point(361, 71);
+            this.label_jmeno.Location = new System.Drawing.Point(539, 200);
             this.label_jmeno.Name = "label_jmeno";
             this.label_jmeno.Size = new System.Drawing.Size(91, 32);
             this.label_jmeno.TabIndex = 9;
@@ -3271,9 +3282,10 @@
             // 
             // label_delkaHry
             // 
+            this.label_delkaHry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_delkaHry.AutoSize = true;
             this.label_delkaHry.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_delkaHry.Location = new System.Drawing.Point(361, 196);
+            this.label_delkaHry.Location = new System.Drawing.Point(11, 692);
             this.label_delkaHry.Name = "label_delkaHry";
             this.label_delkaHry.Size = new System.Drawing.Size(148, 32);
             this.label_delkaHry.TabIndex = 10;
@@ -3281,9 +3293,10 @@
             // 
             // label_obtiznost
             // 
+            this.label_obtiznost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_obtiznost.AutoSize = true;
             this.label_obtiznost.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_obtiznost.Location = new System.Drawing.Point(361, 282);
+            this.label_obtiznost.Location = new System.Drawing.Point(11, 724);
             this.label_obtiznost.Name = "label_obtiznost";
             this.label_obtiznost.Size = new System.Drawing.Size(151, 32);
             this.label_obtiznost.TabIndex = 12;
@@ -3291,6 +3304,7 @@
             // 
             // tabulkaNapoveda
             // 
+            this.tabulkaNapoveda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tabulkaNapoveda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.tabulkaNapoveda.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tabulkaNapoveda.ColumnCount = 4;
@@ -3315,8 +3329,10 @@
             this.tabulkaNapoveda.Controls.Add(this.box216, 3, 3);
             this.tabulkaNapoveda.Controls.Add(this.box201, 0, 0);
             this.tabulkaNapoveda.Cursor = System.Windows.Forms.Cursors.No;
-            this.tabulkaNapoveda.Location = new System.Drawing.Point(367, 317);
+            this.tabulkaNapoveda.Location = new System.Drawing.Point(542, 60);
             this.tabulkaNapoveda.Margin = new System.Windows.Forms.Padding(2);
+            this.tabulkaNapoveda.MaximumSize = new System.Drawing.Size(133, 130);
+            this.tabulkaNapoveda.MinimumSize = new System.Drawing.Size(133, 130);
             this.tabulkaNapoveda.Name = "tabulkaNapoveda";
             this.tabulkaNapoveda.RowCount = 4;
             this.tabulkaNapoveda.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -3488,9 +3504,15 @@
             // 
             // button_novaHra
             // 
-            this.button_novaHra.Location = new System.Drawing.Point(3, 9);
+            this.button_novaHra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_novaHra.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_novaHra.Location = new System.Drawing.Point(3, 3);
+            this.button_novaHra.MaximumSize = new System.Drawing.Size(149, 44);
+            this.button_novaHra.MinimumSize = new System.Drawing.Size(149, 44);
             this.button_novaHra.Name = "button_novaHra";
-            this.button_novaHra.Size = new System.Drawing.Size(133, 29);
+            this.button_novaHra.Size = new System.Drawing.Size(149, 44);
             this.button_novaHra.TabIndex = 14;
             this.button_novaHra.TabStop = false;
             this.button_novaHra.Text = "Začít znovu";
@@ -3499,9 +3521,15 @@
             // 
             // button_menu
             // 
-            this.button_menu.Location = new System.Drawing.Point(3, 74);
+            this.button_menu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_menu.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_menu.Location = new System.Drawing.Point(3, 96);
+            this.button_menu.MaximumSize = new System.Drawing.Size(149, 44);
+            this.button_menu.MinimumSize = new System.Drawing.Size(149, 44);
             this.button_menu.Name = "button_menu";
-            this.button_menu.Size = new System.Drawing.Size(133, 29);
+            this.button_menu.Size = new System.Drawing.Size(149, 44);
             this.button_menu.TabIndex = 15;
             this.button_menu.TabStop = false;
             this.button_menu.Text = "Menu";
@@ -3510,9 +3538,15 @@
             // 
             // button_konec
             // 
-            this.button_konec.Location = new System.Drawing.Point(3, 108);
+            this.button_konec.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_konec.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_konec.Location = new System.Drawing.Point(3, 143);
+            this.button_konec.MaximumSize = new System.Drawing.Size(149, 44);
+            this.button_konec.MinimumSize = new System.Drawing.Size(149, 44);
             this.button_konec.Name = "button_konec";
-            this.button_konec.Size = new System.Drawing.Size(133, 29);
+            this.button_konec.Size = new System.Drawing.Size(149, 44);
             this.button_konec.TabIndex = 16;
             this.button_konec.TabStop = false;
             this.button_konec.Text = "Konec";
@@ -3521,9 +3555,15 @@
             // 
             // button_skore
             // 
-            this.button_skore.Location = new System.Drawing.Point(3, 42);
+            this.button_skore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_skore.Font = new System.Drawing.Font("Arial Narrow", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button_skore.Location = new System.Drawing.Point(3, 49);
+            this.button_skore.MaximumSize = new System.Drawing.Size(149, 44);
+            this.button_skore.MinimumSize = new System.Drawing.Size(149, 44);
             this.button_skore.Name = "button_skore";
-            this.button_skore.Size = new System.Drawing.Size(133, 29);
+            this.button_skore.Size = new System.Drawing.Size(149, 44);
             this.button_skore.TabIndex = 17;
             this.button_skore.TabStop = false;
             this.button_skore.Text = "Skóre";
@@ -3532,9 +3572,10 @@
             // 
             // label_typOvladani
             // 
+            this.label_typOvladani.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_typOvladani.AutoSize = true;
             this.label_typOvladani.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label_typOvladani.Location = new System.Drawing.Point(361, 228);
+            this.label_typOvladani.Location = new System.Drawing.Point(11, 756);
             this.label_typOvladani.Name = "label_typOvladani";
             this.label_typOvladani.Size = new System.Drawing.Size(140, 32);
             this.label_typOvladani.TabIndex = 18;
@@ -3542,36 +3583,50 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.Controls.Add(this.button_skore);
             this.panel1.Controls.Add(this.button_novaHra);
             this.panel1.Controls.Add(this.button_menu);
             this.panel1.Controls.Add(this.button_konec);
-            this.panel1.Location = new System.Drawing.Point(505, 308);
+            this.panel1.Location = new System.Drawing.Point(14, 57);
+            this.panel1.MaximumSize = new System.Drawing.Size(140, 150);
+            this.panel1.MinimumSize = new System.Drawing.Size(155, 190);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(140, 150);
+            this.panel1.Size = new System.Drawing.Size(155, 190);
             this.panel1.TabIndex = 19;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.label_herniRezim);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.label_skore);
+            this.panel2.Controls.Add(this.label_typOvladani);
+            this.panel2.Controls.Add(this.label_cas);
+            this.panel2.Controls.Add(this.tabulkaNapoveda);
+            this.panel2.Controls.Add(this.label_radky);
+            this.panel2.Controls.Add(this.label_obtiznost);
+            this.panel2.Controls.Add(this.tabulka);
+            this.panel2.Controls.Add(this.label_delkaHry);
+            this.panel2.Controls.Add(this.label_pozastaveni);
+            this.panel2.Controls.Add(this.label_jmeno);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.MaximumSize = new System.Drawing.Size(700, 900);
+            this.panel2.MinimumSize = new System.Drawing.Size(700, 900);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(700, 900);
+            this.panel2.TabIndex = 20;
             // 
             // TetrisMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(684, 861);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label_typOvladani);
-            this.Controls.Add(this.tabulkaNapoveda);
-            this.Controls.Add(this.label_obtiznost);
-            this.Controls.Add(this.label_delkaHry);
-            this.Controls.Add(this.label_jmeno);
-            this.Controls.Add(this.label_herniRezim);
-            this.Controls.Add(this.label_pozastaveni);
-            this.Controls.Add(this.tabulka);
-            this.Controls.Add(this.label_radky);
-            this.Controls.Add(this.label_cas);
-            this.Controls.Add(this.label_skore);
+            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(700, 900);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(700, 900);
             this.Name = "TetrisMain";
@@ -3817,8 +3872,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.box216)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.box201)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -4077,6 +4133,7 @@
         private System.Windows.Forms.Button button_skore;
         private System.Windows.Forms.Label label_typOvladani;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

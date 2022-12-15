@@ -1,3 +1,6 @@
 Guest;800;95;Nekonečný mód;Nekonečná;;Lehká;
 Guest;0;62;Nekonečný mód;Nekonečná;;Lehká;
 Guest;0;10;Nekonečný mód;Nekonečná;;Lehká;
+Guest;0;62;Časově omezený;100;Lehká;
+Guest;0;64;Časově omezený;100;Lehká;
+Vojta;1600;147;Nekonečný mód;Nekonečná;;Lehká;
