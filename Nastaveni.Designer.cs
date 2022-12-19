@@ -33,7 +33,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label_delkaModuSOmezenymCasem = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.radioButton_nekonecnyMod = new System.Windows.Forms.RadioButton();
@@ -64,6 +63,7 @@
             this.label_hlasitost = new System.Windows.Forms.Label();
             this.numericUpDown_hlasitost = new System.Windows.Forms.NumericUpDown();
             this.label_hlasitostHry = new System.Windows.Forms.Label();
+            this.numericUpDown_delkaOmezeneho = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doleva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doprava)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_hlasitost)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_delkaOmezeneho)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -124,18 +125,6 @@
             this.button2.Text = "Menu";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.textBox2.Location = new System.Drawing.Point(515, 254);
-            this.textBox2.MaximumSize = new System.Drawing.Size(100, 32);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 32);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.Text = "200";
             // 
             // label_delkaModuSOmezenymCasem
             // 
@@ -492,12 +481,45 @@
             this.label_hlasitostHry.TabIndex = 30;
             this.label_hlasitostHry.Text = "Hlasitost hry:";
             // 
+            // numericUpDown_delkaOmezeneho
+            // 
+            this.numericUpDown_delkaOmezeneho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.numericUpDown_delkaOmezeneho.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.numericUpDown_delkaOmezeneho.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown_delkaOmezeneho.InterceptArrowKeys = false;
+            this.numericUpDown_delkaOmezeneho.Location = new System.Drawing.Point(508, 252);
+            this.numericUpDown_delkaOmezeneho.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDown_delkaOmezeneho.MaximumSize = new System.Drawing.Size(120, 0);
+            this.numericUpDown_delkaOmezeneho.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_delkaOmezeneho.MinimumSize = new System.Drawing.Size(120, 0);
+            this.numericUpDown_delkaOmezeneho.Name = "numericUpDown_delkaOmezeneho";
+            this.numericUpDown_delkaOmezeneho.Size = new System.Drawing.Size(120, 32);
+            this.numericUpDown_delkaOmezeneho.TabIndex = 31;
+            this.numericUpDown_delkaOmezeneho.Value = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            // 
             // Nastaveni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(684, 861);
+            this.Controls.Add(this.numericUpDown_delkaOmezeneho);
             this.Controls.Add(this.label_hlasitostHry);
             this.Controls.Add(this.numericUpDown_hlasitost);
             this.Controls.Add(this.label_hlasitost);
@@ -522,7 +544,6 @@
             this.Controls.Add(this.label_aktualniJmeno);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label_delkaModuSOmezenymCasem);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -544,6 +565,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doleva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doprava)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_hlasitost)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_delkaOmezeneho)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,7 +577,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label_delkaModuSOmezenymCasem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radioButton_nekonecnyMod;
@@ -586,5 +607,6 @@
         private System.Windows.Forms.Label label_hlasitost;
         private System.Windows.Forms.NumericUpDown numericUpDown_hlasitost;
         private System.Windows.Forms.Label label_hlasitostHry;
+        private System.Windows.Forms.NumericUpDown numericUpDown_delkaOmezeneho;
     }
 }

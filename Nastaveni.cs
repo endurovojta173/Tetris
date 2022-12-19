@@ -29,7 +29,7 @@ namespace Tetris
             int hlasitost = int.Parse(numericUpDown_hlasitost.Value.ToString());
 
             sw.WriteLine(textBox1.Text); //Zapisuje jméno hráče
-            sw.WriteLine(textBox2.Text); //Zapisuje délku hry
+            sw.WriteLine(numericUpDown_delkaOmezeneho.Value); //Zapisuje délku hry
             sw.WriteLine(hlasitost); //Zapisuje hlasitost
             //Ověřuje mód //Časově omezený mód == true
             if(radioButton_nekonecnyMod.Checked)
@@ -96,7 +96,7 @@ namespace Tetris
             bool doporuceneOvladani = bool.Parse(sr.ReadLine());
             label_aktualniJmeno.Text = "Jméno: " + jmeno;
             textBox1.Text = jmeno;
-            textBox2.Text = delka;
+            numericUpDown_delkaOmezeneho.Value = decimal.Parse(delka);
 
             //Zobrazuje hlasitost
             label_hlasitostHry.Text = "Hlasitost hry: " + hlasitostHry;
@@ -124,14 +124,14 @@ namespace Tetris
                 label_herniMod.Text = "Herní mód: Časový mód";
                 label_delka.Text = "Délka hry: " + delka + " s";
                 radioButton_casoveOmezenyMod.Checked = true;
-                textBox2.Enabled = true;
+                numericUpDown_delkaOmezeneho.Enabled = true;
             }
             else
             {
                 label_herniMod.Text = "Herní mód: Nekonečný mód";
                 label_delka.Text = "Délka hry: Neomezená";
                 radioButton_nekonecnyMod.Checked = true;
-                textBox2.Enabled = false;
+                numericUpDown_delkaOmezeneho.Enabled = false;
             }
             if(doporuceneOvladani)
             {
@@ -183,12 +183,12 @@ namespace Tetris
 
         private void radioButton_casoveOmezenyMod_Click(object sender, EventArgs e)
         {
-            textBox2.Enabled = true;
+            numericUpDown_delkaOmezeneho.Enabled = true;
         }
 
         private void radioButton_nekonecnyMod_Click(object sender, EventArgs e)
         {
-            textBox2.Enabled = false;
+            numericUpDown_delkaOmezeneho.Enabled = false;
         }
 
 
