@@ -51,8 +51,7 @@ namespace Tetris
             Color.Yellow,   // O 
             Color.Purple    // T
         };
-        
-        System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(); //Konstruktor zvuku //Soundtrack
+        System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(Tetris.Properties.Resources.soundtrack); //Konstruktor zvuku //Soundtrack
 
 
 
@@ -61,7 +60,7 @@ namespace Tetris
         public TetrisMain()
         {
             InitializeComponent();
-            soundtrack.SoundLocation=@"../../soundtrack.wav";//Lokace soundtracku
+            //soundtrack.SoundLocation=@"../../soundtrack.wav";//Lokace soundtracku
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
 
             //Načte nastavení 

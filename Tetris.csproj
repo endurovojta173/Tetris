@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\soundtrack.bmp" />
     <Content Include="sipkaDoleva.png" />
     <Content Include="sipkaDolu.png" />
     <Content Include="sipkaDoprava.png" />

@@ -99,5 +99,14 @@ namespace Tetris.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.IO.UnmanagedMemoryStream podobný System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream soundtrack {
+            get {
+                return ResourceManager.GetStream("soundtrack", resourceCulture);
+            }
+        }
     }
 }
