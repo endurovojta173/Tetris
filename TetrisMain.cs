@@ -60,9 +60,7 @@ namespace Tetris
         public TetrisMain()
         {
             InitializeComponent();
-            CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
-            soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
-            defaultPlaybackDevice.Volume = 50;
+            
 
 
             //Načte nastavení 
@@ -70,6 +68,12 @@ namespace Tetris
             StreamReader sr = new StreamReader(fs);
             jmeno = sr.ReadLine();
             delkaHry = int.Parse(sr.ReadLine());
+
+            int hlasitostHry= int.Parse(sr.ReadLine()); //hlasitost hry
+            CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+            defaultPlaybackDevice.Volume = hlasitostHry;
+            soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
+
             herniMod = bool.Parse(sr.ReadLine());
             obtiznost = bool.Parse(sr.ReadLine());
             doporuceneOvladani = bool.Parse(sr.ReadLine());

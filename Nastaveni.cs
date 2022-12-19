@@ -27,8 +27,6 @@ namespace Tetris
 
             //nastavení zvuk na určitou hlasitost už v nastavení // později budu moct umazat, protože bude nastavovat při spuštění nové hry
             int hlasitost = int.Parse(numericUpDown_hlasitost.Value.ToString());
-            /*CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
-            defaultPlaybackDevice.Volume = hlasitost;*/
 
             sw.WriteLine(textBox1.Text); //Zapisuje jméno hráče
             sw.WriteLine(textBox2.Text); //Zapisuje délku hry
