@@ -95,11 +95,6 @@ namespace Tetris
             pictureBox_doleva.Image = Tetris.Properties.Resources.sipkaDoleva;
             pictureBox_doprava.Image = Tetris.Properties.Resources.sipkaDoprava;
             pictureBox_dolu.Image = Tetris.Properties.Resources.sipkaDolu;
-            //pictureBox_nahoru.ImageLocation = @"../../sipkaNahoru.png";
-            /*pictureBox_dolu.ImageLocation = @"../../sipkaDolu.png";
-            pictureBox_doleva.ImageLocation = @"../../sipkaDoleva.png";
-            pictureBox_doprava.ImageLocation = @"../../sipkaDoprava.png";*/
-
 
             if (obtiznost)
             {
