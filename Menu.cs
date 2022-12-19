@@ -58,6 +58,7 @@ namespace Tetris
                 StreamWriter sw = new StreamWriter(fs);
                 sw.WriteLine("Guest");
                 sw.WriteLine("100");
+                sw.WriteLine("10");
                 sw.WriteLine("false");
                 sw.WriteLine("false");
                 sw.WriteLine("true");

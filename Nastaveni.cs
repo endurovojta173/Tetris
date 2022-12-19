@@ -1,7 +1,9 @@
-﻿using System;
+﻿using AudioSwitcher.AudioApi.CoreAudio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -22,8 +24,15 @@ namespace Tetris
         {
             FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine(textBox1.Text);
-            sw.WriteLine(textBox2.Text);
+
+            //nastavení zvuk na určitou hlasitost už v nastavení // později budu moct umazat, protože bude nastavovat při spuštění nové hry
+            int hlasitost = int.Parse(numericUpDown_hlasitost.Value.ToString());
+            /*CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+            defaultPlaybackDevice.Volume = hlasitost;*/
+
+            sw.WriteLine(textBox1.Text); //Zapisuje jméno hráče
+            sw.WriteLine(textBox2.Text); //Zapisuje délku hry
+            sw.WriteLine(hlasitost); //Zapisuje hlasitost
             //Ověřuje mód //Časově omezený mód == true
             if(radioButton_nekonecnyMod.Checked)
             {
@@ -83,12 +92,18 @@ namespace Tetris
             StreamReader sr = new StreamReader(fs);
             string jmeno = sr.ReadLine();
             string delka = sr.ReadLine();
+            string hlasitostHry=sr.ReadLine();
             bool mod = bool.Parse(sr.ReadLine());
             bool obtiznost = bool.Parse(sr.ReadLine());
             bool doporuceneOvladani = bool.Parse(sr.ReadLine());
             label_aktualniJmeno.Text = "Jméno: " + jmeno;
             textBox1.Text = jmeno;
             textBox2.Text = delka;
+
+            //Zobrazuje hlasitost
+            label_hlasitostHry.Text = "Hlasitost hry: " + hlasitostHry;
+            numericUpDown_hlasitost.Value=decimal.Parse(hlasitostHry);
+
 
             //nacteni sipek
             pictureBox_nahoru.Image = Tetris.Properties.Resources.sipkaNahoru;

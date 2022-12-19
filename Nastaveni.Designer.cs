@@ -61,6 +61,9 @@
             this.pictureBox_dolu = new System.Windows.Forms.PictureBox();
             this.pictureBox_doleva = new System.Windows.Forms.PictureBox();
             this.pictureBox_doprava = new System.Windows.Forms.PictureBox();
+            this.label_hlasitost = new System.Windows.Forms.Label();
+            this.numericUpDown_hlasitost = new System.Windows.Forms.NumericUpDown();
+            this.label_hlasitostHry = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -68,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_dolu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doleva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doprava)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_hlasitost)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -188,7 +192,7 @@
             this.label_aktualniJmeno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_aktualniJmeno.AutoSize = true;
             this.label_aktualniJmeno.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label_aktualniJmeno.Location = new System.Drawing.Point(105, 402);
+            this.label_aktualniJmeno.Location = new System.Drawing.Point(105, 469);
             this.label_aktualniJmeno.Name = "label_aktualniJmeno";
             this.label_aktualniJmeno.Size = new System.Drawing.Size(75, 25);
             this.label_aktualniJmeno.TabIndex = 9;
@@ -199,7 +203,7 @@
             this.label_delka.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_delka.AutoSize = true;
             this.label_delka.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label_delka.Location = new System.Drawing.Point(105, 477);
+            this.label_delka.Location = new System.Drawing.Point(105, 544);
             this.label_delka.Name = "label_delka";
             this.label_delka.Size = new System.Drawing.Size(98, 25);
             this.label_delka.TabIndex = 10;
@@ -210,7 +214,7 @@
             this.label_herniMod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_herniMod.AutoSize = true;
             this.label_herniMod.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label_herniMod.Location = new System.Drawing.Point(105, 452);
+            this.label_herniMod.Location = new System.Drawing.Point(105, 519);
             this.label_herniMod.Name = "label_herniMod";
             this.label_herniMod.Size = new System.Drawing.Size(105, 25);
             this.label_herniMod.TabIndex = 11;
@@ -221,7 +225,7 @@
             this.label_obtiznost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_obtiznost.AutoSize = true;
             this.label_obtiznost.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label_obtiznost.Location = new System.Drawing.Point(105, 427);
+            this.label_obtiznost.Location = new System.Drawing.Point(105, 494);
             this.label_obtiznost.Name = "label_obtiznost";
             this.label_obtiznost.Size = new System.Drawing.Size(100, 25);
             this.label_obtiznost.TabIndex = 12;
@@ -293,7 +297,7 @@
             // textBox_ovladaniDoleva
             // 
             this.textBox_ovladaniDoleva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox_ovladaniDoleva.Location = new System.Drawing.Point(435, 376);
+            this.textBox_ovladaniDoleva.Location = new System.Drawing.Point(435, 443);
             this.textBox_ovladaniDoleva.MaximumSize = new System.Drawing.Size(20, 20);
             this.textBox_ovladaniDoleva.MaxLength = 1;
             this.textBox_ovladaniDoleva.Name = "textBox_ovladaniDoleva";
@@ -303,7 +307,7 @@
             // textBox_ovladaniDoprava
             // 
             this.textBox_ovladaniDoprava.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox_ovladaniDoprava.Location = new System.Drawing.Point(487, 376);
+            this.textBox_ovladaniDoprava.Location = new System.Drawing.Point(487, 443);
             this.textBox_ovladaniDoprava.MaximumSize = new System.Drawing.Size(20, 20);
             this.textBox_ovladaniDoprava.MaxLength = 1;
             this.textBox_ovladaniDoprava.Name = "textBox_ovladaniDoprava";
@@ -313,7 +317,7 @@
             // textBox_ovladaniOtaceni
             // 
             this.textBox_ovladaniOtaceni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox_ovladaniOtaceni.Location = new System.Drawing.Point(461, 350);
+            this.textBox_ovladaniOtaceni.Location = new System.Drawing.Point(461, 417);
             this.textBox_ovladaniOtaceni.MaximumSize = new System.Drawing.Size(20, 20);
             this.textBox_ovladaniOtaceni.MaxLength = 1;
             this.textBox_ovladaniOtaceni.Name = "textBox_ovladaniOtaceni";
@@ -323,7 +327,7 @@
             // textBox_ovladaniDolu
             // 
             this.textBox_ovladaniDolu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.textBox_ovladaniDolu.Location = new System.Drawing.Point(461, 376);
+            this.textBox_ovladaniDolu.Location = new System.Drawing.Point(461, 443);
             this.textBox_ovladaniDolu.MaximumSize = new System.Drawing.Size(20, 20);
             this.textBox_ovladaniDolu.MaxLength = 1;
             this.textBox_ovladaniDolu.Name = "textBox_ovladaniDolu";
@@ -335,7 +339,7 @@
             this.label_nadpisOvladani.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_nadpisOvladani.AutoSize = true;
             this.label_nadpisOvladani.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label_nadpisOvladani.Location = new System.Drawing.Point(370, 328);
+            this.label_nadpisOvladani.Location = new System.Drawing.Point(370, 395);
             this.label_nadpisOvladani.Name = "label_nadpisOvladani";
             this.label_nadpisOvladani.Size = new System.Drawing.Size(87, 25);
             this.label_nadpisOvladani.TabIndex = 20;
@@ -347,7 +351,7 @@
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
             this.panel3.Controls.Add(this.radioButton_ovladaniDoporucene);
             this.panel3.Controls.Add(this.radioButton_ovladaniVlastni);
-            this.panel3.Location = new System.Drawing.Point(258, 288);
+            this.panel3.Location = new System.Drawing.Point(258, 355);
             this.panel3.MaximumSize = new System.Drawing.Size(357, 36);
             this.panel3.MinimumSize = new System.Drawing.Size(357, 36);
             this.panel3.Name = "panel3";
@@ -387,7 +391,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(105, 293);
+            this.label2.Location = new System.Drawing.Point(105, 360);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 25);
             this.label2.TabIndex = 21;
@@ -398,7 +402,7 @@
             this.label_typOvladani.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label_typOvladani.AutoSize = true;
             this.label_typOvladani.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label_typOvladani.Location = new System.Drawing.Point(105, 502);
+            this.label_typOvladani.Location = new System.Drawing.Point(105, 569);
             this.label_typOvladani.Name = "label_typOvladani";
             this.label_typOvladani.Size = new System.Drawing.Size(128, 25);
             this.label_typOvladani.TabIndex = 22;
@@ -407,7 +411,7 @@
             // pictureBox_nahoru
             // 
             this.pictureBox_nahoru.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox_nahoru.Location = new System.Drawing.Point(349, 350);
+            this.pictureBox_nahoru.Location = new System.Drawing.Point(349, 417);
             this.pictureBox_nahoru.MaximumSize = new System.Drawing.Size(20, 20);
             this.pictureBox_nahoru.Name = "pictureBox_nahoru";
             this.pictureBox_nahoru.Size = new System.Drawing.Size(20, 20);
@@ -417,7 +421,7 @@
             // pictureBox_dolu
             // 
             this.pictureBox_dolu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox_dolu.Location = new System.Drawing.Point(349, 376);
+            this.pictureBox_dolu.Location = new System.Drawing.Point(349, 443);
             this.pictureBox_dolu.MaximumSize = new System.Drawing.Size(20, 20);
             this.pictureBox_dolu.Name = "pictureBox_dolu";
             this.pictureBox_dolu.Size = new System.Drawing.Size(20, 20);
@@ -427,7 +431,7 @@
             // pictureBox_doleva
             // 
             this.pictureBox_doleva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox_doleva.Location = new System.Drawing.Point(323, 376);
+            this.pictureBox_doleva.Location = new System.Drawing.Point(323, 443);
             this.pictureBox_doleva.MaximumSize = new System.Drawing.Size(20, 20);
             this.pictureBox_doleva.Name = "pictureBox_doleva";
             this.pictureBox_doleva.Size = new System.Drawing.Size(20, 20);
@@ -437,12 +441,56 @@
             // pictureBox_doprava
             // 
             this.pictureBox_doprava.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox_doprava.Location = new System.Drawing.Point(375, 376);
+            this.pictureBox_doprava.Location = new System.Drawing.Point(375, 443);
             this.pictureBox_doprava.MaximumSize = new System.Drawing.Size(20, 20);
             this.pictureBox_doprava.Name = "pictureBox_doprava";
             this.pictureBox_doprava.Size = new System.Drawing.Size(20, 20);
             this.pictureBox_doprava.TabIndex = 26;
             this.pictureBox_doprava.TabStop = false;
+            // 
+            // label_hlasitost
+            // 
+            this.label_hlasitost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label_hlasitost.AutoSize = true;
+            this.label_hlasitost.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_hlasitost.Location = new System.Drawing.Point(105, 294);
+            this.label_hlasitost.Name = "label_hlasitost";
+            this.label_hlasitost.Size = new System.Drawing.Size(126, 25);
+            this.label_hlasitost.TabIndex = 27;
+            this.label_hlasitost.Text = "Hlasitost hry:";
+            // 
+            // numericUpDown_hlasitost
+            // 
+            this.numericUpDown_hlasitost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.numericUpDown_hlasitost.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.numericUpDown_hlasitost.InterceptArrowKeys = false;
+            this.numericUpDown_hlasitost.Location = new System.Drawing.Point(258, 292);
+            this.numericUpDown_hlasitost.MaximumSize = new System.Drawing.Size(60, 0);
+            this.numericUpDown_hlasitost.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_hlasitost.MinimumSize = new System.Drawing.Size(60, 0);
+            this.numericUpDown_hlasitost.Name = "numericUpDown_hlasitost";
+            this.numericUpDown_hlasitost.Size = new System.Drawing.Size(60, 32);
+            this.numericUpDown_hlasitost.TabIndex = 29;
+            this.numericUpDown_hlasitost.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // label_hlasitostHry
+            // 
+            this.label_hlasitostHry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label_hlasitostHry.AutoSize = true;
+            this.label_hlasitostHry.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_hlasitostHry.Location = new System.Drawing.Point(105, 594);
+            this.label_hlasitostHry.Name = "label_hlasitostHry";
+            this.label_hlasitostHry.Size = new System.Drawing.Size(126, 25);
+            this.label_hlasitostHry.TabIndex = 30;
+            this.label_hlasitostHry.Text = "Hlasitost hry:";
             // 
             // Nastaveni
             // 
@@ -450,6 +498,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(684, 861);
+            this.Controls.Add(this.label_hlasitostHry);
+            this.Controls.Add(this.numericUpDown_hlasitost);
+            this.Controls.Add(this.label_hlasitost);
             this.Controls.Add(this.pictureBox_doprava);
             this.Controls.Add(this.pictureBox_doleva);
             this.Controls.Add(this.pictureBox_dolu);
@@ -492,6 +543,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_dolu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doleva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doprava)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_hlasitost)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,5 +583,8 @@
         private System.Windows.Forms.PictureBox pictureBox_dolu;
         private System.Windows.Forms.PictureBox pictureBox_doleva;
         private System.Windows.Forms.PictureBox pictureBox_doprava;
+        private System.Windows.Forms.Label label_hlasitost;
+        private System.Windows.Forms.NumericUpDown numericUpDown_hlasitost;
+        private System.Windows.Forms.Label label_hlasitostHry;
     }
 }

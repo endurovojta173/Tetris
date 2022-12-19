@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Media; //pridano
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using AudioSwitcher.AudioApi.CoreAudio;
 
 namespace Tetris
 {
@@ -55,12 +56,14 @@ namespace Tetris
 
 
 
-
         //Hra
         public TetrisMain()
         {
             InitializeComponent();
+            CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
+            defaultPlaybackDevice.Volume = 50;
+
 
             //Načte nastavení 
             FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Read);
