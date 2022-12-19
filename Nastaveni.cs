@@ -96,11 +96,11 @@ namespace Tetris
             bool doporuceneOvladani = bool.Parse(sr.ReadLine());
             label_aktualniJmeno.Text = "Jméno: " + jmeno;
             textBox1.Text = jmeno;
-            numericUpDown_delkaOmezeneho.Value = decimal.Parse(delka);
+            //numericUpDown_delkaOmezeneho.Value = decimal.Parse(delka);
 
             //Zobrazuje hlasitost
             label_hlasitostHry.Text = "Hlasitost hry: " + hlasitostHry;
-            numericUpDown_hlasitost.Value=decimal.Parse(hlasitostHry);
+            //numericUpDown_hlasitost.Value=decimal.Parse(hlasitostHry);
 
 
             //nacteni sipek
