@@ -628,7 +628,7 @@ namespace Tetris
             tabulkaNapoveda.BackColor = Color.Black;
         }
 
-        //Je potřeba udělat vypnutí soundtracku a pozastavení timeru
+        //Je potřeba udělat vypnutí soundtracku a pozastavení timeru //hotovo
         //Tlacitko pro menu
         private void button_menu_Click(object sender, EventArgs e)
         {
@@ -654,6 +654,9 @@ namespace Tetris
         //ukonci app
         private void button_konec_Click(object sender, EventArgs e)
         {
+            rychlostHryTimer.Stop();
+            casHryTimer.Stop();
+            soundtrack.Stop();
             this.Dispose();
         }
         //zacne novou hru
@@ -668,47 +671,6 @@ namespace Tetris
             this.Dispose();
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //**************************Ovládání******************************
         //Pracuje s inputem, zatím pouzde WASD a šipky
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
@@ -720,10 +682,6 @@ namespace Tetris
                 rychlostHryTimer.Stop();
                 soundtrack.Stop();
                 pozastaveno = true;
-                /*button_novaHra.Enabled = true;
-                button_menu.Enabled = true;
-                button_skore.Enabled = true;
-                button_konec.Enabled = true;*/
                 label_pozastaveni.Text = "Hra je POZASTAVENA - stiskněte ESC pro pokračování";
             }
             else if (e.KeyCode == Keys.Escape&&pozastaveno)
@@ -732,10 +690,6 @@ namespace Tetris
                 rychlostHryTimer.Start();
                 soundtrack.PlayLooping();
                 pozastaveno = false;
-                /*button_novaHra.Enabled = false;
-                button_menu.Enabled = false;
-                button_skore.Enabled = false;
-                button_konec.Enabled = false;*/
                 label_pozastaveni.Text = "Pro pozastavení stiskněte ESC";
             }
 
