@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using System.Media; //pridano
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
-using AudioSwitcher.AudioApi.CoreAudio;
 
 namespace Tetris
 {
@@ -70,8 +69,8 @@ namespace Tetris
             delkaHry = int.Parse(sr.ReadLine());
 
             int hlasitostHry= int.Parse(sr.ReadLine()); //hlasitost hry
-            CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
-            defaultPlaybackDevice.Volume = hlasitostHry;
+            //CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+            //defaultPlaybackDevice.Volume = hlasitostHry;
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
 
             herniMod = bool.Parse(sr.ReadLine());

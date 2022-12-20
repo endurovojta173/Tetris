@@ -1,6 +1,6 @@
 Guest
-150
-8
+200
+10
 true
 false
 true
