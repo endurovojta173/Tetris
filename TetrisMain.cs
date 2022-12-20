@@ -69,8 +69,7 @@ namespace Tetris
             delkaHry = int.Parse(sr.ReadLine());
 
             int hlasitostHry= int.Parse(sr.ReadLine()); //hlasitost hry
-            //CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
-            //defaultPlaybackDevice.Volume = hlasitostHry;
+
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
 
             herniMod = bool.Parse(sr.ReadLine());
