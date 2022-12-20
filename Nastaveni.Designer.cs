@@ -60,10 +60,11 @@
             this.pictureBox_dolu = new System.Windows.Forms.PictureBox();
             this.pictureBox_doleva = new System.Windows.Forms.PictureBox();
             this.pictureBox_doprava = new System.Windows.Forms.PictureBox();
-            this.label_hlasitost = new System.Windows.Forms.Label();
-            this.numericUpDown_hlasitost = new System.Windows.Forms.NumericUpDown();
-            this.label_hlasitostHry = new System.Windows.Forms.Label();
+            this.label_velikostOkna = new System.Windows.Forms.Label();
+            this.label_velikostOkna1 = new System.Windows.Forms.Label();
             this.numericUpDown_delkaOmezeneho = new System.Windows.Forms.NumericUpDown();
+            this.comboBox_velikost = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_dolu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doleva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doprava)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_hlasitost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_delkaOmezeneho)).BeginInit();
             this.SuspendLayout();
             // 
@@ -437,49 +437,27 @@
             this.pictureBox_doprava.TabIndex = 26;
             this.pictureBox_doprava.TabStop = false;
             // 
-            // label_hlasitost
+            // label_velikostOkna
             // 
-            this.label_hlasitost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label_hlasitost.AutoSize = true;
-            this.label_hlasitost.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label_hlasitost.Location = new System.Drawing.Point(105, 294);
-            this.label_hlasitost.Name = "label_hlasitost";
-            this.label_hlasitost.Size = new System.Drawing.Size(126, 25);
-            this.label_hlasitost.TabIndex = 27;
-            this.label_hlasitost.Text = "Hlasitost hry:";
+            this.label_velikostOkna.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label_velikostOkna.AutoSize = true;
+            this.label_velikostOkna.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_velikostOkna.Location = new System.Drawing.Point(105, 294);
+            this.label_velikostOkna.Name = "label_velikostOkna";
+            this.label_velikostOkna.Size = new System.Drawing.Size(133, 25);
+            this.label_velikostOkna.TabIndex = 27;
+            this.label_velikostOkna.Text = "Velikost okna:";
             // 
-            // numericUpDown_hlasitost
+            // label_velikostOkna1
             // 
-            this.numericUpDown_hlasitost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.numericUpDown_hlasitost.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.numericUpDown_hlasitost.InterceptArrowKeys = false;
-            this.numericUpDown_hlasitost.Location = new System.Drawing.Point(258, 292);
-            this.numericUpDown_hlasitost.MaximumSize = new System.Drawing.Size(60, 0);
-            this.numericUpDown_hlasitost.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown_hlasitost.MinimumSize = new System.Drawing.Size(60, 0);
-            this.numericUpDown_hlasitost.Name = "numericUpDown_hlasitost";
-            this.numericUpDown_hlasitost.Size = new System.Drawing.Size(60, 32);
-            this.numericUpDown_hlasitost.TabIndex = 29;
-            this.numericUpDown_hlasitost.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label_hlasitostHry
-            // 
-            this.label_hlasitostHry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label_hlasitostHry.AutoSize = true;
-            this.label_hlasitostHry.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label_hlasitostHry.Location = new System.Drawing.Point(105, 594);
-            this.label_hlasitostHry.Name = "label_hlasitostHry";
-            this.label_hlasitostHry.Size = new System.Drawing.Size(126, 25);
-            this.label_hlasitostHry.TabIndex = 30;
-            this.label_hlasitostHry.Text = "Hlasitost hry:";
+            this.label_velikostOkna1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label_velikostOkna1.AutoSize = true;
+            this.label_velikostOkna1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label_velikostOkna1.Location = new System.Drawing.Point(105, 594);
+            this.label_velikostOkna1.Name = "label_velikostOkna1";
+            this.label_velikostOkna1.Size = new System.Drawing.Size(133, 25);
+            this.label_velikostOkna1.TabIndex = 30;
+            this.label_velikostOkna1.Text = "Velikost okna:";
             // 
             // numericUpDown_delkaOmezeneho
             // 
@@ -513,16 +491,35 @@
             0,
             0});
             // 
+            // comboBox_velikost
+            // 
+            this.comboBox_velikost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.comboBox_velikost.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox_velikost.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
+            this.comboBox_velikost.FormattingEnabled = true;
+            this.comboBox_velikost.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.comboBox_velikost.Items.AddRange(new object[] {
+            "700 x 900",
+            "1280 × 720",
+            "1920 × 1080"});
+            this.comboBox_velikost.Location = new System.Drawing.Point(360, 291);
+            this.comboBox_velikost.MaximumSize = new System.Drawing.Size(140, 0);
+            this.comboBox_velikost.MinimumSize = new System.Drawing.Size(140, 0);
+            this.comboBox_velikost.Name = "comboBox_velikost";
+            this.comboBox_velikost.Size = new System.Drawing.Size(140, 33);
+            this.comboBox_velikost.TabIndex = 32;
+            this.comboBox_velikost.Text = "700 x 900";
+            // 
             // Nastaveni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(684, 861);
+            this.Controls.Add(this.comboBox_velikost);
             this.Controls.Add(this.numericUpDown_delkaOmezeneho);
-            this.Controls.Add(this.label_hlasitostHry);
-            this.Controls.Add(this.numericUpDown_hlasitost);
-            this.Controls.Add(this.label_hlasitost);
+            this.Controls.Add(this.label_velikostOkna1);
+            this.Controls.Add(this.label_velikostOkna);
             this.Controls.Add(this.pictureBox_doprava);
             this.Controls.Add(this.pictureBox_doleva);
             this.Controls.Add(this.pictureBox_dolu);
@@ -564,7 +561,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_dolu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doleva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_doprava)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_hlasitost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_delkaOmezeneho)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -604,9 +600,10 @@
         private System.Windows.Forms.PictureBox pictureBox_dolu;
         private System.Windows.Forms.PictureBox pictureBox_doleva;
         private System.Windows.Forms.PictureBox pictureBox_doprava;
-        private System.Windows.Forms.Label label_hlasitost;
-        private System.Windows.Forms.NumericUpDown numericUpDown_hlasitost;
-        private System.Windows.Forms.Label label_hlasitostHry;
+        private System.Windows.Forms.Label label_velikostOkna;
+        private System.Windows.Forms.Label label_velikostOkna1;
         private System.Windows.Forms.NumericUpDown numericUpDown_delkaOmezeneho;
+        private System.Windows.Forms.ComboBox comboBox_velikost;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

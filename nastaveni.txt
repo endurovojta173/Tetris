@@ -1,6 +1,6 @@
 Guest
 200
-10
+700 x 900
 true
 false
 true
