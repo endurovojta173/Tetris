@@ -68,7 +68,6 @@ namespace Tetris
             jmeno = sr.ReadLine();
             delkaHry = int.Parse(sr.ReadLine());
 
-            int hlasitostHry= int.Parse(sr.ReadLine()); //hlasitost hry
 
             soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
 

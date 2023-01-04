@@ -27,7 +27,7 @@ namespace Tetris
 
             sw.WriteLine(textBox1.Text); //Zapisuje jméno hráče
             sw.WriteLine(numericUpDown_delkaOmezeneho.Value); //Zapisuje délku hry
-            sw.WriteLine(comboBox_velikost.SelectedItem); //Zapisuje rozlišení
+            //sw.WriteLine(comboBox_velikost.SelectedItem); //Zapisuje rozlišení
             //Ověřuje mód //Časově omezený mód == true
             if(radioButton_nekonecnyMod.Checked)
             {
@@ -87,18 +87,11 @@ namespace Tetris
             StreamReader sr = new StreamReader(fs);
             string jmeno = sr.ReadLine();
             string delka = sr.ReadLine();
-            string velikostOkna=sr.ReadLine();
             bool mod = bool.Parse(sr.ReadLine());
             bool obtiznost = bool.Parse(sr.ReadLine());
             bool doporuceneOvladani = bool.Parse(sr.ReadLine());
             label_aktualniJmeno.Text = "Jméno: " + jmeno;
             textBox1.Text = jmeno;
-
-            //Zobrazuje a nastavuje velikost okna
-            label_velikostOkna1.Text = "Velikost okna: " + velikostOkna;
-            comboBox_velikost.Text = velikostOkna;
-            VelikostOkna velikostOkna1 = new VelikostOkna();
-            velikostOkna1.NastavitVelikostOkna(this, velikostOkna);
 
             //nacteni sipek
             pictureBox_nahoru.Image = Tetris.Properties.Resources.sipkaNahoru;
