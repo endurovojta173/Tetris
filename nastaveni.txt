@@ -1,9 +1,6 @@
 Guest
 200
+80
 false
 false
-false
-a
-d
-s
-w
+true

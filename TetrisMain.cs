@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Media; //pridano
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
+using AxWMPLib;
 
 namespace Tetris
 {
@@ -30,6 +31,7 @@ namespace Tetris
         //Proměnné pro nastavení
         string jmeno = "Guest";
         int delkaHry = 0;
+        int hlasitost = 50;
         bool herniMod = false;
         bool obtiznost = false;
         bool doporuceneOvladani = true;
@@ -51,7 +53,9 @@ namespace Tetris
             Color.Yellow,   // O 
             Color.Purple    // T
         };
-        System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(Tetris.Properties.Resources.soundtrack); //Konstruktor zvuku //Soundtrack
+
+        //System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(Tetris.Properties.Resources.soundtrack); //Konstruktor zvuku //Soundtrack
+        //System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(@"..\..\sound\soundtrack.wav"); //Konstruktor zvuku //Soundtrack
 
 
 
@@ -67,9 +71,13 @@ namespace Tetris
             StreamReader sr = new StreamReader(fs);
             jmeno = sr.ReadLine();
             delkaHry = int.Parse(sr.ReadLine());
-
-
-            soundtrack.PlayLooping();//Opakuje soundtrack furt dokola
+            hlasitost= int.Parse(sr.ReadLine());
+            //soundtrack.PlayLooping();
+            //Potřeba ošetřit loop a vypínání 
+            axWindowsMediaPlayer1.URL = "soundtrack.wav";
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+            axWindowsMediaPlayer1.Ctlenabled = false;
+            axWindowsMediaPlayer1.settings.volume = hlasitost;
 
             herniMod = bool.Parse(sr.ReadLine());
             obtiznost = bool.Parse(sr.ReadLine());
@@ -552,7 +560,14 @@ namespace Tetris
             {
                 label_cas.Text = "Čas: " + ubehlyCas+" s";
             }
+            if(ubehlyCas%84==0)
+            {
+                axWindowsMediaPlayer1.Ctlcontrols.stop();
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
         }
+
+       
 
         //Updatuje skóre
         private void UpdateScore()
@@ -633,7 +648,8 @@ namespace Tetris
         {
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
-            soundtrack.Stop();
+            //soundtrack.Stop();
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
             this.Hide();
             Menu menu = new Menu();
             menu.ShowDialog();
@@ -644,7 +660,8 @@ namespace Tetris
         {
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
-            soundtrack.Stop();
+            //soundtrack.Stop();
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
             this.Hide();
             Skore skore = new Skore();
             skore.ShowDialog();
@@ -655,7 +672,8 @@ namespace Tetris
         {
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
-            soundtrack.Stop();
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            //soundtrack.Stop();
             this.Dispose();
         }
         //zacne novou hru
@@ -663,7 +681,9 @@ namespace Tetris
         {
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
-            soundtrack.Stop();
+            //soundtrack.Stop();
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+
             this.Hide();
             TetrisMain main = new TetrisMain();
             main.ShowDialog();
@@ -679,7 +699,9 @@ namespace Tetris
             {
                 casHryTimer.Stop();
                 rychlostHryTimer.Stop();
-                soundtrack.Stop();
+                //soundtrack.Stop();
+                axWindowsMediaPlayer1.Ctlcontrols.stop();
+
                 pozastaveno = true;
                 label_pozastaveni.Text = "Hra je POZASTAVENA - stiskněte ESC pro pokračování";
             }
@@ -687,7 +709,9 @@ namespace Tetris
             {
                 casHryTimer.Start();
                 rychlostHryTimer.Start();
-                soundtrack.PlayLooping();
+                //soundtrack.PlayLooping();
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+
                 pozastaveno = false;
                 label_pozastaveni.Text = "Pro pozastavení stiskněte ESC";
             }
@@ -1127,9 +1151,6 @@ namespace Tetris
                 }
             }
         }
-
-        
-
     }
 
 }

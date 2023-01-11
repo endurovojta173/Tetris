@@ -18,7 +18,6 @@ namespace Tetris
         {
             InitializeComponent();
             ZobrazitAktualniNastaveni();
-            comboBox_velikost.DropDownStyle = ComboBoxStyle.DropDownList; //nastavuje comboBox aby do něj nešlo zapisovat
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -27,7 +26,7 @@ namespace Tetris
 
             sw.WriteLine(textBox1.Text); //Zapisuje jméno hráče
             sw.WriteLine(numericUpDown_delkaOmezeneho.Value); //Zapisuje délku hry
-            //sw.WriteLine(comboBox_velikost.SelectedItem); //Zapisuje rozlišení
+            sw.WriteLine(numericUpDown1.Value); //Zapisuje hlasitost
             //Ověřuje mód //Časově omezený mód == true
             if(radioButton_nekonecnyMod.Checked)
             {
@@ -87,10 +86,13 @@ namespace Tetris
             StreamReader sr = new StreamReader(fs);
             string jmeno = sr.ReadLine();
             string delka = sr.ReadLine();
+            string hlasitost = sr.ReadLine();
             bool mod = bool.Parse(sr.ReadLine());
             bool obtiznost = bool.Parse(sr.ReadLine());
             bool doporuceneOvladani = bool.Parse(sr.ReadLine());
             label_aktualniJmeno.Text = "Jméno: " + jmeno;
+            label_hlasitostVypis.Text = "Hlasitost: " + hlasitost;
+            numericUpDown1.Value = int.Parse(hlasitost);
             textBox1.Text = jmeno;
 
             //nacteni sipek
