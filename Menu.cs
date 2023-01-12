@@ -52,9 +52,9 @@ namespace Tetris
         private void Menu_Load(object sender, EventArgs e)
         {
             //Ošetření souboru nastaveni.txt
-            if(!File.Exists(@"../../nastaveni.txt"))
+            if(!File.Exists(@"../../data/nastaveni.txt"))
             {
-                FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.Create, FileAccess.Write);
+                FileStream fs = new FileStream(@"../../data/nastaveni.txt", FileMode.Create, FileAccess.Write);
                 StreamWriter sw = new StreamWriter(fs);
                 sw.WriteLine("Guest");
                 sw.WriteLine("100");
@@ -65,11 +65,11 @@ namespace Tetris
                 sw.Close();
                 fs.Close();
             }
-            FileStream fs1 = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs1 = new FileStream(@"../../data/nastaveni.txt", FileMode.Open, FileAccess.Read);
             if(fs1.Length<1)
             {
                 fs1.Close();
-                FileStream fs2 = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Write);
+                FileStream fs2 = new FileStream(@"../../data/nastaveni.txt", FileMode.Open, FileAccess.Write);
                 StreamWriter sw = new StreamWriter(fs2);
                 sw.WriteLine("Guest");
                 sw.WriteLine("100");
@@ -83,9 +83,9 @@ namespace Tetris
             fs1.Close();
 
             //Ošetření souboru skore.txt
-            if(!File.Exists(@"../../skore.txt"))
+            if(!File.Exists(@"../../data/skore.txt"))
             {
-                FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create);
+                FileStream fs = new FileStream(@"../../data/skore.txt", FileMode.Create);
                 fs.Close();
             }
         }

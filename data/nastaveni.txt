@@ -1,0 +1,6 @@
+Guest
+100
+50
+false
+false
+true

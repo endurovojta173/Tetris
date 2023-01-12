@@ -67,7 +67,7 @@ namespace Tetris
 
 
             //Načte nastavení 
-            FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"../../data/nastaveni.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             jmeno = sr.ReadLine();
             delkaHry = int.Parse(sr.ReadLine());
@@ -435,7 +435,7 @@ namespace Tetris
                     {
                         rychlostHryTimer.Stop();
                         casHryTimer.Stop();
-                        MessageBox.Show("Game over!");
+                        //MessageBox.Show("Game over!");
                     }
                     if (CheckForCompleteRows() > -1)
                     {
@@ -581,7 +581,7 @@ namespace Tetris
         {
             if (!jedinecnyPruchod) //Pomocná podmínka, aby funkce neproběhla 3x // nevim proč sa opakuje
             {
-                FileStream fs = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Write);
+                FileStream fs = new FileStream(@"../../data/skore.txt", FileMode.Open, FileAccess.Write);
                 StreamWriter sw = new StreamWriter(fs);
                 string delkaHryString = delkaHry.ToString();
                 string obtiznostString = "Lehká;";

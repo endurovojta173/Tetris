@@ -1,2 +1,0 @@
-Guest;0;10;Časově omezený;200;Lehká;
-Guest;100;28;Nekonečný mód;Nekonečná;;Lehká;

@@ -21,7 +21,7 @@ namespace Tetris
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.OpenOrCreate, FileAccess.Write);
+            FileStream fs = new FileStream(@"../../data/nastaveni.txt", FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter sw = new StreamWriter(fs);
 
             sw.WriteLine(textBox1.Text); //Zapisuje jméno hráče
@@ -82,7 +82,7 @@ namespace Tetris
         private void ZobrazitAktualniNastaveni()
         {
 
-            FileStream fs = new FileStream(@"../../nastaveni.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"../../data/nastaveni.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             string jmeno = sr.ReadLine();
             string delka = sr.ReadLine();
