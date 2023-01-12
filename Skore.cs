@@ -40,7 +40,7 @@ namespace Tetris
         //Vymaže obsah tabulky a refreshne formulář
         private void button2_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(@"../../skore.txt", FileMode.Create, FileAccess.Write);
+            FileStream fs = new FileStream(@"../../data/skore.txt", FileMode.Create, FileAccess.Write);
             fs.Close();
             LoadData();
             this.Hide();
@@ -51,7 +51,7 @@ namespace Tetris
 
         private void LoadData()
         {
-            FileStream fs = new FileStream(@"../../skore.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(@"../../data/skore.txt", FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
             char[] separator = { ';' };
             while (!sr.EndOfStream)

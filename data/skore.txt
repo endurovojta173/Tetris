@@ -1,1 +1,2 @@
 Guest;0;13;Nekonečný mód;Nekonečná;;Lehká;
+Guest;0;7;Nekonečný mód;Nekonečná;;Lehká;
