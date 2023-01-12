@@ -3625,10 +3625,10 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(419, 809);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(419, 797);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(234, 23);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(234, 41);
             this.axWindowsMediaPlayer1.TabIndex = 20;
             this.axWindowsMediaPlayer1.TabStop = false;
             this.axWindowsMediaPlayer1.Visible = false;
