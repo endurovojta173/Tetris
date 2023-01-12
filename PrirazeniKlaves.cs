@@ -52,6 +52,17 @@ namespace Tetris
             }
             return jeValidni;
         }
+        public bool klavesySeNerovnaji(char doleva, char doprava, char nahoru, char dolu)
+        {
+            bool rovnajiSe = false;
+            if(doleva == doprava)rovnajiSe=true;
+            else if(doleva== nahoru)rovnajiSe=true;
+            else if(doleva== dolu)rovnajiSe=true;
+            else if(doprava== nahoru)rovnajiSe=true;
+            else if(doprava == dolu)rovnajiSe=true;
+            else if(nahoru==dolu)rovnajiSe=true;
+            return rovnajiSe;
+        }
 
     }
 }

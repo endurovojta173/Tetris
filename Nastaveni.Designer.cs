@@ -356,10 +356,10 @@
             this.radioButton_ovladaniDoporucene.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold);
             this.radioButton_ovladaniDoporucene.Location = new System.Drawing.Point(3, 3);
             this.radioButton_ovladaniDoporucene.Name = "radioButton_ovladaniDoporucene";
-            this.radioButton_ovladaniDoporucene.Size = new System.Drawing.Size(134, 29);
+            this.radioButton_ovladaniDoporucene.Size = new System.Drawing.Size(77, 29);
             this.radioButton_ovladaniDoporucene.TabIndex = 7;
             this.radioButton_ovladaniDoporucene.TabStop = true;
-            this.radioButton_ovladaniDoporucene.Text = "Doporučené";
+            this.radioButton_ovladaniDoporucene.Text = "Šipky";
             this.radioButton_ovladaniDoporucene.UseVisualStyleBackColor = true;
             this.radioButton_ovladaniDoporucene.Click += new System.EventHandler(this.radioButton_ovladaniDoporucene_Click);
             // 

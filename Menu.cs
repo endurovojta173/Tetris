@@ -22,9 +22,17 @@ namespace Tetris
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TetrisMain main = new TetrisMain();
-            main.ShowDialog();
-            this.Dispose();
+            try
+            {
+                TetrisMain main = new TetrisMain();
+                main.ShowDialog();
+                this.Dispose();
+            }
+            catch(FileNotFoundException)
+            {
+                MessageBox.Show("Přeinstalujte hru a nehrabte se v souborech :)");
+            }
+            
         }
         private void button3_nastaveni_Click(object sender, EventArgs e)
         {
@@ -51,8 +59,27 @@ namespace Tetris
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            //Ošetření soundtracku a knihoven
+            /*try
+            {
+                if (!File.Exists("Interop.WMPLib.dll")) throw new FileNotFoundException();
+                else if (!File.Exists("AxInterop.WMPLib.dll")) throw new FileNotFoundException();
+            }
+            catch(FileNotFoundException)
+            {
+                MessageBox.Show("Hra se rozbila, prosím přeinstalujte ji a nezasahujte do souborů :)");
+            }*/
+            //Ošetření zvuku
+            try
+            {
+                if (!File.Exists("soundtrack.wav")) throw new FileNotFoundException();
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("Nebyl nalezen zvukový soubor, prosím přeinstalujte hru :), nebo si hrajte beze zvuku");
+            }
             //Ošetření souboru nastaveni.txt
-            if(!File.Exists(@"../../data/nastaveni.txt"))
+            if (!File.Exists(@"../../data/nastaveni.txt"))
             {
                 FileStream fs = new FileStream(@"../../data/nastaveni.txt", FileMode.Create, FileAccess.Write);
                 StreamWriter sw = new StreamWriter(fs);

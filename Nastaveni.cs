@@ -58,7 +58,7 @@ namespace Tetris
                 string dolu=textBox_ovladaniDolu.Text;
                 string otaceni=textBox_ovladaniOtaceni.Text;
                 PrirazeniKlaves prirazeniKlaves= new PrirazeniKlaves();
-                if(!prirazeniKlaves.jeVstupValidni(doleva) || !prirazeniKlaves.jeVstupValidni(doprava) || !prirazeniKlaves.jeVstupValidni(dolu) || !prirazeniKlaves.jeVstupValidni(otaceni))
+                if (!prirazeniKlaves.jeVstupValidni(doleva) || !prirazeniKlaves.jeVstupValidni(doprava) || !prirazeniKlaves.jeVstupValidni(dolu) || !prirazeniKlaves.jeVstupValidni(otaceni) || prirazeniKlaves.klavesySeNerovnaji(char.Parse(doleva), char.Parse(doprava), char.Parse(otaceni), char.Parse(dolu)))
                 {
                     MessageBox.Show("Chybně zadané ovládání, bylo nastaveno Doporučené nastavení");
                     sw.WriteLine("true");

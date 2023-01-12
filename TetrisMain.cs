@@ -13,6 +13,7 @@ namespace Tetris
     public partial class TetrisMain : Form
     {
 
+
         //***INICIALIZACE***
         Control[] aktivniPolozka = { null, null, null, null };
         Control[] aktivniPolozka2 = { null, null, null, null };
@@ -251,7 +252,7 @@ namespace Tetris
                     SaveScore();
                     DisableIfEnd();
                     konecHry = true;
-                    MessageBox.Show("Game over!");
+                    //MessageBox.Show("Game over!");
                     return;
                 }
             }
@@ -1151,6 +1152,7 @@ namespace Tetris
                 }
             }
         }
+
     }
 
 }
