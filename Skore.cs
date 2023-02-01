@@ -96,5 +96,32 @@ namespace Tetris
             dataGridView1.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
         }
+
+        private void ShowData()
+        {
+            //Znovu zobrazí všechno
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1.Rows[i].Visible = true;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ShowData();
+            string coChciVyhledat=textBox1.Text;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if(dataGridView1.Rows[i].Cells[0].Value.ToString() != coChciVyhledat)
+                {
+                    dataGridView1.Rows[i].Visible = false;
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ShowData();
+        }
     }
 }
