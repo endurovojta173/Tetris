@@ -110,9 +110,19 @@ namespace Tetris
         {
             ShowData();
             string coChciVyhledat=textBox1.Text;
+            int kategorie = comboBox1.SelectedIndex;
+            /*int sloupec = 0;
+            if (kategorie == "Jméno") sloupec = 0;
+            else if (kategorie == "Skóre") sloupec = 1;
+            else if (kategorie == "Délka hry") sloupec = 2;
+            else if (kategorie == "Herní mód") sloupec = 3;
+            else if (kategorie == "Maximální délka hry") sloupec = 4;
+            else sloupec = 5;*/
+
+
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                if(dataGridView1.Rows[i].Cells[0].Value.ToString() != coChciVyhledat)
+                if(dataGridView1.Rows[i].Cells[kategorie].Value.ToString() != coChciVyhledat)
                 {
                     dataGridView1.Rows[i].Visible = false;
                 }
