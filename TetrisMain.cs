@@ -441,13 +441,22 @@ namespace Tetris
                     if (CheckForCompleteRows() > -1)
                     {
                         ClearFullRow();
+                        
+                        Zrychleni();
                     }
                     DropNewPiece();
                 }
             }
         }
 
-
+        //Zrychleni hry každých 5 clear radku
+        private void Zrychleni()
+        {
+            if(vycistenychRadku%5==0&&rychlostHryTimer.Interval>100)
+            {
+                rychlostHryTimer.Interval -= 100;
+            }
+        }
         //Vyčistí nejnižší plný řádek
         private void ClearFullRow()
         {
@@ -1051,7 +1060,7 @@ namespace Tetris
                             {
                                 return;
                             }
-                        }0
+                        }
                     }
                     else if (momentalniPolozka == 5) //Čtverec
                     {

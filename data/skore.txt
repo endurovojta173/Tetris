@@ -7,3 +7,6 @@ Guest;0;8;Nekonečný mód;Nekonečná;;Lehká;
 pepa;0;11;Nekonečný mód;Nekonečná;;Lehká;
 xxx;0;33;Nekonečný mód;Nekonečná;;Lehká;
 xxx58196;0;7;Nekonečný mód;Nekonečná;;Lehká;
+xxx58196;3400;404;Nekonečný mód;Nekonečná;;Těžká;
+xxx58196;200;68;Nekonečný mód;Nekonečná;;Těžká;
+Vojta;600;57;Nekonečný mód;Nekonečná;;Lehká;
