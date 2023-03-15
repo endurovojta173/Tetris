@@ -1051,7 +1051,7 @@ namespace Tetris
                             {
                                 return;
                             }
-                        }
+                        }0
                     }
                     else if (momentalniPolozka == 5) //Čtverec
                     {
