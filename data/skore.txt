@@ -3,3 +3,7 @@ Guest;0;17;Nekonečný mód;Nekonečná;;Lehká;
 Guest;0;73;Nekonečný mód;Nekonečná;;Lehká;
 Guest;300;38;Nekonečný mód;Nekonečná;;Lehká;
 Guest;0;21;Nekonečný mód;Nekonečná;;Lehká;
+Guest;0;8;Nekonečný mód;Nekonečná;;Lehká;
+pepa;0;11;Nekonečný mód;Nekonečná;;Lehká;
+xxx;0;33;Nekonečný mód;Nekonečná;;Lehká;
+xxx58196;0;7;Nekonečný mód;Nekonečná;;Lehká;
