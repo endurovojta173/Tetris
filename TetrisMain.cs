@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Media; //pridano
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
-using AxWMPLib;
 
 namespace Tetris
 {
