@@ -68,6 +68,7 @@ namespace Tetris
             {
                 MessageBox.Show("Nebyl nalezen zvukový soubor, prosím přeinstalujte hru :), nebo hrajte beze zvuku");
             }
+
             //Ošetření souboru nastaveni.txt
             if (!File.Exists(@"../../data/nastaveni.txt"))
             {
