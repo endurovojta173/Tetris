@@ -130,12 +130,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
-    <None Include="Resources\soundtrack.bmp" />
     <Content Include="sipkaDoleva.png" />
     <Content Include="sipkaDolu.png" />
     <Content Include="sipkaDoprava.png" />
     <Content Include="sipkaNahoru.png" />
-    <Content Include="soundtrack.wav" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -168,6 +166,8 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

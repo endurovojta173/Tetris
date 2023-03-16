@@ -52,11 +52,6 @@ namespace Tetris
             Color.Purple    // T
         };
 
-        //System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(Tetris.Properties.Resources.soundtrack); //Konstruktor zvuku //Soundtrack
-        //System.Media.SoundPlayer soundtrack = new System.Media.SoundPlayer(@"..\..\sound\soundtrack.wav"); //Konstruktor zvuku //Soundtrack
-
-
-
         //Hra
         public TetrisMain()
         {
@@ -72,7 +67,7 @@ namespace Tetris
             hlasitost= int.Parse(sr.ReadLine());
             //soundtrack.PlayLooping();
             //Potřeba ošetřit loop a vypínání 
-            axWindowsMediaPlayer1.URL = "soundtrack.wav";
+            axWindowsMediaPlayer1.URL = @"../../data/soundtrack.wav";
             axWindowsMediaPlayer1.Ctlcontrols.play();
             axWindowsMediaPlayer1.Ctlenabled = false;
             axWindowsMediaPlayer1.settings.volume = hlasitost;

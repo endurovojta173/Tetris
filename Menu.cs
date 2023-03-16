@@ -59,24 +59,14 @@ namespace Tetris
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            //Ošetření soundtracku a knihoven
-            /*try
-            {
-                if (!File.Exists("Interop.WMPLib.dll")) throw new FileNotFoundException();
-                else if (!File.Exists("AxInterop.WMPLib.dll")) throw new FileNotFoundException();
-            }
-            catch(FileNotFoundException)
-            {
-                MessageBox.Show("Hra se rozbila, prosím přeinstalujte ji a nezasahujte do souborů :)");
-            }*/
             //Ošetření zvuku
             try
             {
-                if (!File.Exists(@"../..data/soundtrack.wav")) throw new FileNotFoundException();
+                if (!File.Exists(@"../../data/soundtrack.wav")) throw new FileNotFoundException();
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("Nebyl nalezen zvukový soubor, prosím přeinstalujte hru :), nebo si hrajte beze zvuku");
+                MessageBox.Show("Nebyl nalezen zvukový soubor, prosím přeinstalujte hru :), nebo hrajte beze zvuku");
             }
             //Ošetření souboru nastaveni.txt
             if (!File.Exists(@"../../data/nastaveni.txt"))
