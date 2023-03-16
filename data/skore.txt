@@ -1,0 +1,2 @@
+Vojta;0;11;Nekonečný mód;Nekonečná;;Lehká;
+Vojta;0;8;Nekonečný mód;Nekonečná;;Lehká;

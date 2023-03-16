@@ -102,13 +102,21 @@ namespace Tetris
             ShowData();
             string coChciVyhledat=textBox1.Text;
             int kategorie = comboBox1.SelectedIndex;
-
+            
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                if(dataGridView1.Rows[i].Cells[kategorie].Value.ToString() != coChciVyhledat)
+                try
                 {
-                    dataGridView1.Rows[i].Visible = false;
+                    if (dataGridView1.Rows[i].Cells[kategorie].Value.ToString() != coChciVyhledat)
+                    {
+                        dataGridView1.Rows[i].Visible = false;
+                    }
                 }
+                catch(System.ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("Zadejte co chcete vyhledat");
+                }
+                
             }
         }
 
