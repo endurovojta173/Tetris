@@ -65,15 +65,6 @@ namespace Tetris
 
         private void AddRow(string jmeno,string skore,string delkaHry,string herniMod, string maxDelkaHry, string obtiznost)
         {
-            if(int.Parse(delkaHry)>60)
-            {
-                int delkaPomoc = int.Parse(delkaHry);
-                delkaHry=delkaPomoc/60+" m " + delkaPomoc%60+" s";
-            }
-            else
-            {
-                delkaHry += " s";
-            }
             String[] radek = {jmeno,skore,delkaHry,herniMod,maxDelkaHry,obtiznost};
             dataGridView1.Rows.Add(radek);
         }
@@ -111,14 +102,6 @@ namespace Tetris
             ShowData();
             string coChciVyhledat=textBox1.Text;
             int kategorie = comboBox1.SelectedIndex;
-            /*int sloupec = 0;
-            if (kategorie == "Jméno") sloupec = 0;
-            else if (kategorie == "Skóre") sloupec = 1;
-            else if (kategorie == "Délka hry") sloupec = 2;
-            else if (kategorie == "Herní mód") sloupec = 3;
-            else if (kategorie == "Maximální délka hry") sloupec = 4;
-            else sloupec = 5;*/
-
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {

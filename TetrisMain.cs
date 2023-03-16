@@ -524,7 +524,7 @@ namespace Tetris
         //***!!!!Pokud je mód na čas tak může i po vypršení času
         private bool CheckGameOver()
         {
-            Control[] topRow = { box1, box2, box3, box4, box5, box6, box7, box8, box9, box10 };
+            Control[] topRow = {box5, box6}; //Opraven bug, kvůli kterému se hra ukončila i při vystavení bloků nahoru, i když se mohli dále spawnovat
 
                 foreach (Control box in topRow)
                 {
