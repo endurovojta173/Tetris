@@ -72,7 +72,7 @@ namespace Tetris
             //Ošetření zvuku
             try
             {
-                if (!File.Exists("soundtrack.wav")) throw new FileNotFoundException();
+                if (!File.Exists(@"../..data/soundtrack.wav")) throw new FileNotFoundException();
             }
             catch (FileNotFoundException)
             {
