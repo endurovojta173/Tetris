@@ -18,9 +18,6 @@ namespace Tetris
             InitializeComponent();
         }
 
-        //Funguje, ale nefiltruje režim podle času a taky je potřeba otestovat když se vymažou save soubory
-
-
         //Načte skore při otevření
         private void Skore_Load(object sender, EventArgs e)
         {
@@ -35,7 +32,6 @@ namespace Tetris
             menu.ShowDialog();
             this.Dispose();
         }
-
 
         //Vymaže obsah tabulky a refreshne formulář
         private void button2_Click(object sender, EventArgs e)
