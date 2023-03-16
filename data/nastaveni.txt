@@ -1,12 +1,6 @@
-Vojta
-200
+Guest
+100
 50
 false
 false
 true
-
-
-
-6
-2
-8

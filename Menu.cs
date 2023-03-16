@@ -72,14 +72,6 @@ namespace Tetris
             if (!File.Exists(@"../../data/nastaveni.txt"))
             {
                 FileStream fs = new FileStream(@"../../data/nastaveni.txt", FileMode.Create, FileAccess.Write);
-                StreamWriter sw = new StreamWriter(fs);
-                sw.WriteLine("Guest");
-                sw.WriteLine("100");
-                sw.WriteLine("50");
-                sw.WriteLine("false");
-                sw.WriteLine("false");
-                sw.WriteLine("true");
-                sw.Close();
                 fs.Close();
             }
             FileStream fs1 = new FileStream(@"../../data/nastaveni.txt", FileMode.Open, FileAccess.Read);

@@ -1,6 +1,0 @@
-Guest
-200
-80
-false
-false
-true
