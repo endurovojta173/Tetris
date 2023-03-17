@@ -21,59 +21,65 @@ namespace Tetris
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            FileStream fs = new FileStream(@"../../data/nastaveni.txt", FileMode.OpenOrCreate, FileAccess.Write);
-            StreamWriter sw = new StreamWriter(fs);
-
-            sw.WriteLine(textBox1.Text); //Zapisuje jméno hráče
-            sw.WriteLine(numericUpDown_delkaOmezeneho.Value); //Zapisuje délku hry
-            sw.WriteLine(numericUpDown1.Value); //Zapisuje hlasitost
-            //Ověřuje mód //Časově omezený mód == true
-            if(radioButton_nekonecnyMod.Checked)
+            if (textBox1.Text.Length > 0)
             {
-                sw.WriteLine("false");
-            }
-            else
-            {
-                sw.WriteLine("true");
-            }
-            //Ověřuje obtížnost //Těžká == true
-            if(radioButton_lehka.Checked)
-            {
-                sw.WriteLine("false");
-            }
-            else
-            {
-                sw.WriteLine("true");
-            }
-            //Ověřuje typ ovládání //Doporučené == true
-            if (radioButton_ovladaniDoporucene.Checked)
-            {
-                sw.WriteLine("true");
-            }
-            else //Ověřuje rovnou vstupy 
-            {
-                //sw.WriteLine("false");
-                string doleva=textBox_ovladaniDoleva.Text;
-                string doprava=textBox_ovladaniDoprava.Text;
-                string dolu=textBox_ovladaniDolu.Text;
-                string otaceni=textBox_ovladaniOtaceni.Text;
-                PrirazeniKlaves prirazeniKlaves= new PrirazeniKlaves();
-                if (!prirazeniKlaves.jeVstupValidni(doleva) || !prirazeniKlaves.jeVstupValidni(doprava) || !prirazeniKlaves.jeVstupValidni(dolu) || !prirazeniKlaves.jeVstupValidni(otaceni) || prirazeniKlaves.klavesySeNerovnaji(char.Parse(doleva), char.Parse(doprava), char.Parse(otaceni), char.Parse(dolu)))
+                FileStream fs = new FileStream(@"../../data/nastaveni.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs);
+                sw.WriteLine(textBox1.Text); //Zapisuje jméno hráče
+                sw.WriteLine(numericUpDown_delkaOmezeneho.Value); //Zapisuje délku hry
+                sw.WriteLine(numericUpDown1.Value); //Zapisuje hlasitost
+                                                    //Ověřuje mód //Časově omezený mód == true
+                if (radioButton_nekonecnyMod.Checked)
                 {
-                    MessageBox.Show("Chybně zadané ovládání, bylo nastaveno Doporučené nastavení");
-                    sw.WriteLine("true");
+                    sw.WriteLine("false");
                 }
                 else
                 {
-                    sw.WriteLine("false");
-                    sw.WriteLine(doleva);
-                    sw.WriteLine(doprava);
-                    sw.WriteLine(dolu);
-                    sw.WriteLine(otaceni);
+                    sw.WriteLine("true");
                 }
+                //Ověřuje obtížnost //Těžká == true
+                if (radioButton_lehka.Checked)
+                {
+                    sw.WriteLine("false");
+                }
+                else
+                {
+                    sw.WriteLine("true");
+                }
+                //Ověřuje typ ovládání //Doporučené == true
+                if (radioButton_ovladaniDoporucene.Checked)
+                {
+                    sw.WriteLine("true");
+                }
+                else //Ověřuje rovnou vstupy 
+                {
+                    //sw.WriteLine("false");
+                    string doleva = textBox_ovladaniDoleva.Text;
+                    string doprava = textBox_ovladaniDoprava.Text;
+                    string dolu = textBox_ovladaniDolu.Text;
+                    string otaceni = textBox_ovladaniOtaceni.Text;
+                    PrirazeniKlaves prirazeniKlaves = new PrirazeniKlaves();
+                    if (!prirazeniKlaves.jeVstupValidni(doleva) || !prirazeniKlaves.jeVstupValidni(doprava) || !prirazeniKlaves.jeVstupValidni(dolu) || !prirazeniKlaves.jeVstupValidni(otaceni) || prirazeniKlaves.klavesySeNerovnaji(char.Parse(doleva), char.Parse(doprava), char.Parse(otaceni), char.Parse(dolu)))
+                    {
+                        MessageBox.Show("Chybně zadané ovládání, bylo nastaveno Doporučené nastavení");
+                        sw.WriteLine("true");
+                    }
+                    else
+                    {
+                        sw.WriteLine("false");
+                        sw.WriteLine(doleva);
+                        sw.WriteLine(doprava);
+                        sw.WriteLine(dolu);
+                        sw.WriteLine(otaceni);
+                    }
+                }
+                sw.Close();
+                fs.Close();
             }
-            sw.Close();
-            fs.Close();
+            else
+            {
+                MessageBox.Show("Zadejte jméno");
+            }
             ZobrazitAktualniNastaveni();
         }
 

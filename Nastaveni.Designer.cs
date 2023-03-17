@@ -63,7 +63,6 @@
             this.label_hlasitost = new System.Windows.Forms.Label();
             this.label_hlasitostVypis = new System.Windows.Forms.Label();
             this.numericUpDown_delkaOmezeneho = new System.Windows.Forms.NumericUpDown();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -613,7 +612,6 @@
         private System.Windows.Forms.Label label_hlasitost;
         private System.Windows.Forms.Label label_hlasitostVypis;
         private System.Windows.Forms.NumericUpDown numericUpDown_delkaOmezeneho;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
