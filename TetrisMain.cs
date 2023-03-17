@@ -65,8 +65,7 @@ namespace Tetris
             jmeno = sr.ReadLine();
             delkaHry = int.Parse(sr.ReadLine());
             hlasitost= int.Parse(sr.ReadLine());
-            //soundtrack.PlayLooping();
-            //Potřeba ošetřit loop a vypínání 
+            //Zvuk
             axWindowsMediaPlayer1.URL = "soundtrack.wav";
             axWindowsMediaPlayer1.Ctlcontrols.play();
             axWindowsMediaPlayer1.Ctlenabled = false;
