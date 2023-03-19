@@ -1,3 +1,4 @@
-Vojta;0;11;Nekonečný mód;Nekonečná;;Lehká;
-Vojta;0;8;Nekonečný mód;Nekonečná;;Lehká;
-;0;13;Nekonečný mód;Nekonečná;;Lehká;
+pepa;0;8;Nekonečný mód;Nekonečná;;Lehká;
+pepa;0;12;Nekonečný mód;Nekonečná;;Lehká;
+pepa;100;24;Nekonečný mód;Nekonečná;;Lehká;
+pepa;100;20;Časově omezený;20;Lehká;

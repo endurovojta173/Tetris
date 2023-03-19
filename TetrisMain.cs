@@ -24,7 +24,6 @@ namespace Tetris
         int vycistenychRadku = 0;
         bool konecHry = false;
         int PieceSequenceIteration = 0;
-        Menu menu = new Menu();
 
         //Proměnné pro nastavení
         string jmeno = "Guest";
@@ -56,7 +55,6 @@ namespace Tetris
         public TetrisMain()
         {
             InitializeComponent();
-            
 
 
             //Načte nastavení 
@@ -173,7 +171,7 @@ namespace Tetris
             if (!obtiznost)
             {
 
-                // If not first move, clear next piece panel
+                //If not first move, clear next piece panel
                 if (dalsiPolozka.Contains(null) == false)
                 {
                     foreach (Control x in dalsiPolozka)
@@ -243,7 +241,6 @@ namespace Tetris
                     SaveScore();
                     DisableIfEnd();
                     konecHry = true;
-                    //MessageBox.Show("Game over!");
                     return;
                 }
             }
@@ -290,7 +287,7 @@ namespace Tetris
                 }
             }
 
-            //Otestuje jestli by byli nějaké čtverce mimo tabulku
+            //Otestuje jestli by byly nějaké čtverce mimo tabulku
             foreach (Control square in aktivniPolozka)
             {
                 int squareRow = tabulka.GetRow(square);
@@ -345,7 +342,7 @@ namespace Tetris
         }
         public void MovePiece(string direction)
         {
-            // Vymaže starou pozici a určí novou podle inputu
+            // Vymaže starou pozici a určí novou podle směru ovládání
             int x = 0;
             foreach (PictureBox square in aktivniPolozka)
             {
@@ -412,7 +409,6 @@ namespace Tetris
             {
                 rychlostHryTimer.Stop();
                 casHryTimer.Stop();
-                MessageBox.Show("Game over!");
             }
             else
             {
@@ -427,7 +423,6 @@ namespace Tetris
                     {
                         rychlostHryTimer.Stop();
                         casHryTimer.Stop();
-                        //MessageBox.Show("Game over!");
                     }
                     if (CheckForCompleteRows() > -1)
                     {
@@ -487,6 +482,7 @@ namespace Tetris
                 ClearFullRow();
             }
         }
+
         // Vrací číslo nejnižšího plného řádku
         // Když není žádný plný, tak vrátí -1
         private int CheckForCompleteRows()

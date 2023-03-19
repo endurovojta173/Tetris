@@ -1,7 +1,8 @@
 pepa
-200
-50
-false
+20
+1
+true
 false
 true
+e
 
