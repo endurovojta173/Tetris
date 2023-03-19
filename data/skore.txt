@@ -2,3 +2,5 @@ pepa;0;8;Nekonečný mód;Nekonečná;;Lehká;
 pepa;0;12;Nekonečný mód;Nekonečná;;Lehká;
 pepa;100;24;Nekonečný mód;Nekonečná;;Lehká;
 pepa;100;20;Časově omezený;20;Lehká;
+pepa;100;20;Časově omezený;20;Lehká;
+pepa;300;44;Nekonečný mód;Nekonečná;;Lehká;
