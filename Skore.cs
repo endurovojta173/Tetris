@@ -62,7 +62,7 @@ namespace Tetris
         private void AddRow(string jmeno,string skore,string delkaHry,string herniMod, string maxDelkaHry, string obtiznost)
         {
             String[] radek = {jmeno,skore,delkaHry,herniMod,maxDelkaHry,obtiznost};
-            dataGridView1.Rows.Add(radek);
+            dataGridView1.Rows.Add(jmeno, int.Parse(skore), int.Parse(delkaHry), herniMod, maxDelkaHry,obtiznost); //Musí se nastavit jako určité typy, kvůli filtrování
         }
 
         private void CreateTable()
@@ -73,7 +73,7 @@ namespace Tetris
             dataGridView1.Columns[2].Name = "Délka hry";
             dataGridView1.Columns[3].Name = "Herní mód";
             dataGridView1.Columns[4].Name = "Maximální délka hry";
-            dataGridView1.Columns[5].Name = "Obtížnost";
+            dataGridView1.Columns[5].Name = "Obtížnost";       
 
             dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

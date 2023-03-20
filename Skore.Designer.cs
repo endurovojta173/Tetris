@@ -104,6 +104,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.ReadOnly = true;
             this.dataGridView1.ShowCellErrors = false;
             this.dataGridView1.ShowCellToolTips = false;
