@@ -86,8 +86,8 @@ namespace Tetris
                 dolu = char.Parse(sr.ReadLine());
                 nahoru = char.Parse(sr.ReadLine());
                 label_typOvladani.Text = "Ovládání: Vlastní";
-                //nastaveniOvladacich klaves
 
+                //nastaveniOvladacich klaves
                 if (!doporuceneOvladani)
                 {
                     PrirazeniKlaves prirazeniKlaves = new PrirazeniKlaves();
