@@ -25,6 +25,13 @@ namespace Tetris
         bool konecHry = false;
         int PieceSequenceIteration = 0;
 
+        //Nastavení šipek
+        Keys dolevaKlavesa = Keys.Left;
+        Keys dopravaKlavesa = Keys.Right;
+        Keys doluKlavesa = Keys.Down;
+        Keys nahoruKlavesa = Keys.Up;
+
+
         //Proměnné pro nastavení
         string jmeno = "Guest";
         int delkaHry = 0;
@@ -79,6 +86,16 @@ namespace Tetris
                 dolu = char.Parse(sr.ReadLine());
                 nahoru = char.Parse(sr.ReadLine());
                 label_typOvladani.Text = "Ovládání: Vlastní";
+                //nastaveniOvladacich klaves
+
+                if (!doporuceneOvladani)
+                {
+                    PrirazeniKlaves prirazeniKlaves = new PrirazeniKlaves();
+                    dolevaKlavesa = prirazeniKlaves.priraditKlavesu(doleva);
+                    dopravaKlavesa = prirazeniKlaves.priraditKlavesu(doprava);
+                    doluKlavesa = prirazeniKlaves.priraditKlavesu(dolu);
+                    nahoruKlavesa = prirazeniKlaves.priraditKlavesu(nahoru);
+                }
             }
             else
             {
@@ -239,7 +256,7 @@ namespace Tetris
                     rychlostHryTimer.Stop();
                     casHryTimer.Stop();
                     SaveScore();
-                    DisableIfEnd();
+                    BlackIfEnd();
                     konecHry = true;
                     return;
                 }
@@ -440,9 +457,10 @@ namespace Tetris
         {
             if(vycistenychRadku%5==0&&rychlostHryTimer.Interval>100)
             {
-                rychlostHryTimer.Interval -= 100;
+                rychlostHryTimer.Interval -= 50;
             }
         }
+
         //Vyčistí nejnižší plný řádek
         private void ClearFullRow()
         {
@@ -537,7 +555,7 @@ namespace Tetris
                 //uloží skóre
 
                 SaveScore();
-                DisableIfEnd();
+                BlackIfEnd();
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Ukončí hru
                 return true;
             }
@@ -604,14 +622,14 @@ namespace Tetris
 
 
         //Cool feature -- Změní položené bloky na černé 
-        private void DisableIfEnd()
+        private void BlackIfEnd()
         {
             foreach(PictureBox pbx in tabulka.Controls)
             {
                 pbx.Enabled = false;
                 if(pbx.BackColor==Color.White)
                 {
-                    pbx.BackColor = Color.Gray;
+                    pbx.BackColor = Color.Black;
                 }
                 else //Cool feature
                 {
@@ -628,15 +646,15 @@ namespace Tetris
                 pbx.Enabled=false;
                 if (pbx.BackColor == Color.White)
                 {
-                    pbx.BackColor = Color.Gray;
+                    pbx.BackColor = Color.Black;
                 }
                 else //Cool feature
                 {
                     pbx.BackColor = Color.Black;
                 }
             }
-            tabulka.BackColor = Color.Black;
-            tabulkaNapoveda.BackColor = Color.Black;
+            tabulka.BackColor = Color.Red;
+            tabulkaNapoveda.BackColor = Color.Red;
         }
 
         //Je potřeba udělat vypnutí soundtracku a pozastavení timeru //hotovo
@@ -645,7 +663,6 @@ namespace Tetris
         {
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
-            //soundtrack.Stop();
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             this.Hide();
             Menu menu = new Menu();
@@ -657,7 +674,6 @@ namespace Tetris
         {
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
-            //soundtrack.Stop();
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             this.Hide();
             Skore skore = new Skore();
@@ -670,7 +686,6 @@ namespace Tetris
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
             axWindowsMediaPlayer1.Ctlcontrols.stop();
-            //soundtrack.Stop();
             this.Dispose();
         }
         //zacne novou hru
@@ -688,7 +703,6 @@ namespace Tetris
         }
 
         //**************************Ovládání******************************
-        //Pracuje s inputem, zatím pouzde WASD a šipky
         private void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
             //Pozastavuje hru
@@ -696,7 +710,6 @@ namespace Tetris
             {
                 casHryTimer.Stop();
                 rychlostHryTimer.Stop();
-                //soundtrack.Stop();
                 axWindowsMediaPlayer1.Ctlcontrols.stop();
 
                 pozastaveno = true;
@@ -706,25 +719,10 @@ namespace Tetris
             {
                 casHryTimer.Start();
                 rychlostHryTimer.Start();
-                //soundtrack.PlayLooping();
                 axWindowsMediaPlayer1.Ctlcontrols.play();
 
                 pozastaveno = false;
                 label_pozastaveni.Text = "Pro pozastavení stiskněte ESC";
-            }
-
-            //nastaveniOvladacich klaves
-            Keys dolevaKlavesa = Keys.Left;
-            Keys dopravaKlavesa = Keys.Right;
-            Keys doluKlavesa = Keys.Down;
-            Keys nahoruKlavesa= Keys.Up;
-            if(!doporuceneOvladani)
-            {
-                PrirazeniKlaves prirazeniKlaves= new PrirazeniKlaves();
-                dolevaKlavesa=prirazeniKlaves.priraditKlavesu(doleva);
-                dopravaKlavesa = prirazeniKlaves.priraditKlavesu(doprava);
-                doluKlavesa = prirazeniKlaves.priraditKlavesu(dolu);
-                nahoruKlavesa = prirazeniKlaves.priraditKlavesu(nahoru);
             }
 
 

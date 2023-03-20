@@ -536,7 +536,7 @@
             this.label_skore.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
             this.label_skore.Location = new System.Drawing.Point(399, 724);
             this.label_skore.Name = "label_skore";
-            this.label_skore.Size = new System.Drawing.Size(124, 32);
+            this.label_skore.Size = new System.Drawing.Size(123, 32);
             this.label_skore.TabIndex = 1;
             this.label_skore.Text = "Skóre: 0";
             // 
@@ -547,7 +547,7 @@
             this.label_cas.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
             this.label_cas.Location = new System.Drawing.Point(399, 692);
             this.label_cas.Name = "label_cas";
-            this.label_cas.Size = new System.Drawing.Size(121, 32);
+            this.label_cas.Size = new System.Drawing.Size(120, 32);
             this.label_cas.TabIndex = 2;
             this.label_cas.Text = "Čas: 0 s";
             // 
@@ -558,7 +558,7 @@
             this.label_radky.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
             this.label_radky.Location = new System.Drawing.Point(399, 756);
             this.label_radky.Name = "label_radky";
-            this.label_radky.Size = new System.Drawing.Size(130, 32);
+            this.label_radky.Size = new System.Drawing.Size(129, 32);
             this.label_radky.TabIndex = 4;
             this.label_radky.Text = "Řádky: 0";
             // 
@@ -808,7 +808,7 @@
             this.tabulka.Controls.Add(this.box250, 7, 1);
             this.tabulka.Controls.Add(this.box251, 8, 1);
             this.tabulka.Controls.Add(this.box252, 9, 1);
-            this.tabulka.Cursor = System.Windows.Forms.Cursors.No;
+            this.tabulka.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabulka.Location = new System.Drawing.Point(178, 57);
             this.tabulka.Margin = new System.Windows.Forms.Padding(2);
             this.tabulka.MaximumSize = new System.Drawing.Size(341, 624);
@@ -3278,7 +3278,7 @@
             this.label_jmeno.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
             this.label_jmeno.Location = new System.Drawing.Point(539, 200);
             this.label_jmeno.Name = "label_jmeno";
-            this.label_jmeno.Size = new System.Drawing.Size(92, 32);
+            this.label_jmeno.Size = new System.Drawing.Size(91, 32);
             this.label_jmeno.TabIndex = 9;
             this.label_jmeno.Text = "Guest";
             // 
@@ -3289,7 +3289,7 @@
             this.label_delkaHry.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_delkaHry.Location = new System.Drawing.Point(11, 692);
             this.label_delkaHry.Name = "label_delkaHry";
-            this.label_delkaHry.Size = new System.Drawing.Size(149, 32);
+            this.label_delkaHry.Size = new System.Drawing.Size(148, 32);
             this.label_delkaHry.TabIndex = 10;
             this.label_delkaHry.Text = "Délka hry:";
             // 
@@ -3300,7 +3300,7 @@
             this.label_obtiznost.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_obtiznost.Location = new System.Drawing.Point(11, 724);
             this.label_obtiznost.Name = "label_obtiznost";
-            this.label_obtiznost.Size = new System.Drawing.Size(152, 32);
+            this.label_obtiznost.Size = new System.Drawing.Size(151, 32);
             this.label_obtiznost.TabIndex = 12;
             this.label_obtiznost.Text = "Obtížnost:";
             // 
@@ -3579,7 +3579,7 @@
             this.label_typOvladani.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_typOvladani.Location = new System.Drawing.Point(11, 756);
             this.label_typOvladani.Name = "label_typOvladani";
-            this.label_typOvladani.Size = new System.Drawing.Size(141, 32);
+            this.label_typOvladani.Size = new System.Drawing.Size(140, 32);
             this.label_typOvladani.TabIndex = 18;
             this.label_typOvladani.Text = "Ovládání:";
             // 

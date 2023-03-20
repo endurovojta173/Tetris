@@ -4,3 +4,7 @@ pepa;100;24;Nekonečný mód;Nekonečná;;Lehká;
 pepa;100;20;Časově omezený;20;Lehká;
 pepa;100;20;Časově omezený;20;Lehká;
 pepa;300;44;Nekonečný mód;Nekonečná;;Lehká;
+pepa;200;26;Nekonečný mód;Nekonečná;;Lehká;
+pepa;0;7;Nekonečný mód;Nekonečná;;Lehká;
+pepa;0;6;Nekonečný mód;Nekonečná;;Lehká;
+pepa;0;8;Nekonečný mód;Nekonečná;;Lehká;
