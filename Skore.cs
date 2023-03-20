@@ -61,7 +61,6 @@ namespace Tetris
 
         private void AddRow(string jmeno,string skore,string delkaHry,string herniMod, string maxDelkaHry, string obtiznost)
         {
-            String[] radek = {jmeno,skore,delkaHry,herniMod,maxDelkaHry,obtiznost};
             dataGridView1.Rows.Add(jmeno, int.Parse(skore), int.Parse(delkaHry), herniMod, maxDelkaHry,obtiznost); //Musí se nastavit jako určité typy, kvůli filtrování
         }
 
