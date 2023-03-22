@@ -1,10 +1,9 @@
 Vojta
 200
-1
+100
 false
 false
 true
-
 a
 d
 s

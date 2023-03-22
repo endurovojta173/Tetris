@@ -747,14 +747,13 @@ namespace Tetris
                         //Pokud test projde, tak se otočí
                         if (otaceni == 0)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 2, ctverec1Radek);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek - 1);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek - 2);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek - 3);
-
                             //Otestuje jestli nepřekrývá jiný kousek, jestli ne tak inkrementuje, aby se mohl otočit
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 2, ctverec1Radek);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek - 1);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek - 2);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek - 3);
                                 otaceni++;
                             }
                             else
@@ -764,13 +763,12 @@ namespace Tetris
                         }
                         else if (otaceni == 1)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 2, ctverec1Radek);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek + 1);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek + 2);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 1, ctverec4Radek + 3);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 2, ctverec1Radek);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek + 1);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek + 2);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 1, ctverec4Radek + 3);
                                 otaceni = 0;
                             }
                             else
@@ -794,14 +792,13 @@ namespace Tetris
                         //Otočí
                         if (otaceni == 0)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek + 2);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek + 1);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 2, ctverec3Radek);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek - 1);
-
                             //Otestuje, jestli nepřekrývá, jestli jo tak zruší rotaci
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek + 2);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek + 1);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 2, ctverec3Radek);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek - 1);
                                 otaceni++;
                             }
                             else
@@ -811,14 +808,13 @@ namespace Tetris
                         }
                         else if (otaceni == 1)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek - 1);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek - 2);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 2, ctverec4Radek - 1);
-
                             //Otestuje, jestli nepřekrývá, jestli jo tak zruší rotaci
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek - 1);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek - 2);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 2, ctverec4Radek - 1);
                                 otaceni++;
                             }
                             else
@@ -828,14 +824,13 @@ namespace Tetris
                         }
                         else if (otaceni == 2)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek - 1);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek + 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek + 2);
-
                             //Otestuje, jestli nepřekrývá, jestli jo tak zruší rotaci
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek - 1);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek + 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek + 2);
                                 otaceni++;
                             }
                             else
@@ -845,14 +840,13 @@ namespace Tetris
                         }
                         else if (otaceni == 3)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 2, ctverec1Radek - 1);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek + 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek);
-
                             //Otestuje, jestli nepřekrývá, jestli jo tak zruší rotaci
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 2, ctverec1Radek - 1);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek + 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek);
                                 otaceni = 0;
                             }
                             else
@@ -874,13 +868,12 @@ namespace Tetris
 
                         if (otaceni == 0)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 2, ctverec1Radek + 1);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek - 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 2, ctverec1Radek + 1);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek - 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek);
                                 otaceni++;
                             }
                             else
@@ -890,13 +883,12 @@ namespace Tetris
                         }
                         else if (otaceni == 1)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek + 1);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek - 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek - 2);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek + 1);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek - 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek - 2);
                                 otaceni++;
                             }
                             else
@@ -906,13 +898,12 @@ namespace Tetris
                         }
                         else if (otaceni == 2)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek + 1);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek + 2);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 2, ctverec4Radek + 1);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek + 1);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek + 2);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 2, ctverec4Radek + 1);
                                 otaceni++;
                             }
                             else
@@ -922,13 +913,12 @@ namespace Tetris
                         }
                         else if (otaceni == 3)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek - 2);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek - 1);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 2, ctverec3Radek);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek + 1);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek - 2);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek - 1);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 2, ctverec3Radek);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek + 1);
                                 otaceni = 0;
                             }
                             else
@@ -950,15 +940,12 @@ namespace Tetris
 
                         if (otaceni == 0)
                         {
-
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek - 2);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek - 1);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 1, ctverec3Radek);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek + 1);
-
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec + 1, ctverec1Radek - 2);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek - 1);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 1, ctverec3Radek);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek + 1);
                                 otaceni++;
                             }
                             else
@@ -968,13 +955,12 @@ namespace Tetris
                         }
                         else if (otaceni == 1)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 1, ctverec1Radek + 2);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek + 1);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek - 1);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec - 1, ctverec1Radek + 2);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek + 1);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek - 1);
                                 otaceni = 0;
                             }
                             else
@@ -992,13 +978,12 @@ namespace Tetris
 
                         if (otaceni == 0)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek + 1);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek - 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 1, ctverec4Radek - 2);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek + 1);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 1, ctverec2Radek);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek - 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 1, ctverec4Radek - 2);
                                 otaceni++;
                             }
                             else
@@ -1008,13 +993,12 @@ namespace Tetris
                         }
                         else if (otaceni == 1)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek - 1);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek + 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek + 2);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek - 1);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 1, ctverec2Radek);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec, ctverec3Radek + 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 1, ctverec4Radek + 2);
                                 otaceni = 0;
                             }
                             else
@@ -1040,13 +1024,12 @@ namespace Tetris
 
                         if (otaceni == 0)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek - 2);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek - 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 2, ctverec4Radek);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek - 2);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek - 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec - 2, ctverec4Radek);
                                 otaceni++;
                             }
                             else
@@ -1056,13 +1039,12 @@ namespace Tetris
                         }
                         else if (otaceni == 1)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 2, ctverec2Radek);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 1, ctverec3Radek - 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek - 2);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec + 2, ctverec2Radek);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 1, ctverec3Radek - 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek - 2);
                                 otaceni++;
                             }
                             else
@@ -1072,13 +1054,12 @@ namespace Tetris
                         }
                         else if (otaceni == 2)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek + 2);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 1, ctverec3Radek + 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 2, ctverec4Radek);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec, ctverec2Radek + 2);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec + 1, ctverec3Radek + 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec + 2, ctverec4Radek);
                                 otaceni++;
                             }
                             else
@@ -1088,13 +1069,12 @@ namespace Tetris
                         }
                         else if (otaceni == 3)
                         {
-                            aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
-                            aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 2, ctverec2Radek);
-                            aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek + 1);
-                            aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek + 2);
-
                             if (TestOverlap() == true)
                             {
+                                aktivniPolozka2[0] = tabulka.GetControlFromPosition(ctverec1Sloupec, ctverec1Radek);
+                                aktivniPolozka2[1] = tabulka.GetControlFromPosition(ctverec2Sloupec - 2, ctverec2Radek);
+                                aktivniPolozka2[2] = tabulka.GetControlFromPosition(ctverec3Sloupec - 1, ctverec3Radek + 1);
+                                aktivniPolozka2[3] = tabulka.GetControlFromPosition(ctverec4Sloupec, ctverec4Radek + 2);
                                 otaceni = 0;
                             }
                             else
@@ -1105,17 +1085,17 @@ namespace Tetris
                     }
                     
                     //Nastaví starou pozici na bílo
-                    foreach (PictureBox square in aktivniPolozka)
+                    foreach (PictureBox ctverec in aktivniPolozka)
                     {
-                        square.BackColor = Color.White;
+                        ctverec.BackColor = Color.White;
                     }
 
                     //Nová pozice se přebarví na barvu položky
                     int x = 0;
-                    foreach (PictureBox square in aktivniPolozka2)
+                    foreach (PictureBox ctverec in aktivniPolozka2)
                     {
-                        square.BackColor = seznamBarev[momentalniPolozka];
-                        aktivniPolozka[x] = square;
+                        ctverec.BackColor = seznamBarev[momentalniPolozka];
+                        aktivniPolozka[x] = ctverec;
                         x++;
                     }
                 }
