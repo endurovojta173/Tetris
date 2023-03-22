@@ -30,7 +30,7 @@ namespace Tetris
             }
             catch(FileNotFoundException)
             {
-                MessageBox.Show("Přeinstalujte hru a nehrabte se v souborech :)");
+                MessageBox.Show("Přeinstalujte hru");
             }
             
         }
