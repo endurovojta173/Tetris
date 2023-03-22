@@ -60,14 +60,27 @@ namespace Tetris
         private void Menu_Load(object sender, EventArgs e)
         {
             //Ošetření zvuku
-            try
+            if (File.Exists("soundtrack.wav") && File.Exists(@"..\..\data\soundtrack.wav")) { }
+            else if (!File.Exists("soundtrack.wav")&&!File.Exists(@"..\..\data\soundtrack.wav"))
+            {
+                MessageBox.Show("Nebyl nalezen zvukový soubor, prosím přeinstalujte hru, nebo hrajte bez zvuku");
+            }
+            else if(File.Exists(@"..\..\data\soundtrack.wav"))
+            {
+                File.Copy(@"..\..\data\soundtrack.wav", "soundtrack.wav");
+            }
+            else if(File.Exists("soundtrack.wav"))
+            {
+                File.Copy("soundtrack.wav", @"..\..\data\soundtrack.wav");
+            }
+            /*try
             {
                 if (!File.Exists("soundtrack.wav")) throw new FileNotFoundException();
             }
             catch (FileNotFoundException)
             {
                 MessageBox.Show("Nebyl nalezen zvukový soubor, prosím přeinstalujte hru, nebo hrajte bez zvuku");
-            }
+            }*/
 
             //Ošetření souboru nastaveni.txt
             if (!File.Exists(@"../../data/nastaveni.txt"))
