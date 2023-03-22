@@ -12,7 +12,7 @@ namespace Tetris
 
 
         //***INICIALIZACE***
-        Control[] aktivniPolozka = { null, null, null, null };
+        Control[] aktivniPolozka = { null, null, null, null }; 
         Control[] aktivniPolozka2 = { null, null, null, null };
         Control[] dalsiPolozka = {null,null, null, null};
         List<int> PieceSequence = new List<int>();
@@ -165,7 +165,6 @@ namespace Tetris
             {
                 PieceSequenceIteration = 0;
 
-                //83
                 PieceSequence.Clear();
                 System.Random random = new System.Random();
                 while (PieceSequence.Count < 7)
@@ -223,7 +222,6 @@ namespace Tetris
             }
             //********************************Box s napovědou
 
-
             //Rozvržení padajícího kousku //1
             Control[,] activePieceArray =
             {
@@ -236,16 +234,11 @@ namespace Tetris
                 { box6, box15, box16, box17 }  // T
             };
 
-
-
-
             //Vybere padající kousek //1
             for (int x = 0; x < 4; x++)
             {
                 aktivniPolozka[x] = activePieceArray[momentalniPolozka, x];
             }
-
-
 
             //Zkontroluje jestli není konec hry //1
             foreach (Control box in aktivniPolozka)
@@ -268,9 +261,6 @@ namespace Tetris
                 square.BackColor = seznamBarev[momentalniPolozka];
             }
         }
-
-
-
 
         //Otestuje jestli budoucí pohyb (doprava,doleva,dolů) byl mimo tabulku nebo jiný kousek
         public bool TestMove(string direction)
@@ -526,8 +516,6 @@ namespace Tetris
             return -1; //Žádný plný řádek
         }
 
-
-
         //Hra skončí, když je položka ve vrchním řádku, když je vytvořena nová položka
         //***!!!!Pokud je mód na čas tak může i po vypršení času
         private bool CheckGameOver()
@@ -562,7 +550,6 @@ namespace Tetris
             else return false;
         }
 
-
         //Updatuje čas hry
         private void CasHryTimer_Tick(object sender, EventArgs e)
         {
@@ -581,8 +568,6 @@ namespace Tetris
                 axWindowsMediaPlayer1.Ctlcontrols.play();
             }
         }
-
-       
 
         //Updatuje skóre
         private void UpdateScore()
@@ -605,7 +590,6 @@ namespace Tetris
                 {
                     herniModString = "Nekonečný mód;";
                     delkaHryString = "Nekonečná;";
-
                 }
                 else
                 {
@@ -619,7 +603,6 @@ namespace Tetris
                 jedinecnyPruchod = true;
             }
         }
-
 
         //Cool feature -- Změní položené bloky na černé 
         private void BlackIfEnd()
@@ -639,7 +622,6 @@ namespace Tetris
                 button_menu.Enabled = true;
                 button_konec.Enabled = true;
                 button_skore.Enabled = true;
-
             }
             foreach(PictureBox pbx in tabulkaNapoveda.Controls)
             {
@@ -724,8 +706,7 @@ namespace Tetris
                 pozastaveno = false;
                 label_pozastaveni.Text = "Pro pozastavení stiskněte ESC";
             }
-
-
+            
             if (!pozastaveno)
             {
                 if (!CheckGameOver() & ((e.KeyCode == dolevaKlavesa) & TestMove("left") == true))
@@ -1134,7 +1115,6 @@ namespace Tetris
                         square.BackColor = Color.White;
                     }
 
-
                     //Nová pozidce se přebarví na barvu položky
                     int x = 0;
                     foreach (PictureBox square in aktivniPolozka2)
@@ -1146,7 +1126,5 @@ namespace Tetris
                 }
             }
         }
-
     }
-
 }

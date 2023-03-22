@@ -57,6 +57,7 @@ namespace Tetris
                 AddRow(splitRadek[0], splitRadek[1], splitRadek[2], splitRadek[3], splitRadek[4], splitRadek[5]);
             }
             fs.Close();
+            comboBox1.SelectedIndex = 0; //Nastaví defaultní index
         }
 
         private void AddRow(string jmeno,string skore,string delkaHry,string herniMod, string maxDelkaHry, string obtiznost)
@@ -97,22 +98,18 @@ namespace Tetris
             ShowData();
             string coChciVyhledat=textBox1.Text;
             int kategorie = comboBox1.SelectedIndex;
-            
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+
+            if (coChciVyhledat.Length > 0)
             {
-                try
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     if (dataGridView1.Rows[i].Cells[kategorie].Value.ToString() != coChciVyhledat)
                     {
                         dataGridView1.Rows[i].Visible = false;
                     }
                 }
-                catch(System.ArgumentOutOfRangeException)
-                {
-                    MessageBox.Show("Zadejte co chcete vyhledat");
-                }
-                
             }
+            else MessageBox.Show("Zadejte co chcete vyhledat do vyhledávacího pole");
         }
 
         private void button4_Click(object sender, EventArgs e)
