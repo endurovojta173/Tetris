@@ -167,7 +167,7 @@ namespace Tetris
 
                 VygenerovaneBloky.Clear();
                 System.Random random = new System.Random();
-                while (VygenerovaneBloky.Count < 7)     //
+                while (VygenerovaneBloky.Count < 7) 
                 {
                     int x = random.Next(7);
                     if (!VygenerovaneBloky.Contains(x))
@@ -273,7 +273,7 @@ namespace Tetris
             int dalsiCtverec = 0;
 
             Control novyCtverec = new Control();
-            //Určí potencionální místa k pohybu
+            //Určí hraniční sloupce a řádky ve kterých se blok nachází
             foreach (Control ctverec in aktivniPolozka)
             {
                 if (tabulka.GetRow(ctverec) < momentalniVrchniRadek)
@@ -301,36 +301,36 @@ namespace Tetris
                 int ctverecSloupec = tabulka.GetColumn(ctverec);
 
                 //Vlevo
-                if (smer == "left" & ctverecSloupec > 0)
+                if (smer == "left" && ctverecSloupec > 0)
                 {
                     novyCtverec = tabulka.GetControlFromPosition(ctverecSloupec - 1, ctverecRadek);
                     dalsiCtverec = momentalniLevySloupec;
                 }
-                else if (smer == "left" & ctverecSloupec == 0)
+                else if (smer == "left" && ctverecSloupec == 0)
                 {
                     //Otestuje jestli by nebyl objekt doleva mimo tabulku
                     return false;
                 }
 
                 //Vpravo
-                else if (smer == "right" & ctverecSloupec < 9)
+                else if (smer == "right" && ctverecSloupec < 9)
                 {
                     novyCtverec = tabulka.GetControlFromPosition(ctverecSloupec + 1, ctverecRadek);
                     dalsiCtverec = momentalniPravySloupec;
                 }
-                else if (smer == "right" & ctverecSloupec == 9)
+                else if (smer == "right" && ctverecSloupec == 9)
                 {
                     //Otestuje jestli by nebyl objekt doprava mimo tabulku
                     return false;
                 }
 
                 //Dolů
-                else if (smer == "down" & ctverecRadek < 21)
+                else if (smer == "down" && ctverecRadek < 21)
                 {
                     novyCtverec = tabulka.GetControlFromPosition(ctverecSloupec, ctverecRadek + 1);
                     dalsiCtverec = momentalniSpodniRadek;
                 }
-                else if (smer == "down" & ctverecRadek == 21)
+                else if (smer == "down" && ctverecRadek == 21)
                 {
                     return false;
                     //Otestuje, jestli by nebyl pohyb pod tabulku

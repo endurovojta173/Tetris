@@ -12,3 +12,4 @@ pepa;0;8;Nekonečný mód;Nekonečná;;Lehká;
 pepa;4100;431;Nekonečný mód;Nekonečná;;Lehká;
 Vojta;400;47;Nekonečný mód;Nekonečná;;Lehká;
 Vojta;0;8;Nekonečný mód;Nekonečná;;Lehká;
+Vojta;100;23;Nekonečný mód;Nekonečná;;Lehká;
