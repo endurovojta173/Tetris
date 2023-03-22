@@ -680,7 +680,7 @@ namespace Tetris
         }
 
         //**************************Ovládání******************************
-        private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+        private void TetrisMain_KeyDown(object sender, KeyEventArgs e)
         {
             //Pozastavuje hru
             if (e.KeyCode == Keys.Escape&&!pozastaveno)
@@ -704,15 +704,15 @@ namespace Tetris
             
             if (!pozastaveno)
             {
-                if (!CheckGameOver() & ((e.KeyCode == dolevaKlavesa) & TestMove("left") == true))
+                if (((e.KeyCode == dolevaKlavesa) && TestMove("left") == true))
                 {
                     MovePiece("left");
                 }
-                else if (!CheckGameOver() & ((e.KeyCode == dopravaKlavesa) & TestMove("right") == true))
+                else if (((e.KeyCode == dopravaKlavesa) && TestMove("right") == true))
                 {
                     MovePiece("right");
                 }
-                else if ((e.KeyCode == doluKlavesa) & TestMove("down") == true)
+                else if ((e.KeyCode == doluKlavesa) && TestMove("down") == true)
                 {
                     MovePiece("down");
                 }
@@ -1110,7 +1110,7 @@ namespace Tetris
                         square.BackColor = Color.White;
                     }
 
-                    //Nová pozidce se přebarví na barvu položky
+                    //Nová pozice se přebarví na barvu položky
                     int x = 0;
                     foreach (PictureBox square in aktivniPolozka2)
                     {

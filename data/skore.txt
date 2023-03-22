@@ -16,3 +16,4 @@ Vojta;100;23;Nekonečný mód;Nekonečná;;Lehká;
 Vojta;0;0;Nekonečný mód;Nekonečná;;Lehká;
 Vojta;100;39;Nekonečný mód;Nekonečná;;Lehká;
 Vojta;0;10;Nekonečný mód;Nekonečná;;Lehká;
+Vojta;0;21;Nekonečný mód;Nekonečná;;Lehká;
