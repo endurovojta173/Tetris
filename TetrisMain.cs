@@ -213,7 +213,7 @@ namespace Tetris
                     dalsiPolozka[x] = poleDalsiPolozky[dalsiPolozkaInt, x];
                 }
 
-                // Populate next piece panel with correct color
+                //Obarví blok
                 foreach (Control square in dalsiPolozka)
                 {
                     square.BackColor = seznamBarev[dalsiPolozkaInt];
