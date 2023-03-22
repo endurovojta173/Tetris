@@ -265,7 +265,7 @@ namespace Tetris
         //Otestuje jestli budoucí pohyb (doprava,doleva,dolů) byl mimo tabulku nebo jiný kousek
         public bool TestMove(string smer)
         {
-            int momentalniVrchniRadek = 21;
+            int momentalniVrchniRadek = 21; 
             int momentalniSpodniRadek = 0;
             int momentalniLevySloupec = 9;
             int momentalniPravySloupec = 0;
@@ -337,7 +337,7 @@ namespace Tetris
                 }
 
                 //Otestuje jestli překryje jiný kousek
-                if ((novyCtverec.BackColor != Color.White & novyCtverec.BackColor != Color.LightGray) & aktivniPolozka.Contains(novyCtverec) == false & dalsiCtverec > 0)
+                if ((novyCtverec.BackColor != Color.White) && !aktivniPolozka.Contains(novyCtverec))
                 {
                     return false;
                 }
@@ -378,7 +378,7 @@ namespace Tetris
                 x++;
             }
 
-            //Zkopíruje activePiece2 do activePiece
+            //Zkopíruje aktivniPolozka2 do aktivniPolozka
             x = 0;
             foreach (PictureBox ctverec in aktivniPolozka2)
             {
@@ -522,22 +522,22 @@ namespace Tetris
         {
             Control[] vrchniRadekSpawn = {box5, box6}; //Opraven bug, kvůli kterému se hra ukončila i při vystavení bloků nahoru, i když se mohli dále spawnovat
 
-                foreach (Control box in vrchniRadekSpawn)
+            foreach (Control box in vrchniRadekSpawn)
+            {
+                if ((box.BackColor != Color.White) & !aktivniPolozka.Contains(box))
                 {
-                    if ((box.BackColor != Color.White) & !aktivniPolozka.Contains(box))
-                    {
-                        konecHry = true;
-                    }
+                    konecHry = true;
                 }
+            }
 
-                if (herniMod)
+            if (herniMod)
+            {
+                if (ubehlyCas == delkaHry)
                 {
-                    if (ubehlyCas == delkaHry)
-                    {
-                        konecHry = true;
-                    }
+                    konecHry = true;
                 }
-            //pořád se opakuje dokola, kvůli tomu se skore uloží 3x // vyřešení pomocí bool
+            }
+
             if (konecHry == true)
             {
                 //uloží skóre
@@ -617,10 +617,6 @@ namespace Tetris
                 {
                     pbx.BackColor = Color.Black;
                 }
-                button_novaHra.Enabled = true;
-                button_menu.Enabled = true;
-                button_konec.Enabled = true;
-                button_skore.Enabled = true;
             }
             foreach(PictureBox pbx in tabulkaNapoveda.Controls)
             {
