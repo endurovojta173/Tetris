@@ -15,7 +15,7 @@ namespace Tetris
         Control[] aktivniPolozka = { null, null, null, null }; 
         Control[] aktivniPolozka2 = { null, null, null, null };
         Control[] dalsiPolozka = {null,null, null, null};
-        List<int> PieceSequence = new List<int>();
+        List<int> VygenerovaneBloky = new List<int>(); //Vygenerovaná čísla pro bloky - dle nich se budou spawnovat
         int ubehlyCas = 0;
         int momentalniPolozka;
         int dalsiPolozkaInt;
@@ -23,7 +23,7 @@ namespace Tetris
         int skore = 0;
         int vycistenychRadku = 0;
         bool konecHry = false;
-        int PieceSequenceIteration = 0;
+        int opakovaniGenerovanychBloku = 0; //Kontroluje kolikrát se položí vygenerované bloky // Pokud 7, tak se nastaví znova od nuly a vygeneruje se nový seznam bloků
 
         //Nastavení šipek
         Keys dolevaKlavesa = Keys.Left;
@@ -134,20 +134,20 @@ namespace Tetris
             rychlostHryTimer.Start();
             casHryTimer.Start();
 
-            //Generování položek
+            //Generování položek //Vygeneruje se prvních 7 bloků do listu
             Random random = new Random();
-            while (PieceSequence.Count < 7)
+            while (VygenerovaneBloky.Count < 7)
             {
                 int x = random.Next(7);
-                if (!PieceSequence.Contains(x))
+                if (!VygenerovaneBloky.Contains(x))
                 {
-                    PieceSequence.Add(x);
+                    VygenerovaneBloky.Add(x);
                 }
             }
 
             //Vybere první položku
-            dalsiPolozkaInt = PieceSequence[0];
-            PieceSequenceIteration++;
+            dalsiPolozkaInt = VygenerovaneBloky[0];
+            opakovaniGenerovanychBloku++;
 
             DropNewPiece();
         }
@@ -161,25 +161,25 @@ namespace Tetris
             momentalniPolozka = dalsiPolozkaInt;
 
             //Pokud je poslední pieceSequence, vygeneruje novou
-            if (PieceSequenceIteration == 7)
+            if (opakovaniGenerovanychBloku == 7)
             {
-                PieceSequenceIteration = 0;
+                opakovaniGenerovanychBloku = 0;
 
-                PieceSequence.Clear();
+                VygenerovaneBloky.Clear();
                 System.Random random = new System.Random();
-                while (PieceSequence.Count < 7)
+                while (VygenerovaneBloky.Count < 7)
                 {
                     int x = random.Next(7);
-                    if (!PieceSequence.Contains(x))
+                    if (!VygenerovaneBloky.Contains(x))
                     {
-                        PieceSequence.Add(x);
+                        VygenerovaneBloky.Add(x);
                     }
                 }
             }
 
             //Zvolí další položku
-            dalsiPolozkaInt = PieceSequence[PieceSequenceIteration];
-            PieceSequenceIteration++;
+            dalsiPolozkaInt = VygenerovaneBloky[opakovaniGenerovanychBloku];
+            opakovaniGenerovanychBloku++;
 
 
             //**************************************************Box s napovědou
@@ -187,7 +187,7 @@ namespace Tetris
             if (!obtiznost)
             {
 
-                //If not first move, clear next piece panel
+                //Nápověda nic nezobrazí, pokud je teprve první blok
                 if (dalsiPolozka.Contains(null) == false)
                 {
                     foreach (Control x in dalsiPolozka)
@@ -255,7 +255,7 @@ namespace Tetris
                 }
             }
 
-            // Populate falling piece squares with correct color //1
+            //Přiřadí barvu k daným blokům
             foreach (Control square in aktivniPolozka)
             {
                 square.BackColor = seznamBarev[momentalniPolozka];
@@ -263,16 +263,16 @@ namespace Tetris
         }
 
         //Otestuje jestli budoucí pohyb (doprava,doleva,dolů) byl mimo tabulku nebo jiný kousek
-        public bool TestMove(string direction)
+        public bool TestMove(string smer)
         {
             int currentHighRow = 21;
             int currentLowRow = 0;
             int currentLeftCol = 9;
             int currentRightCol = 0;
 
-            int nextSquare = 0;
+            int dalsiCtverec = 0;
 
-            Control newSquare = new Control();
+            Control novyCtverec = new Control();
             //Určí potencionální místa k pohybu
             foreach (Control square in aktivniPolozka)
             {
@@ -295,49 +295,49 @@ namespace Tetris
             }
 
             //Otestuje jestli by byly nějaké čtverce mimo tabulku
-            foreach (Control square in aktivniPolozka)
+            foreach (Control ctverec in aktivniPolozka)
             {
-                int squareRow = tabulka.GetRow(square);
-                int squareCol = tabulka.GetColumn(square);
+                int ctverecRadek = tabulka.GetRow(ctverec);
+                int ctverecSloupec = tabulka.GetColumn(ctverec);
 
                 //Vlevo
-                if (direction == "left" & squareCol > 0)
+                if (smer == "left" & ctverecSloupec > 0)
                 {
-                    newSquare = tabulka.GetControlFromPosition(squareCol - 1, squareRow);
-                    nextSquare = currentLeftCol;
+                    novyCtverec = tabulka.GetControlFromPosition(ctverecSloupec - 1, ctverecRadek);
+                    dalsiCtverec = currentLeftCol;
                 }
-                else if (direction == "left" & squareCol == 0)
+                else if (smer == "left" & ctverecSloupec == 0)
                 {
                     //Otestuje jestli by nebyl objekt doleva mimo tabulku
                     return false;
                 }
 
                 //Vpravo
-                else if (direction == "right" & squareCol < 9)
+                else if (smer == "right" & ctverecSloupec < 9)
                 {
-                    newSquare = tabulka.GetControlFromPosition(squareCol + 1, squareRow);
-                    nextSquare = currentRightCol;
+                    novyCtverec = tabulka.GetControlFromPosition(ctverecSloupec + 1, ctverecRadek);
+                    dalsiCtverec = currentRightCol;
                 }
-                else if (direction == "right" & squareCol == 9)
+                else if (smer == "right" & ctverecSloupec == 9)
                 {
                     //Otestuje jestli by nebyl objekt doprava mimo tabulku
                     return false;
                 }
 
                 //Dolů
-                else if (direction == "down" & squareRow < 21)
+                else if (smer == "down" & ctverecRadek < 21)
                 {
-                    newSquare = tabulka.GetControlFromPosition(squareCol, squareRow + 1);
-                    nextSquare = currentLowRow;
+                    novyCtverec = tabulka.GetControlFromPosition(ctverecSloupec, ctverecRadek + 1);
+                    dalsiCtverec = currentLowRow;
                 }
-                else if (direction == "down" & squareRow == 21)
+                else if (smer == "down" & ctverecRadek == 21)
                 {
                     return false;
                     //Otestuje, jestli by nebyl pohyb pod tabulku
                 }
 
                 //Otestuje jestli překryje jiný kousek
-                if ((newSquare.BackColor != Color.White & newSquare.BackColor != Color.LightGray) & aktivniPolozka.Contains(newSquare) == false & nextSquare > 0)
+                if ((novyCtverec.BackColor != Color.White & novyCtverec.BackColor != Color.LightGray) & aktivniPolozka.Contains(novyCtverec) == false & dalsiCtverec > 0)
                 {
                     return false;
                 }
@@ -347,31 +347,31 @@ namespace Tetris
             //Když projde všemi testy tak vrátí true
             return true;
         }
-        public void MovePiece(string direction)
+        public void MovePiece(string smer)
         {
             // Vymaže starou pozici a určí novou podle směru ovládání
             int x = 0;
-            foreach (PictureBox square in aktivniPolozka)
+            foreach (PictureBox ctverec in aktivniPolozka)
             {
-                square.BackColor = Color.White;
-                int squareRow = tabulka.GetRow(square);
-                int squareCol = tabulka.GetColumn(square);
+                ctverec.BackColor = Color.White;
+                int ctverecRadek = tabulka.GetRow(ctverec);
+                int ctverecSloupec = tabulka.GetColumn(ctverec);
                 int newSquareRow = 0;
                 int newSquareCol = 0;
-                if (direction == "left")
+                if (smer == "left")
                 {
-                    newSquareCol = squareCol - 1;
-                    newSquareRow = squareRow;
+                    newSquareCol = ctverecSloupec - 1;
+                    newSquareRow = ctverecRadek;
                 }
-                else if (direction == "right")
+                else if (smer == "right")
                 {
-                    newSquareCol = squareCol + 1;
-                    newSquareRow = squareRow;
+                    newSquareCol = ctverecSloupec + 1;
+                    newSquareRow = ctverecRadek;
                 }
-                else if (direction == "down")
+                else if (smer == "down")
                 {
-                    newSquareCol = squareCol;
-                    newSquareRow = squareRow + 1;
+                    newSquareCol = ctverecSloupec;
+                    newSquareRow = ctverecRadek + 1;
                 }
 
                 aktivniPolozka2[x] = tabulka.GetControlFromPosition(newSquareCol, newSquareRow);
@@ -380,10 +380,10 @@ namespace Tetris
 
             //Zkopíruje activePiece2 do activePiece
             x = 0;
-            foreach (PictureBox square in aktivniPolozka2)
+            foreach (PictureBox ctverec in aktivniPolozka2)
             {
 
-                aktivniPolozka[x] = square;
+                aktivniPolozka[x] = ctverec;
                 x++;
             }
 
@@ -399,9 +399,9 @@ namespace Tetris
         //Otestuje jestli by při rotaci překryl položený kousek
         private bool TestOverlap()
         {
-            foreach (PictureBox square in aktivniPolozka2)
+            foreach (PictureBox ctverec in aktivniPolozka2)
             {
-                if ((square.BackColor != Color.White) & aktivniPolozka.Contains(square) == false)
+                if ((ctverec.BackColor != Color.White) & aktivniPolozka.Contains(ctverec) == false)
                 {
                     return false;
                 }
@@ -454,17 +454,17 @@ namespace Tetris
         //Vyčistí nejnižší plný řádek
         private void ClearFullRow()
         {
-            int completedRow = CheckForCompleteRows();
+            int plnyRadek = CheckForCompleteRows();
 
             //Přebarví ho na bílo
             for (int x = 0; x <= 9; x++)
             {
-                Control z = tabulka.GetControlFromPosition(x, completedRow);
+                Control z = tabulka.GetControlFromPosition(x, plnyRadek);
                 z.BackColor = Color.White;
             }
 
             //Posune všechny ostatní čtverce dolů
-            for (int x = completedRow - 1; x >= 0; x--) //Každý řádek nad vymazaným
+            for (int x = plnyRadek - 1; x >= 0; x--) //Každý řádek nad vymazaným
             {
                 //Každý čtverec v řádku
                 for (int y = 0; y <= 9; y++)
@@ -520,11 +520,11 @@ namespace Tetris
         //***!!!!Pokud je mód na čas tak může i po vypršení času
         private bool CheckGameOver()
         {
-            Control[] topRow = {box5, box6}; //Opraven bug, kvůli kterému se hra ukončila i při vystavení bloků nahoru, i když se mohli dále spawnovat
+            Control[] vrchniRadekSpawn = {box5, box6}; //Opraven bug, kvůli kterému se hra ukončila i při vystavení bloků nahoru, i když se mohli dále spawnovat
 
-                foreach (Control box in topRow)
+                foreach (Control box in vrchniRadekSpawn)
                 {
-                    if ((box.BackColor != Color.White & box.BackColor != Color.LightGray) & !aktivniPolozka.Contains(box))
+                    if ((box.BackColor != Color.White) & !aktivniPolozka.Contains(box))
                     {
                         konecHry = true;
                     }
@@ -541,7 +541,6 @@ namespace Tetris
             if (konecHry == true)
             {
                 //uloží skóre
-
                 SaveScore();
                 BlackIfEnd();
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Ukončí hru
