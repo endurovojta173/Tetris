@@ -15,7 +15,7 @@ namespace Tetris
         Control[] aktivniPolozka = { null, null, null, null }; 
         Control[] aktivniPolozka2 = { null, null, null, null };
         Control[] dalsiPolozka = {null,null, null, null};
-        List<int> VygenerovaneBloky = new List<int>(); //Vygenerovaná čísla pro bloky - dle nich se budou spawnovat
+        List<int> VygenerovaneBloky = new List<int>(); //Vygenerovaná čísla pro bloky - dle nich se budou spawnovat 
         int ubehlyCas = 0;
         int momentalniPolozka;
         int dalsiPolozkaInt;
@@ -23,7 +23,7 @@ namespace Tetris
         int skore = 0;
         int vycistenychRadku = 0;
         bool konecHry = false;
-        int opakovaniGenerovanychBloku = 0; //Kontroluje kolikrát se položí vygenerované bloky // Pokud 7, tak se nastaví znova od nuly a vygeneruje se nový seznam bloků
+        int vygenerovanyBlok = 0; //Kontroluje kolikrát se položí vygenerované bloky // Pokud 7, tak se nastaví znova od nuly a vygeneruje se nový seznam bloků
 
         //Nastavení šipek
         Keys dolevaKlavesa = Keys.Left;
@@ -70,11 +70,12 @@ namespace Tetris
             jmeno = sr.ReadLine();
             delkaHry = int.Parse(sr.ReadLine());
             hlasitost= int.Parse(sr.ReadLine());
+
             //Zvuk
-            axWindowsMediaPlayer1.URL = "soundtrack.wav";
-            axWindowsMediaPlayer1.Ctlcontrols.play();
-            axWindowsMediaPlayer1.Ctlenabled = false;
-            axWindowsMediaPlayer1.settings.volume = hlasitost;
+            mediaPlayer.URL = "soundtrack.wav";
+            mediaPlayer.Ctlcontrols.play();
+            mediaPlayer.Ctlenabled = false;
+            mediaPlayer.settings.volume = hlasitost;
 
             herniMod = bool.Parse(sr.ReadLine());
             obtiznost = bool.Parse(sr.ReadLine());
@@ -90,7 +91,7 @@ namespace Tetris
                 //nastaveniOvladacich klaves
                 if (!doporuceneOvladani)
                 {
-                    PrirazeniKlaves prirazeniKlaves = new PrirazeniKlaves();
+                    PrirazeniKlaves prirazeniKlaves = new PrirazeniKlaves(); //Instance třídy PrirazeniKlaves.cs
                     dolevaKlavesa = prirazeniKlaves.priraditKlavesu(doleva);
                     dopravaKlavesa = prirazeniKlaves.priraditKlavesu(doprava);
                     doluKlavesa = prirazeniKlaves.priraditKlavesu(dolu);
@@ -130,11 +131,10 @@ namespace Tetris
                 label_obtiznost.Text += " Lehká";
             }
 
-
             rychlostHryTimer.Start();
             casHryTimer.Start();
 
-            //Generování položek //Vygeneruje se prvních 7 bloků do listu
+            //Generování položek //Vygeneruje se prvních 7 bloků do listu //Pokaždé se položí všech 7 a pak se generuje znova
             Random random = new Random();
             while (VygenerovaneBloky.Count < 7)
             {
@@ -147,7 +147,7 @@ namespace Tetris
 
             //Vybere první položku
             dalsiPolozkaInt = VygenerovaneBloky[0];
-            opakovaniGenerovanychBloku++;
+            vygenerovanyBlok++;
 
             DropNewPiece();
         }
@@ -161,13 +161,13 @@ namespace Tetris
             momentalniPolozka = dalsiPolozkaInt;
 
             //Pokud je poslední pieceSequence, vygeneruje novou
-            if (opakovaniGenerovanychBloku == 7)
+            if (vygenerovanyBlok == 7)
             {
-                opakovaniGenerovanychBloku = 0;
+                vygenerovanyBlok = 0;
 
                 VygenerovaneBloky.Clear();
                 System.Random random = new System.Random();
-                while (VygenerovaneBloky.Count < 7)
+                while (VygenerovaneBloky.Count < 7)     //
                 {
                     int x = random.Next(7);
                     if (!VygenerovaneBloky.Contains(x))
@@ -178,8 +178,8 @@ namespace Tetris
             }
 
             //Zvolí další položku
-            dalsiPolozkaInt = VygenerovaneBloky[opakovaniGenerovanychBloku];
-            opakovaniGenerovanychBloku++;
+            dalsiPolozkaInt = VygenerovaneBloky[vygenerovanyBlok];
+            vygenerovanyBlok++;
 
 
             //**************************************************Box s napovědou
@@ -223,7 +223,7 @@ namespace Tetris
             //********************************Box s napovědou
 
             //Rozvržení padajícího kousku //1
-            Control[,] activePieceArray =
+            Control[,] aktivniPolozka =
             {
                 { box6, box16, box26, box36 }, // I
                 { box5, box15, box25, box26 }, // L
@@ -234,14 +234,14 @@ namespace Tetris
                 { box6, box15, box16, box17 }  // T
             };
 
-            //Vybere padající kousek //1
+            //Vybere padající kousek
             for (int x = 0; x < 4; x++)
             {
-                aktivniPolozka[x] = activePieceArray[momentalniPolozka, x];
+                this.aktivniPolozka[x] = aktivniPolozka[momentalniPolozka, x];
             }
 
-            //Zkontroluje jestli není konec hry //1
-            foreach (Control box in aktivniPolozka)
+            //Zkontroluje jestli není konec hry
+            foreach (Control box in this.aktivniPolozka)
             {
                 if (box.BackColor != Color.White & box.BackColor != Color.LightGray)
                 {
@@ -256,7 +256,7 @@ namespace Tetris
             }
 
             //Přiřadí barvu k daným blokům
-            foreach (Control square in aktivniPolozka)
+            foreach (Control square in this.aktivniPolozka)
             {
                 square.BackColor = seznamBarev[momentalniPolozka];
             }
@@ -265,32 +265,32 @@ namespace Tetris
         //Otestuje jestli budoucí pohyb (doprava,doleva,dolů) byl mimo tabulku nebo jiný kousek
         public bool TestMove(string smer)
         {
-            int currentHighRow = 21;
-            int currentLowRow = 0;
-            int currentLeftCol = 9;
-            int currentRightCol = 0;
+            int momentalniVrchniRadek = 21;
+            int momentalniSpodniRadek = 0;
+            int momentalniLevySloupec = 9;
+            int momentalniPravySloupec = 0;
 
             int dalsiCtverec = 0;
 
             Control novyCtverec = new Control();
             //Určí potencionální místa k pohybu
-            foreach (Control square in aktivniPolozka)
+            foreach (Control ctverec in aktivniPolozka)
             {
-                if (tabulka.GetRow(square) < currentHighRow)
+                if (tabulka.GetRow(ctverec) < momentalniVrchniRadek)
                 {
-                    currentHighRow = tabulka.GetRow(square);
+                    momentalniVrchniRadek = tabulka.GetRow(ctverec);
                 }
-                if (tabulka.GetRow(square) > currentLowRow)
+                if (tabulka.GetRow(ctverec) > momentalniSpodniRadek)
                 {
-                    currentLowRow = tabulka.GetRow(square);
+                    momentalniSpodniRadek = tabulka.GetRow(ctverec);
                 }
-                if (tabulka.GetColumn(square) < currentLeftCol)
+                if (tabulka.GetColumn(ctverec) < momentalniLevySloupec)
                 {
-                    currentLeftCol = tabulka.GetColumn(square);
+                    momentalniLevySloupec = tabulka.GetColumn(ctverec);
                 }
-                if (tabulka.GetColumn(square) > currentRightCol)
+                if (tabulka.GetColumn(ctverec) > momentalniPravySloupec)
                 {
-                    currentRightCol = tabulka.GetColumn(square);
+                    momentalniPravySloupec = tabulka.GetColumn(ctverec);
                 }
             }
 
@@ -304,7 +304,7 @@ namespace Tetris
                 if (smer == "left" & ctverecSloupec > 0)
                 {
                     novyCtverec = tabulka.GetControlFromPosition(ctverecSloupec - 1, ctverecRadek);
-                    dalsiCtverec = currentLeftCol;
+                    dalsiCtverec = momentalniLevySloupec;
                 }
                 else if (smer == "left" & ctverecSloupec == 0)
                 {
@@ -316,7 +316,7 @@ namespace Tetris
                 else if (smer == "right" & ctverecSloupec < 9)
                 {
                     novyCtverec = tabulka.GetControlFromPosition(ctverecSloupec + 1, ctverecRadek);
-                    dalsiCtverec = currentRightCol;
+                    dalsiCtverec = momentalniPravySloupec;
                 }
                 else if (smer == "right" & ctverecSloupec == 9)
                 {
@@ -328,7 +328,7 @@ namespace Tetris
                 else if (smer == "down" & ctverecRadek < 21)
                 {
                     novyCtverec = tabulka.GetControlFromPosition(ctverecSloupec, ctverecRadek + 1);
-                    dalsiCtverec = currentLowRow;
+                    dalsiCtverec = momentalniSpodniRadek;
                 }
                 else if (smer == "down" & ctverecRadek == 21)
                 {
@@ -356,25 +356,25 @@ namespace Tetris
                 ctverec.BackColor = Color.White;
                 int ctverecRadek = tabulka.GetRow(ctverec);
                 int ctverecSloupec = tabulka.GetColumn(ctverec);
-                int newSquareRow = 0;
-                int newSquareCol = 0;
+                int novyCtverecRadek = 0;
+                int novyCtverecSloupec = 0;
                 if (smer == "left")
                 {
-                    newSquareCol = ctverecSloupec - 1;
-                    newSquareRow = ctverecRadek;
+                    novyCtverecSloupec = ctverecSloupec - 1;
+                    novyCtverecRadek = ctverecRadek;
                 }
                 else if (smer == "right")
                 {
-                    newSquareCol = ctverecSloupec + 1;
-                    newSquareRow = ctverecRadek;
+                    novyCtverecSloupec = ctverecSloupec + 1;
+                    novyCtverecRadek = ctverecRadek;
                 }
                 else if (smer == "down")
                 {
-                    newSquareCol = ctverecSloupec;
-                    newSquareRow = ctverecRadek + 1;
+                    novyCtverecSloupec = ctverecSloupec;
+                    novyCtverecRadek = ctverecRadek + 1;
                 }
 
-                aktivniPolozka2[x] = tabulka.GetControlFromPosition(newSquareCol, newSquareRow);
+                aktivniPolozka2[x] = tabulka.GetControlFromPosition(novyCtverecSloupec, novyCtverecRadek);
                 x++;
             }
 
@@ -563,8 +563,8 @@ namespace Tetris
             }
             if(ubehlyCas%84==0)
             {
-                axWindowsMediaPlayer1.Ctlcontrols.stop();
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+                mediaPlayer.Ctlcontrols.stop();
+                mediaPlayer.Ctlcontrols.play();
             }
         }
 
@@ -644,7 +644,7 @@ namespace Tetris
         {
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            mediaPlayer.Ctlcontrols.stop();
             this.Hide();
             Menu menu = new Menu();
             menu.ShowDialog();
@@ -655,7 +655,7 @@ namespace Tetris
         {
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            mediaPlayer.Ctlcontrols.stop();
             this.Hide();
             Skore skore = new Skore();
             skore.ShowDialog();
@@ -666,7 +666,7 @@ namespace Tetris
         {
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            mediaPlayer.Ctlcontrols.stop();
             this.Dispose();
         }
         //zacne novou hru
@@ -675,7 +675,7 @@ namespace Tetris
             rychlostHryTimer.Stop();
             casHryTimer.Stop();
             //soundtrack.Stop();
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            mediaPlayer.Ctlcontrols.stop();
 
             this.Hide();
             TetrisMain main = new TetrisMain();
@@ -691,7 +691,7 @@ namespace Tetris
             {
                 casHryTimer.Stop();
                 rychlostHryTimer.Stop();
-                axWindowsMediaPlayer1.Ctlcontrols.stop();
+                mediaPlayer.Ctlcontrols.stop();
 
                 pozastaveno = true;
                 label_pozastaveni.Text = "Hra je POZASTAVENA - stiskněte ESC pro pokračování";
@@ -700,7 +700,7 @@ namespace Tetris
             {
                 casHryTimer.Start();
                 rychlostHryTimer.Start();
-                axWindowsMediaPlayer1.Ctlcontrols.play();
+                mediaPlayer.Ctlcontrols.play();
 
                 pozastaveno = false;
                 label_pozastaveni.Text = "Pro pozastavení stiskněte ESC";

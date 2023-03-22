@@ -285,7 +285,7 @@
             this.label_typOvladani = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.tabulka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.box100)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.box1)).BeginInit();
@@ -526,7 +526,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.box201)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // label_skore
@@ -3601,7 +3601,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Controls.Add(this.axWindowsMediaPlayer1);
+            this.panel2.Controls.Add(this.mediaPlayer);
             this.panel2.Controls.Add(this.label_herniRezim);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.label_skore);
@@ -3624,14 +3624,14 @@
             // 
             // axWindowsMediaPlayer1
             // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(644, 832);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(42, 29);
-            this.axWindowsMediaPlayer1.TabIndex = 20;
-            this.axWindowsMediaPlayer1.TabStop = false;
-            this.axWindowsMediaPlayer1.Visible = false;
+            this.mediaPlayer.Enabled = true;
+            this.mediaPlayer.Location = new System.Drawing.Point(644, 832);
+            this.mediaPlayer.Name = "axWindowsMediaPlayer1";
+            this.mediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.mediaPlayer.Size = new System.Drawing.Size(42, 29);
+            this.mediaPlayer.TabIndex = 20;
+            this.mediaPlayer.TabStop = false;
+            this.mediaPlayer.Visible = false;
             // 
             // TetrisMain
             // 
@@ -3888,7 +3888,7 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mediaPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4149,7 +4149,7 @@
         private System.Windows.Forms.Label label_typOvladani;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private AxWMPLib.AxWindowsMediaPlayer mediaPlayer;
     }
 }
 
