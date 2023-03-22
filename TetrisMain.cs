@@ -197,7 +197,7 @@ namespace Tetris
                 }
 
                 //Rozložení
-                Control[,] poleDalsiPolozky =
+                Control[,] poleDalsiPolozky = 
                 {
                 { box203, box207, box211, box215 }, // I piece
                 { box202, box206, box210, box211 }, // L piece
