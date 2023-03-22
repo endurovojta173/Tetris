@@ -66,7 +66,7 @@ namespace Tetris
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("Nebyl nalezen zvukový soubor, prosím přeinstalujte hru :), nebo hrajte beze zvuku");
+                MessageBox.Show("Nebyl nalezen zvukový soubor, prosím přeinstalujte hru, nebo hrajte bez zvuku");
             }
 
             //Ošetření souboru nastaveni.txt
