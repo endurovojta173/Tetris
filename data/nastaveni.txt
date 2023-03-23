@@ -1,9 +1,12 @@
-Vojta
-200
-100
-false
-false
+Pepa
+50
+50
 true
+true
+true
+
+
+
 a
 d
 s
